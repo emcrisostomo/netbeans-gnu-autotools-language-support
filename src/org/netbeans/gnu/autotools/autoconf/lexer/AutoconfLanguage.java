@@ -39,8 +39,8 @@ public class AutoconfLanguage extends DefaultLanguageConfig {
         return "AC";
     }
 
-    //@Override
-    //public Parser getParser() {
-    //    return new ACParser();
-    //}
+    @Override
+    public Parser getParser() {
+        return new ACParser();
+    }
 }

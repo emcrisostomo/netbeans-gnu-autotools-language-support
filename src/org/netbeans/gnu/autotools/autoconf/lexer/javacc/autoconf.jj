@@ -223,5 +223,29 @@ TOKEN :
 
 TOKEN :
 {
+  < IDENTIFIER: <LETTER> (<PART_LETTER>)* >
+|
+  < #LETTER:
+    [  
+       "$",
+       "A"-"Z",
+       "_",
+       "a"-"z"
+     ]
+  >
+|
+  < #PART_LETTER:
+      [  
+         "$",
+         "0"-"9",
+         "A"-"Z",
+         "_",
+         "a"-"z"
+      ]
+  >
+}
+
+TOKEN :
+{
   <TEXT: ~[]>
 }

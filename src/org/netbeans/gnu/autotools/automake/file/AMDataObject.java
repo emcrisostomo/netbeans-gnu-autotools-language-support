@@ -85,7 +85,8 @@ import org.openide.util.NbBundle.Messages;
 })
 public class AMDataObject extends MultiDataObject {
 
-    public AMDataObject(FileObject pf, MultiFileLoader loader) throws DataObjectExistsException, IOException {
+    public AMDataObject(FileObject pf, MultiFileLoader loader)
+            throws DataObjectExistsException, IOException {
         super(pf, loader);
         registerEditor("text/x-automake", false);
     }

@@ -21,7 +21,7 @@ import org.netbeans.api.lexer.TokenId;
 
 /**
  *
- * @author enricomariacrisostomo
+ * @author Enrico M. Crisostomo
  */
 public class ACTokenId implements TokenId {
 

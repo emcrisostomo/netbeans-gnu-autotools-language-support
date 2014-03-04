@@ -197,13 +197,15 @@ public interface AutoconfParserConstants {
   /** RegularExpression Id. */
   int STRING_LITERAL = 93;
   /** RegularExpression Id. */
-  int IDENTIFIER = 94;
+  int M4_LITERAL = 94;
   /** RegularExpression Id. */
-  int LETTER = 95;
+  int IDENTIFIER = 95;
   /** RegularExpression Id. */
-  int PART_LETTER = 96;
+  int LETTER = 96;
   /** RegularExpression Id. */
-  int TEXT = 97;
+  int PART_LETTER = 97;
+  /** RegularExpression Id. */
+  int TEXT = 98;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -304,6 +306,7 @@ public interface AutoconfParserConstants {
     "<HEXADECIMAL_EXPONENT>",
     "<CHARACTER_LITERAL>",
     "<STRING_LITERAL>",
+    "<M4_LITERAL>",
     "<IDENTIFIER>",
     "<LETTER>",
     "<PART_LETTER>",

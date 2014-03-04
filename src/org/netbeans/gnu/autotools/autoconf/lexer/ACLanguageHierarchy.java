@@ -130,10 +130,11 @@ public class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
             new ACTokenId("HEXADECIMAL_EXPONENT", "number", 91),
             new ACTokenId("CHARACTER_LITERAL", "literal", 92),
             new ACTokenId("STRING_LITERAL", "literal", 93),
-            new ACTokenId("IDENTIFIER", "identifier", 94),
-            new ACTokenId("LETTER", "identifier", 95),
-            new ACTokenId("PART_LETTER", "identifier", 96), 
-            new ACTokenId("TEXT", "text", 97)
+            new ACTokenId("M4_LITERAL", "literal", 94),
+            new ACTokenId("IDENTIFIER", "identifier", 95),
+            new ACTokenId("LETTER", "identifier", 96),
+            new ACTokenId("PART_LETTER", "identifier", 97), 
+            new ACTokenId("TEXT", "text", 98)
         });
 
         idToToken = new HashMap<Integer, ACTokenId>();

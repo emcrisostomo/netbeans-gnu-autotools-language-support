@@ -83,7 +83,6 @@ TOKEN :
 | < WHILE: "while" >
 }
 
-
 /* SEPARATORS */
 
 TOKEN :
@@ -226,6 +225,8 @@ TOKEN :
       "]"
   >
 }
+
+/* IDENTIFIERS */
 
 TOKEN :
 {

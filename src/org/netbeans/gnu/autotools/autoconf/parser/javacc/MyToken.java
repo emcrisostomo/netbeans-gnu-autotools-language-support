@@ -11,7 +11,7 @@ public class MyToken extends Token
      this.image = image;
   }
 
-  int realKind = AutoconfParserConstants.GT;
+  //int realKind = AutoconfParserConstants.GT;
 
   /**
    * Returns a new Token object.

@@ -4,13 +4,13 @@ README
 GNU Autotools Language Support is a NetBeans plugin which aims to offer the
 following functionality:
 
-  * Syntax highlighting for Autoconf files (.ac).
-  * Syntax highlighting for Automake files (.am).
+  * Syntax highlighting for Autoconf files (`.ac`).
+  * Syntax highlighting for Automake files (`.am`).
   * Code completion for either kind of files.
   * Brace matching for either kind of files.
 
-Development started on March 2014 and the plugin is still in alpha quality and
-**not meant for general use**.
+**Disclaimer:** Having development started on March 2014, the plugin is
+still in its early stages and thus **not meant for general use**.
 
 Limitations
 -----------

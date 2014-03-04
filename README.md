@@ -9,7 +9,7 @@ following functionality:
   * Code completion for either kind of files.
   * Brace matching for either kind of files.
 
-  Development started on March 2014 and the plugin is still in alpha quality and
+Development started on March 2014 and the plugin is still in alpha quality and
 **not meant for general use**.
 
 Limitations
@@ -43,7 +43,7 @@ To install this plugin you must perform the following operations.
   * Navigate to the location of the nbm file you downloaded.
   * Select it and finish.
 
-  No other software packages or dependencies are required to configure and
+No other software packages or dependencies are required to configure and
 install this package.
 
 Bug Reports

@@ -200,12 +200,6 @@ TOKEN :
       )*
       "\""
   >
- |
-  < M4_LITERAL:
-      "[" 
-      (   (~["]"])      )*
-      "]"
-  >
 }
 
 /* Autoconf macros */
@@ -243,6 +237,19 @@ TOKEN :
 {
   < AC_MACRO: "AC_"(["0"-"9","a"-"z","A"-"Z"])* >
 }
+
+/* Autoconf AX_* macro */
+TOKEN :
+{
+  < AX_MACRO: "AX_"(["0"-"9","a"-"z","A"-"Z"])* >
+}
+
+/* Autoconf AM_* macro */
+TOKEN :
+{
+  < AM_MACRO: "AM_"(["0"-"9","a"-"z","A"-"Z"])* >
+}
+
 
 /* IDENTIFIERS */
 

@@ -175,65 +175,67 @@ public interface AutoconfParserConstants {
   /** RegularExpression Id. */
   int STRING_LITERAL = 82;
   /** RegularExpression Id. */
-  int M4_LITERAL = 83;
+  int AC_PREREQ = 83;
   /** RegularExpression Id. */
-  int AC_PREREQ = 84;
+  int AC_INIT = 84;
   /** RegularExpression Id. */
-  int AC_INIT = 85;
+  int AC_COPYRIGHT = 85;
   /** RegularExpression Id. */
-  int AC_COPYRIGHT = 86;
+  int AC_REVISION = 86;
   /** RegularExpression Id. */
-  int AC_REVISION = 87;
+  int AC_CONFIG_SRCDIR = 87;
   /** RegularExpression Id. */
-  int AC_CONFIG_SRCDIR = 88;
+  int AC_CONFIG_AUX_DIR = 88;
   /** RegularExpression Id. */
-  int AC_CONFIG_AUX_DIR = 89;
+  int AC_CONFIG_FILES = 89;
   /** RegularExpression Id. */
-  int AC_CONFIG_FILES = 90;
+  int AC_CONFIG_MACRO_DIRS = 90;
   /** RegularExpression Id. */
-  int AC_CONFIG_MACRO_DIRS = 91;
+  int AC_LANG = 91;
   /** RegularExpression Id. */
-  int AC_LANG = 92;
+  int AC_PROG_CC = 92;
   /** RegularExpression Id. */
-  int AC_PROG_CC = 93;
+  int AC_PROG_CXX = 93;
   /** RegularExpression Id. */
-  int AC_PROG_CXX = 94;
+  int AC_CONFIG_HEADERS = 94;
   /** RegularExpression Id. */
-  int AC_CONFIG_HEADERS = 95;
+  int AM_INIT_AUTOMAKE = 95;
   /** RegularExpression Id. */
-  int AM_INIT_AUTOMAKE = 96;
+  int AC_CHECK_HEADERS = 96;
   /** RegularExpression Id. */
-  int AC_CHECK_HEADERS = 97;
+  int AM_CONDITIONAL = 97;
   /** RegularExpression Id. */
-  int AM_CONDITIONAL = 98;
+  int AC_CHECK_HEADER_STDBOOL = 98;
   /** RegularExpression Id. */
-  int AC_CHECK_HEADER_STDBOOL = 99;
+  int AC_TYPE_SIZE_T = 99;
   /** RegularExpression Id. */
-  int AC_TYPE_SIZE_T = 100;
+  int AC_TYPE_UINT32_T = 100;
   /** RegularExpression Id. */
-  int AC_TYPE_UINT32_T = 101;
+  int AC_TYPE_MODE_T = 101;
   /** RegularExpression Id. */
-  int AC_TYPE_MODE_T = 102;
+  int AC_FUNC_STRTOD = 102;
   /** RegularExpression Id. */
-  int AC_FUNC_STRTOD = 103;
+  int AC_CHECK_FUNCS = 103;
   /** RegularExpression Id. */
-  int AC_CHECK_FUNCS = 104;
+  int AC_MSG_ERROR = 104;
   /** RegularExpression Id. */
-  int AC_MSG_ERROR = 105;
+  int AC_CHECK_DECLS = 105;
   /** RegularExpression Id. */
-  int AC_CHECK_DECLS = 106;
+  int AC_OUTPUT = 106;
   /** RegularExpression Id. */
-  int AC_OUTPUT = 107;
+  int AC_MACRO = 107;
   /** RegularExpression Id. */
-  int AC_MACRO = 108;
+  int AX_MACRO = 108;
   /** RegularExpression Id. */
-  int IDENTIFIER = 109;
+  int AM_MACRO = 109;
   /** RegularExpression Id. */
-  int LETTER = 110;
+  int IDENTIFIER = 110;
   /** RegularExpression Id. */
-  int PART_LETTER = 111;
+  int LETTER = 111;
   /** RegularExpression Id. */
-  int TEXT = 112;
+  int PART_LETTER = 112;
+  /** RegularExpression Id. */
+  int TEXT = 113;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -323,7 +325,6 @@ public interface AutoconfParserConstants {
     "<HEXADECIMAL_EXPONENT>",
     "<CHARACTER_LITERAL>",
     "<STRING_LITERAL>",
-    "<M4_LITERAL>",
     "\"AC_PREREQ\"",
     "\"AC_INIT\"",
     "\"AC_COPYRIGHT\"",
@@ -349,6 +350,8 @@ public interface AutoconfParserConstants {
     "\"AC_CHECK_DECLS\"",
     "\"AC_OUTPUT\"",
     "<AC_MACRO>",
+    "<AX_MACRO>",
+    "<AM_MACRO>",
     "<IDENTIFIER>",
     "<LETTER>",
     "<PART_LETTER>",

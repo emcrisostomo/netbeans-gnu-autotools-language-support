@@ -165,11 +165,12 @@ PARSER_END(AutoconfParser)
 
 SKIP :
 {
+  < WHITESPACE:
   " "
 | "\t"
 | "\n"
 | "\r"
-| "\f"
+| "\f">
 }
 
 /* COMMENTS */
@@ -390,10 +391,6 @@ TOKEN :
 void CompilationUnit():
 {}
 {
-  [ LOOKAHEAD( ( Annotation() )* "package" ) PackageDeclaration() ]
-  ( ImportDeclaration() )*
-  ( TypeDeclaration() )+
-  ( < "\u001a" > )?
   ( <STUFF_TO_IGNORE: ~[]> )?
   <EOF>
 }

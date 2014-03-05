@@ -27,7 +27,7 @@ import org.netbeans.spi.lexer.LexerRestartInfo;
 
 /**
  *
- * @author enricomariacrisostomo
+ * @author Enrico M. Crisostomo
  */
 public class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
 

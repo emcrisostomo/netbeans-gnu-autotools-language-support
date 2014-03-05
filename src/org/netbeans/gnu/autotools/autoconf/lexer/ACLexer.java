@@ -24,7 +24,7 @@ import org.netbeans.spi.lexer.LexerRestartInfo;
 
 /**
  *
- * @author enricomariacrisostomo
+ * @author Enrico M. Crisostomo
  */
 class ACLexer implements Lexer<ACTokenId> {
 

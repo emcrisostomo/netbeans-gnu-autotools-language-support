@@ -35,7 +35,7 @@ import org.netbeans.modules.parsing.spi.SourceModificationEvent;
 
 /**
  *
- * @author enricomariacrisostomo
+ * @author Enrico M. Crisostomo
  */
 public class ACParser extends Parser {
 

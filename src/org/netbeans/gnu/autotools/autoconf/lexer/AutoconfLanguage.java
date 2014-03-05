@@ -24,7 +24,7 @@ import org.netbeans.modules.parsing.spi.Parser;
 
 /**
  *
- * @author enricomariacrisostomo
+ * @author Enrico M. Crisostomo
  */
 @LanguageRegistration(mimeType = "text/x-autoconf")
 public class AutoconfLanguage extends DefaultLanguageConfig {

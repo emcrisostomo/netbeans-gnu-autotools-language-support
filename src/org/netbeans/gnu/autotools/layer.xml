@@ -15,12 +15,29 @@
                     </folder>
                 </folder>
             </folder>
+            <folder name="x-automake">
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.autotools.Bundle"/>
+                <folder name="FontsColors">
+                    <folder name="NetBeans">
+                        <folder name="Defaults">
+                            <file name="FontAndColors.xml" url="FontAndColors.xml">
+                                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.autotools.Bundle"/>
+                            </file>
+                        </folder>
+                    </folder>
+                </folder>
+            </folder>
         </folder>
     </folder>
     <folder name="OptionsDialog">
         <folder name="PreviewExamples">
             <folder name="text">
                 <file name="x-autoconf" url="autoconf/file/ACTemplate.ac"/>
+            </folder>
+        </folder>
+        <folder name="PreviewExamples">
+            <folder name="text">
+                <file name="x-automake" url="automake/file/AMTemplate.am"/>
             </folder>
         </folder>
     </folder>

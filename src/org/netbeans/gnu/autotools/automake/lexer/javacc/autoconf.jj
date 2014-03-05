@@ -1,0 +1,257 @@
+/* 
+ * Copyright (C) 2014, Enrico M. Crisostomo
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 3, or (at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+options {
+  JAVA_UNICODE_ESCAPE = true;
+  ERROR_REPORTING = false;
+  STATIC = false;
+  COMMON_TOKEN_ACTION = false;
+  TOKEN_FACTORY = "Token";
+  JDK_VERSION = "1.5";
+  BUILD_PARSER = false;
+}
+
+PARSER_BEGIN(AutomakeParser)
+
+package org.netbeans.gnu.autotools.automake.lexer.javacc;
+
+public class AutomakeParser {}
+
+PARSER_END(AutomakeParser)
+
+/* WHITE SPACE */
+
+TOKEN :
+{
+  < WHITESPACE:
+  " "
+| "\t"
+| "\n"
+| "\r"
+| "\f">
+}
+
+/* COMMENTS */
+
+TOKEN :
+{
+  <SINGLE_LINE_COMMENT: "#" (~["\n", "\r"])* ("\n" | "\r" | "\r\n")?>
+}
+
+/* RESERVED WORDS AND LITERALS */
+
+TOKEN :
+{
+  < BOOLEAN: "boolean" >
+| < BREAK: "break" >
+| < CASE: "case" >
+| < CHAR: "char" >
+| < CONTINUE: "continue" >
+| < _DEFAULT: "default" >
+| < DO: "do" >
+| < DOUBLE: "double" >
+| < ELSE: "else" >
+| < FALSE: "false" >
+| < FINALLY: "finally" >
+| < FLOAT: "float" >
+| < FOR: "for" >
+| < GOTO: "goto" >
+| < IF: "if" >
+| < INT: "int" >
+| < LONG: "long" >
+| < NULL: "null" >
+| < RETURN: "return" >
+| < SHORT: "short" >
+| < SWITCH: "switch" >
+| < TRUE: "true" >
+| < TRY: "try" >
+| < VOID: "void" >
+| < WHILE: "while" >
+}
+
+/* SEPARATORS */
+
+TOKEN :
+{
+  < LPAREN: "(" >
+| < RPAREN: ")" >
+| < LBRACE: "{" >
+| < RBRACE: "}" >
+| < LBRACKET: "[" >
+| < RBRACKET: "]" >
+| < SEMICOLON: ";" >
+| < COMMA: "," >
+| < DOT: "." >
+| < AT: "@" >
+}
+
+/* OPERATORS */
+
+TOKEN :
+{
+  < ASSIGN: "=" >
+| < LT: "<" >
+| < BANG: "!" >
+| < TILDE: "~" >
+| < HOOK: "?" >
+| < COLON: ":" >
+| < EQ: "==" >
+| < LE: "<=" >
+| < GE: ">=" >
+| < NE: "!=" >
+| < SC_OR: "||" >
+| < SC_AND: "&&" >
+| < INCR: "++" >
+| < DECR: "--" >
+| < PLUS: "+" >
+| < MINUS: "-" >
+| < STAR: "*" >
+| < SLASH: "/" >
+| < BIT_AND: "&" >
+| < BIT_OR: "|" >
+| < XOR: "^" >
+| < REM: "%" >
+| < LSHIFT: "<<" >
+| < PLUSASSIGN: "+=" >
+| < MINUSASSIGN: "-=" >
+| < STARASSIGN: "*=" >
+| < SLASHASSIGN: "/=" >
+| < ANDASSIGN: "&=" >
+| < ORASSIGN: "|=" >
+| < XORASSIGN: "^=" >
+| < REMASSIGN: "%=" >
+| < LSHIFTASSIGN: "<<=" >
+| < RSIGNEDSHIFTASSIGN: ">>=" >
+| < ELLIPSIS: "..." >
+}
+
+/* Automake macros */
+
+TOKEN :
+{
+  < AC_PREREQ: "AC_PREREQ" >
+| < AC_INIT: "AC_INIT" >
+| < AC_COPYRIGHT: "AC_COPYRIGHT" >
+| < AC_REVISION: "AC_REVISION" >
+| < AC_CONFIG_SRCDIR: "AC_CONFIG_SRCDIR" >
+| < AC_CONFIG_AUX_DIR: "AC_CONFIG_AUX_DIR" >
+| < AC_CONFIG_FILES: "AC_CONFIG_FILES" >
+| < AC_CONFIG_MACRO_DIRS: "AC_CONFIG_MACRO_DIRS" >
+| < AC_LANG: "AC_LANG" >
+| < AC_PROG_CC: "AC_PROG_CC" >
+| < AC_PROG_CXX: "AC_PROG_CXX" >
+}
+
+/* LITERALS */
+
+TOKEN :
+{
+  < INTEGER_LITERAL:
+        <DECIMAL_LITERAL> (["l","L"])?
+      | <HEX_LITERAL> (["l","L"])?
+      | <OCTAL_LITERAL> (["l","L"])?
+  >
+|
+  < #DECIMAL_LITERAL: ["1"-"9"] (["0"-"9"])* >
+|
+  < #HEX_LITERAL: "0" ["x","X"] (["0"-"9","a"-"f","A"-"F"])+ >
+|
+  < #OCTAL_LITERAL: "0" (["0"-"7"])* >
+|
+  < FLOATING_POINT_LITERAL:
+        <DECIMAL_FLOATING_POINT_LITERAL>
+      | <HEXADECIMAL_FLOATING_POINT_LITERAL>
+  >
+|
+  < #DECIMAL_FLOATING_POINT_LITERAL:
+        (["0"-"9"])+ "." (["0"-"9"])* (<DECIMAL_EXPONENT>)? (["f","F","d","D"])?
+      | "." (["0"-"9"])+ (<DECIMAL_EXPONENT>)? (["f","F","d","D"])?
+      | (["0"-"9"])+ <DECIMAL_EXPONENT> (["f","F","d","D"])?
+      | (["0"-"9"])+ (<DECIMAL_EXPONENT>)? ["f","F","d","D"]
+  >
+|
+  < #DECIMAL_EXPONENT: ["e","E"] (["+","-"])? (["0"-"9"])+ >
+|
+  < #HEXADECIMAL_FLOATING_POINT_LITERAL:
+        "0" ["x", "X"] (["0"-"9","a"-"f","A"-"F"])+ (".")? <HEXADECIMAL_EXPONENT> (["f","F","d","D"])?
+      | "0" ["x", "X"] (["0"-"9","a"-"f","A"-"F"])* "." (["0"-"9","a"-"f","A"-"F"])+ <HEXADECIMAL_EXPONENT> (["f","F","d","D"])?
+  >
+|
+  < #HEXADECIMAL_EXPONENT: ["p","P"] (["+","-"])? (["0"-"9"])+ >
+|
+  < CHARACTER_LITERAL:
+      "'"
+      (   (~["'","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","\\","'","\""]
+            | ["0"-"7"] ( ["0"-"7"] )?
+            | ["0"-"3"] ["0"-"7"] ["0"-"7"]
+            )
+          )
+      )
+      "'"
+  >
+|
+  < STRING_LITERAL:
+      "\""
+      (   (~["\"","\\","\n","\r"])
+        | ("\\"
+            ( ["n","t","b","r","f","\\","'","\""]
+            | ["0"-"7"] ( ["0"-"7"] )?
+            | ["0"-"3"] ["0"-"7"] ["0"-"7"]
+            )
+          )
+      )*
+      "\""
+  >
+ |
+  < M4_LITERAL:
+      "[" 
+      (   (~["]"])      )*
+      "]"
+  >
+}
+
+/* IDENTIFIERS */
+
+TOKEN :
+{
+  < IDENTIFIER: <LETTER> (<PART_LETTER>)* >
+|
+  < #LETTER:
+    [  
+       "$",
+       "A"-"Z",
+       "_",
+       "a"-"z"
+     ]
+  >
+|
+  < #PART_LETTER:
+      [  
+         "$",
+         "0"-"9",
+         "A"-"Z",
+         "_",
+         "a"-"z"
+      ]
+  >
+}
+
+TOKEN :
+{
+  <TEXT: ~[]>
+}

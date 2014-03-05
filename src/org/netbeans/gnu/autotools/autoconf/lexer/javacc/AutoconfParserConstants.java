@@ -153,59 +153,87 @@ public interface AutoconfParserConstants {
   /** RegularExpression Id. */
   int ELLIPSIS = 71;
   /** RegularExpression Id. */
-  int AC_PREREQ = 72;
+  int INTEGER_LITERAL = 72;
   /** RegularExpression Id. */
-  int AC_INIT = 73;
+  int DECIMAL_LITERAL = 73;
   /** RegularExpression Id. */
-  int AC_COPYRIGHT = 74;
+  int HEX_LITERAL = 74;
   /** RegularExpression Id. */
-  int AC_REVISION = 75;
+  int OCTAL_LITERAL = 75;
   /** RegularExpression Id. */
-  int AC_CONFIG_SRCDIR = 76;
+  int FLOATING_POINT_LITERAL = 76;
   /** RegularExpression Id. */
-  int AC_CONFIG_AUX_DIR = 77;
+  int DECIMAL_FLOATING_POINT_LITERAL = 77;
   /** RegularExpression Id. */
-  int AC_CONFIG_FILES = 78;
+  int DECIMAL_EXPONENT = 78;
   /** RegularExpression Id. */
-  int AC_CONFIG_MACRO_DIRS = 79;
+  int HEXADECIMAL_FLOATING_POINT_LITERAL = 79;
   /** RegularExpression Id. */
-  int AC_LANG = 80;
+  int HEXADECIMAL_EXPONENT = 80;
   /** RegularExpression Id. */
-  int AC_PROG_CC = 81;
+  int CHARACTER_LITERAL = 81;
   /** RegularExpression Id. */
-  int AC_PROG_CXX = 82;
+  int STRING_LITERAL = 82;
   /** RegularExpression Id. */
-  int INTEGER_LITERAL = 83;
+  int M4_LITERAL = 83;
   /** RegularExpression Id. */
-  int DECIMAL_LITERAL = 84;
+  int AC_PREREQ = 84;
   /** RegularExpression Id. */
-  int HEX_LITERAL = 85;
+  int AC_INIT = 85;
   /** RegularExpression Id. */
-  int OCTAL_LITERAL = 86;
+  int AC_COPYRIGHT = 86;
   /** RegularExpression Id. */
-  int FLOATING_POINT_LITERAL = 87;
+  int AC_REVISION = 87;
   /** RegularExpression Id. */
-  int DECIMAL_FLOATING_POINT_LITERAL = 88;
+  int AC_CONFIG_SRCDIR = 88;
   /** RegularExpression Id. */
-  int DECIMAL_EXPONENT = 89;
+  int AC_CONFIG_AUX_DIR = 89;
   /** RegularExpression Id. */
-  int HEXADECIMAL_FLOATING_POINT_LITERAL = 90;
+  int AC_CONFIG_FILES = 90;
   /** RegularExpression Id. */
-  int HEXADECIMAL_EXPONENT = 91;
+  int AC_CONFIG_MACRO_DIRS = 91;
   /** RegularExpression Id. */
-  int CHARACTER_LITERAL = 92;
+  int AC_LANG = 92;
   /** RegularExpression Id. */
-  int STRING_LITERAL = 93;
+  int AC_PROG_CC = 93;
   /** RegularExpression Id. */
-  int M4_LITERAL = 94;
+  int AC_PROG_CXX = 94;
   /** RegularExpression Id. */
-  int IDENTIFIER = 95;
+  int AC_CONFIG_HEADERS = 95;
   /** RegularExpression Id. */
-  int LETTER = 96;
+  int AM_INIT_AUTOMAKE = 96;
   /** RegularExpression Id. */
-  int PART_LETTER = 97;
+  int AC_CHECK_HEADERS = 97;
   /** RegularExpression Id. */
-  int TEXT = 98;
+  int AM_CONDITIONAL = 98;
+  /** RegularExpression Id. */
+  int AC_CHECK_HEADER_STDBOOL = 99;
+  /** RegularExpression Id. */
+  int AC_TYPE_SIZE_T = 100;
+  /** RegularExpression Id. */
+  int AC_TYPE_UINT32_T = 101;
+  /** RegularExpression Id. */
+  int AC_TYPE_MODE_T = 102;
+  /** RegularExpression Id. */
+  int AC_FUNC_STRTOD = 103;
+  /** RegularExpression Id. */
+  int AC_CHECK_FUNCS = 104;
+  /** RegularExpression Id. */
+  int AC_MSG_ERROR = 105;
+  /** RegularExpression Id. */
+  int AC_CHECK_DECLS = 106;
+  /** RegularExpression Id. */
+  int AC_OUTPUT = 107;
+  /** RegularExpression Id. */
+  int AC_MACRO = 108;
+  /** RegularExpression Id. */
+  int IDENTIFIER = 109;
+  /** RegularExpression Id. */
+  int LETTER = 110;
+  /** RegularExpression Id. */
+  int PART_LETTER = 111;
+  /** RegularExpression Id. */
+  int TEXT = 112;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -284,17 +312,6 @@ public interface AutoconfParserConstants {
     "\"<<=\"",
     "\">>=\"",
     "\"...\"",
-    "\"AC_PREREQ\"",
-    "\"AC_INIT\"",
-    "\"AC_COPYRIGHT\"",
-    "\"AC_REVISION\"",
-    "\"AC_CONFIG_SRCDIR\"",
-    "\"AC_CONFIG_AUX_DIR\"",
-    "\"AC_CONFIG_FILES\"",
-    "\"AC_CONFIG_MACRO_DIRS\"",
-    "\"AC_LANG\"",
-    "\"AC_PROG_CC\"",
-    "\"AC_PROG_CXX\"",
     "<INTEGER_LITERAL>",
     "<DECIMAL_LITERAL>",
     "<HEX_LITERAL>",
@@ -307,6 +324,31 @@ public interface AutoconfParserConstants {
     "<CHARACTER_LITERAL>",
     "<STRING_LITERAL>",
     "<M4_LITERAL>",
+    "\"AC_PREREQ\"",
+    "\"AC_INIT\"",
+    "\"AC_COPYRIGHT\"",
+    "\"AC_REVISION\"",
+    "\"AC_CONFIG_SRCDIR\"",
+    "\"AC_CONFIG_AUX_DIR\"",
+    "\"AC_CONFIG_FILES\"",
+    "\"AC_CONFIG_MACRO_DIRS\"",
+    "\"AC_LANG\"",
+    "\"AC_PROG_CC\"",
+    "\"AC_PROG_CXX\"",
+    "\"AC_CONFIG_HEADERS\"",
+    "\"AM_INIT_AUTOMAKE\"",
+    "\"AC_CHECK_HEADERS\"",
+    "\"AM_CONDITIONAL\"",
+    "\"AC_CHECK_HEADER_STDBOOL\"",
+    "\"AC_TYPE_SIZE_T\"",
+    "\"AC_TYPE_UINT32_T\"",
+    "\"AC_TYPE_MODE_T\"",
+    "\"AC_FUNC_STRTOD\"",
+    "\"AC_CHECK_FUNCS\"",
+    "\"AC_MSG_ERROR\"",
+    "\"AC_CHECK_DECLS\"",
+    "\"AC_OUTPUT\"",
+    "<AC_MACRO>",
     "<IDENTIFIER>",
     "<LETTER>",
     "<PART_LETTER>",

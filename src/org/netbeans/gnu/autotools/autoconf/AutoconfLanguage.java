@@ -14,10 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.netbeans.gnu.autotools.autoconf.lexer;
+package org.netbeans.gnu.autotools.autoconf;
 
 import org.netbeans.gnu.autotools.autoconf.parser.ACParser;
 import org.netbeans.api.lexer.Language;
+import org.netbeans.gnu.autotools.autoconf.lexer.ACTokenId;
 import org.netbeans.modules.csl.spi.DefaultLanguageConfig;
 import org.netbeans.modules.csl.spi.LanguageRegistration;
 import org.netbeans.modules.parsing.spi.Parser;

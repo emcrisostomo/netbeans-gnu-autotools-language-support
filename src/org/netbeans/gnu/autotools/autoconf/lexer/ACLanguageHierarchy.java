@@ -133,7 +133,7 @@ public class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
             new ACTokenId("M4_LITERAL", "literal", 94),
             new ACTokenId("IDENTIFIER", "identifier", 95),
             new ACTokenId("LETTER", "identifier", 96),
-            new ACTokenId("PART_LETTER", "identifier", 97), 
+            new ACTokenId("PART_LETTER", "identifier", 97),
             new ACTokenId("TEXT", "text", 98)
         });
 
@@ -170,5 +170,4 @@ public class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
     protected String mimeType() {
         return "text/x-autoconf";
     }
-
 }

@@ -1,7 +1,7 @@
 README
 ======
 
-GNU Autotools Language Support is a NetBeans plugin which aims to offer the
+*GNU Autotools Language Support* is a NetBeans plugin which aims to offer the
 following functionality:
 
   * Syntax highlighting for Autoconf files (`.ac`).

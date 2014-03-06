@@ -46,9 +46,63 @@ TOKEN :
 
 /* COMMENTS */
 
+<DEFAULT>
 TOKEN :
 {
   <SINGLE_LINE_COMMENT: "#" (~["\n", "\r"])* ("\n" | "\r" | "\r\n")?>
+}
+
+TOKEN_MGR_DECLS : {
+  int m4NestingDepth ;
+}
+
+/* SEPARATORS */
+
+<DEFAULT>
+SPECIAL_TOKEN : 
+{
+  "[" { 
+    m4NestingDepth = 1 ; 
+    System.out.println("Open");
+  } : MCOMMENT
+}
+
+<MCOMMENT>
+SPECIAL_TOKEN : 
+{
+  "[" {
+    m4NestingDepth += 1; 
+    System.out.println("Open Nested: " + m4NestingDepth);
+  }
+}
+
+<MCOMMENT>
+TOKEN :
+{
+  < MRBRACKET: "]" > {
+    if (m4NestingDepth == 1)
+    {
+      SwitchTo( DEFAULT );
+    }
+    
+    m4NestingDepth -= 1;
+    System.out.println("Close Nested: " + m4NestingDepth);
+  }
+}
+
+<DEFAULT>
+TOKEN :
+{
+  < RBRACKET: "]" > {
+    System.out.println("Closing.");
+    m4NestingDepth = 0;
+  }
+}
+
+<MCOMMENT>
+SPECIAL_TOKEN : 
+{
+  < ~[] > 
 }
 
 /* RESERVED WORDS AND LITERALS */
@@ -90,8 +144,6 @@ TOKEN :
 | < RPAREN: ")" >
 | < LBRACE: "{" >
 | < RBRACE: "}" >
-| < LBRACKET: "[" >
-| < RBRACKET: "]" >
 | < SEMICOLON: ";" >
 | < COMMA: "," >
 | < DOT: "." >
@@ -277,6 +329,7 @@ TOKEN :
   >
 }
 
+<DEFAULT>
 TOKEN :
 {
   <TEXT: ~[]>

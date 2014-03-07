@@ -599,8 +599,9 @@ TOKEN :
 <*>
 TOKEN :
 {
-  < AC_MACRO:    "AC_"(["0"-"9","a"-"z","A"-"Z","_"])* >
-| < AC_VARIABLE: "ac_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+  < AC_MACRO:            "AC_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+| < AC_MACRO_PRIVATE:    "_AC_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+| < AC_VARIABLE:         "ac_"(["0"-"9","a"-"z","A"-"Z","_"])* >
 }
 
 /* Autoconf AX_* macro */

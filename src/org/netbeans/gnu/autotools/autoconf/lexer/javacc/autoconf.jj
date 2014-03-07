@@ -145,7 +145,6 @@ TOKEN :
 | < SEMICOLON: ";" >
 | < COMMA: "," >
 | < DOT: "." >
-| < AT: "@" >
 }
 
 /* OPERATORS */
@@ -187,6 +186,18 @@ TOKEN :
 | < LSHIFTASSIGN: "<<=" >
 | < RSIGNEDSHIFTASSIGN: ">>=" >
 | < ELLIPSIS: "..." >
+}
+
+<*>
+TOKEN :
+{
+  < LBRACKET_QG: "@<:@" >
+| < RBRACKET_QG: "@:>@" >
+| < DOLLAR_QG:   "@S|@" >
+| < BANG_QG:     "@%:@" >
+| < LBRACE_QG:   "@{:@" >
+| < RBRACE_QG:   "@:}@" >
+| < EMPTY_QG:    "@&t@" >
 }
 
 /* LITERALS */

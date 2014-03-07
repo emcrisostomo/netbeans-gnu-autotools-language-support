@@ -59,18 +59,18 @@ TOKEN_MGR_DECLS : {
 /* SEPARATORS */
 
 <DEFAULT>
-SPECIAL_TOKEN : 
+TOKEN : 
 {
-  "[" { 
+  < LBRACKET: "[" > { 
     m4NestingDepth = 1 ; 
     System.out.println("Open");
   } : MCOMMENT
 }
 
 <MCOMMENT>
-SPECIAL_TOKEN : 
+TOKEN : 
 {
-  "[" {
+  < MLBRACKET: "[" > {
     m4NestingDepth += 1; 
     System.out.println("Open Nested: " + m4NestingDepth);
   }
@@ -80,13 +80,13 @@ SPECIAL_TOKEN :
 TOKEN :
 {
   < MRBRACKET: "]" > {
+    System.out.println("Close Nested: " + m4NestingDepth);
+    m4NestingDepth -= 1;
+
     if (m4NestingDepth == 1)
     {
       SwitchTo( DEFAULT );
     }
-    
-    m4NestingDepth -= 1;
-    System.out.println("Close Nested: " + m4NestingDepth);
   }
 }
 
@@ -99,14 +99,8 @@ TOKEN :
   }
 }
 
-<MCOMMENT>
-SPECIAL_TOKEN : 
-{
-  < ~[] > 
-}
-
 /* RESERVED WORDS AND LITERALS */
-
+<*>
 TOKEN :
 {
   < BOOLEAN: "boolean" >
@@ -116,6 +110,7 @@ TOKEN :
 | < CONTINUE: "continue" >
 | < _DEFAULT: "default" >
 | < DO: "do" >
+| < DONE: "done" >
 | < DOUBLE: "double" >
 | < ELSE: "else" >
 | < FALSE: "false" >
@@ -124,12 +119,14 @@ TOKEN :
 | < FOR: "for" >
 | < GOTO: "goto" >
 | < IF: "if" >
+| < FI: "fi" >
 | < INT: "int" >
 | < LONG: "long" >
 | < NULL: "null" >
 | < RETURN: "return" >
 | < SHORT: "short" >
 | < SWITCH: "switch" >
+| < THEN: "then" >
 | < TRUE: "true" >
 | < TRY: "try" >
 | < VOID: "void" >
@@ -138,6 +135,7 @@ TOKEN :
 
 /* SEPARATORS */
 
+<*>
 TOKEN :
 {
   < LPAREN: "(" >
@@ -152,6 +150,7 @@ TOKEN :
 
 /* OPERATORS */
 
+<*>
 TOKEN :
 {
   < ASSIGN: "=" >
@@ -192,6 +191,7 @@ TOKEN :
 
 /* LITERALS */
 
+<*>
 TOKEN :
 {
   < INTEGER_LITERAL:
@@ -256,6 +256,7 @@ TOKEN :
 
 /* Autoconf macros */
 
+<*>
 TOKEN :
 {
   < AC_PREREQ: "AC_PREREQ" >
@@ -285,18 +286,24 @@ TOKEN :
 }
 
 /* Autoconf AC_* macro */
+
+<*>
 TOKEN :
 {
   < AC_MACRO: "AC_"(["0"-"9","a"-"z","A"-"Z"])* >
 }
 
 /* Autoconf AX_* macro */
+
+<*>
 TOKEN :
 {
   < AX_MACRO: "AX_"(["0"-"9","a"-"z","A"-"Z"])* >
 }
 
 /* Autoconf AM_* macro */
+
+<*>
 TOKEN :
 {
   < AM_MACRO: "AM_"(["0"-"9","a"-"z","A"-"Z"])* >
@@ -305,6 +312,7 @@ TOKEN :
 
 /* IDENTIFIERS */
 
+<*>
 TOKEN :
 {
   < IDENTIFIER: <LETTER> (<PART_LETTER>)* >
@@ -327,6 +335,12 @@ TOKEN :
          "a"-"z"
       ]
   >
+}
+
+<MCOMMENT>
+SPECIAL_TOKEN : 
+{
+  < ~[] > 
 }
 
 <DEFAULT>

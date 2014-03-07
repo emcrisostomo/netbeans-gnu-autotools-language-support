@@ -44,7 +44,7 @@ class ACLexer implements Lexer<ACTokenId> {
         if (info.input().readLength() < 1) {
             return null;
         }
-        
+
         return info.tokenFactory().createToken(ACLanguageHierarchy.getToken(token.kind));
     }
 

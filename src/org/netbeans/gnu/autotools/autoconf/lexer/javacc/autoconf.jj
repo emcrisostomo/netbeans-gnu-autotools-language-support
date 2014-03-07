@@ -290,7 +290,7 @@ TOKEN :
 <*>
 TOKEN :
 {
-  < AC_MACRO: "AC_"(["0"-"9","a"-"z","A"-"Z"])* >
+  < AC_MACRO: "AC_"(["0"-"9","a"-"z","A"-"Z","_"])* >
 }
 
 /* Autoconf AX_* macro */
@@ -298,7 +298,7 @@ TOKEN :
 <*>
 TOKEN :
 {
-  < AX_MACRO: "AX_"(["0"-"9","a"-"z","A"-"Z"])* >
+  < AX_MACRO: "AX_"(["0"-"9","a"-"z","A"-"Z","_"])* >
 }
 
 /* Autoconf AM_* macro */
@@ -306,7 +306,7 @@ TOKEN :
 <*>
 TOKEN :
 {
-  < AM_MACRO: "AM_"(["0"-"9","a"-"z","A"-"Z"])* >
+  < AM_MACRO: "AM_"(["0"-"9","a"-"z","A"-"Z","_"])* >
 }
 
 

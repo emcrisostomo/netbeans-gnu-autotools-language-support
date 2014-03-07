@@ -527,15 +527,71 @@ TOKEN :
 | < AC_TYPE_UINTPTR_T: "AC_TYPE_UINTPTR_T" >
 | < AC_TYPE_UNSIGNED_LONG_LONG_INT: "AC_TYPE_UNSIGNED_LONG_LONG_INT" >
 | < AC_USE_SYSTEM_EXTENSIONS: "AC_USE_SYSTEM_EXTENSIONS" >
+}
 
-| < AH_BOTTOM: "AH_BOTTOM" >
+/* Autoconf AH macros */
+
+<*>
+TOKEN :
+{
+  < AH_BOTTOM: "AH_BOTTOM" >
 | < AH_HEADER: "AH_HEADER" >
 | < AH_TEMPLATE: "AH_TEMPLATE" >
 | < AH_TOP: "AH_TOP" >
 | < AH_VERBATIM: "AH_VERBATIM" >
+}
 
-| < AM_INIT_AUTOMAKE: "AM_INIT_AUTOMAKE" >
+/* Automake AM macros */
+
+<*>
+TOKEN :
+{
+  < AM_INIT_AUTOMAKE: "AM_INIT_AUTOMAKE" >
 | < AM_CONDITIONAL: "AM_CONDITIONAL" >
+}
+
+/* m4sh macros */
+
+<*>
+TOKEN :
+{
+  < AS_BOURNE_COMPATIBLE: "AS_BOURNE_COMPATIBLE" >
+| < AS_BOX: "AS_BOX" >
+| < AS_CASE: "AS_CASE" >
+| < AS_DIRNAME: "AS_DIRNAME" >
+| < AS_ECHO: "AS_ECHO" >
+| < AS_ECHO_N: "AS_ECHO_N" >
+| < AS_ESCAPE: "AS_ESCAPE" >
+| < AS_EXECUTABLE_P: "AS_EXECUTABLE_P" >
+| < AS_EXIT: "AS_EXIT" >
+| < AS_IF: "AS_IF" >
+| < AS_INIT: "AS_INIT" >
+| < AS_INIT_GENERATED: "AS_INIT_GENERATED" >
+| < AS_LINENO_PREPARE: "AS_LINENO_PREPARE" >
+| < AS_LITERAL_IF: "AS_LITERAL_IF" >
+| < AS_LITERAL_WORD_IF: "AS_LITERAL_WORD_IF" >
+| < AS_ME_PREPARE: "AS_ME_PREPARE" >
+| < AS_MESSAGE_FD: "AS_MESSAGE_FD" >
+| < AS_MESSAGE_LOG_FD: "AS_MESSAGE_LOG_FD" >
+| < AS_MKDIR_P: "AS_MKDIR_P" >
+| < AS_ORIGINAL_STDIN_FD: "AS_ORIGINAL_STDIN_FD" >
+| < AS_SET_CATFILE: "AS_SET_CATFILE" >
+| < AS_SET_STATUS: "AS_SET_STATUS" >
+| < AS_SHELL_SANITIZE: "AS_SHELL_SANITIZE" >
+| < AS_TMPDIR: "AS_TMPDIR" >
+| < AS_TR_CPP: "AS_TR_CPP" >
+| < AS_TR_SH: "AS_TR_SH" >
+| < AS_UNSET: "AS_UNSET" >
+| < AS_VAR_APPEND: "AS_VAR_APPEND" >
+| < AS_VAR_ARITH: "AS_VAR_ARITH" >
+| < AS_VAR_COPY: "AS_VAR_COPY" >
+| < AS_VAR_IF: "AS_VAR_IF" >
+| < AS_VAR_POPDEF: "AS_VAR_POPDEF" >
+| < AS_VAR_PUSHDEF: "AS_VAR_PUSHDEF" >
+| < AS_VAR_SET: "AS_VAR_SET" >
+| < AS_VAR_SET_IF: "AS_VAR_SET_IF" >
+| < AS_VAR_TEST_SET: "AS_VAR_TEST_SET" >
+| < AS_VERSION_COMPARE: "AS_VERSION_COMPARE" >
 }
 
 /* Autoconf AC_* macro */
@@ -543,7 +599,8 @@ TOKEN :
 <*>
 TOKEN :
 {
-  < AC_MACRO: "AC_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+  < AC_MACRO:    "AC_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+| < AC_VARIABLE: "ac_"(["0"-"9","a"-"z","A"-"Z","_"])* >
 }
 
 /* Autoconf AX_* macro */
@@ -551,7 +608,17 @@ TOKEN :
 <*>
 TOKEN :
 {
-  < AX_MACRO: "AX_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+  < AX_MACRO:    "AX_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+| < AX_VARIABLE: "ax_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+}
+
+/* Autoconf AH_* macro */
+
+<*>
+TOKEN :
+{
+  < AH_MACRO:    "AH_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+| < AH_VARIABLE: "ah_"(["0"-"9","a"-"z","A"-"Z","_"])* >
 }
 
 /* Autoconf AM_* macro */
@@ -559,9 +626,25 @@ TOKEN :
 <*>
 TOKEN :
 {
-  < AM_MACRO: "AM_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+  < AM_MACRO:    "AM_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+| < AM_VARIABLE: "am_"(["0"-"9","a"-"z","A"-"Z","_"])* >
 }
 
+/* m4sh AS_* macros */
+<*>
+TOKEN :
+{
+  < AS_MACRO:    "AS_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+| < AS_VARIABLE: "as_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+}
+
+/* Generic M4 m4_* macro */
+
+<*>
+TOKEN :
+{
+  < MF_MACRO:    "m4_"(["0"-"9","a"-"z","A"-"Z","_"])* >
+}
 
 /* IDENTIFIERS */
 

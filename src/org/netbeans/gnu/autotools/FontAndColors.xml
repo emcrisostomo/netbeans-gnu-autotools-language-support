@@ -17,19 +17,27 @@
     <fontcolor name="autoconf" default="keyword">
         <font style="bold" />
     </fontcolor>
-    <fontcolor name="autoconf-obsolete" default="keyword" bgColor="red" foreColor="white">
+    <fontcolor name="autoconf-obsolete" default="keyword" bgColor="blue" foreColor="white">
         <font style="bold" />
     </fontcolor>
-    <fontcolor name="autoconf-ah-keyword" default="keyword" />
-    <fontcolor name="autoconf-am-keyword" default="keyword" />
-    <fontcolor name="autoconf-as-keyword" default="keyword" />
-    <fontcolor name="autoconf-au-keyword" default="keyword" />
+    <fontcolor name="autoconf-ah-keyword" default="keyword" foreColor="pink">
+        <font style="bold" />
+    </fontcolor>
+    <fontcolor name="autoconf-am-keyword" default="keyword" foreColor="magenta">
+        <font style="bold" />
+    </fontcolor>
+    <fontcolor name="autoconf-as-keyword" default="keyword" foreColor="orange">
+        <font style="bold" />
+    </fontcolor>
+    <fontcolor name="autoconf-au-keyword" default="keyword">
+        <font style="bold" />
+    </fontcolor>
     <fontcolor name="autoconf-ac-generic-keyword" default="keyword" />
-    <fontcolor name="autoconf-ah-generic-keyword" default="keyword" />
-    <fontcolor name="autoconf-am-generic-keyword" default="keyword" />
-    <fontcolor name="autoconf-an-generic-keyword" default="keyword" />
-    <fontcolor name="autoconf-as-generic-keyword" default="keyword" />
+    <fontcolor name="autoconf-ah-generic-keyword" default="keyword" foreColor="pink"/>
+    <fontcolor name="autoconf-am-generic-keyword" default="keyword" foreColor="magenta"/>
+    <fontcolor name="autoconf-an-generic-keyword" default="keyword" foreColor="gray"/>
+    <fontcolor name="autoconf-as-generic-keyword" default="keyword" foreColor="orange"/>
     <fontcolor name="autoconf-ax-generic-keyword" default="keyword" foreColor="red"/>
-    <fontcolor name="unknown-keyword" default="keyword"/>
+    <fontcolor name="unknown-keyword" default="keyword" foreColor="black"/>
     <fontcolor name="m4-keyword" default="keyword" />
 </fontscolors>

@@ -611,7 +611,7 @@ public class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
             new ACTokenId("LETTER", "identifier", regExCounter++),
             new ACTokenId("PART_LETTER", "identifier", regExCounter++),
             // Text
-            new ACTokenId("TEXT", "text", regExCounter++)
+            new ACTokenId("TEXT", "text", 551)
         });
 
         idToToken = new HashMap<Integer, ACTokenId>();

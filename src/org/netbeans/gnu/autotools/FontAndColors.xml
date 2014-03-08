@@ -29,7 +29,7 @@
     <fontcolor name="autoconf-am-generic-keyword" default="keyword" />
     <fontcolor name="autoconf-an-generic-keyword" default="keyword" />
     <fontcolor name="autoconf-as-generic-keyword" default="keyword" />
-    <fontcolor name="autoconf-ax-generic-keyword" default="keyword" />
-    <fontcolor name="unknown-keyword" default="keyword" />
+    <fontcolor name="autoconf-ax-generic-keyword" default="keyword" foreColor="red"/>
+    <fontcolor name="unknown-keyword" default="keyword"/>
     <fontcolor name="m4-keyword" default="keyword" />
 </fontscolors>

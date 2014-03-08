@@ -591,6 +591,10 @@ public class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
             new ACTokenId("AS_MACRO_PRIVATE", "autoconf-as-generic-keyword", regExCounter++),
             new ACTokenId("AS_MACRO", "autoconf-as-generic-keyword", regExCounter++),
             new ACTokenId("AS_VARIABLE", "autoconf-as-generic-keyword", regExCounter++),
+            // Autoconf AU_* macro
+            new ACTokenId("AU_MACRO_PRIVATE", "autoconf-as-generic-keyword", regExCounter++),
+            new ACTokenId("AU_MACRO", "autoconf-as-generic-keyword", regExCounter++),
+            new ACTokenId("AU_VARIABLE", "autoconf-as-generic-keyword", regExCounter++),
             // Autoconf AX_* macro
             new ACTokenId("AX_MACRO_PRIVATE", "autoconf-ax-generic-keyword", regExCounter++),
             new ACTokenId("AX_MACRO", "autoconf-ax-generic-keyword", regExCounter++),

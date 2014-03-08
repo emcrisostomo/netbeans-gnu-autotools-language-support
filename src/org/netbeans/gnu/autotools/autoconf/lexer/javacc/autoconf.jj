@@ -99,7 +99,8 @@ TOKEN :
   }
 }
 
-/* RESERVED WORDS AND LITERALS */
+/* Reserved words */
+
 <*>
 TOKEN :
 {

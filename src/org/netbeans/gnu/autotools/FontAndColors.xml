@@ -2,26 +2,34 @@
     "-//NetBeans//DTD Editor Fonts and Colors settings 1.1//EN"
     "https://netbeans.org/dtds/EditorFontsColors-1_1.dtd">
 <fontscolors>
-    <fontcolor name="character" default="char"/>
-    <fontcolor name="errors" default="error"/>
-    <fontcolor name="identifier" default="identifier"/>
+    <fontcolor name="whitespace" default="whitespace"/>
+    <fontcolor name="comment" default="comment"/>
     <fontcolor name="keyword" default="keyword"/>
+    <fontcolor name="operator" default="operator"/>
+    <fontcolor name="number" default="number"/>
+    <fontcolor name="character" default="char"/>
+    <fontcolor name="string" default="string"/>
+    <fontcolor name="literal" default="keyword" />
+    <fontcolor name="identifier" default="identifier"/>
+    <fontcolor name="text" default="identifier"/>
+    <fontcolor name="errors" default="error"/>
+    <fontcolor name="separator" default="separator"/>
     <fontcolor name="autoconf" default="keyword">
         <font style="bold" />
     </fontcolor>
-    <fontcolor name="autoconf-c-keyword" default="keyword" />
-    <fontcolor name="autoconf-x-keyword" default="keyword" foreColor="red"/>
-    <fontcolor name="autoconf-m-keyword" default="keyword" foreColor="magenta"/>
-    <fontcolor name="keyword" default="keyword"/>
-    <fontcolor name="literal" default="keyword" />
-    <fontcolor name="comment" default="comment"/>
-    <fontcolor name="number" default="number"/>
-    <fontcolor name="operator" default="operator"/>
-    <fontcolor name="string" default="string"/>
-    <fontcolor name="separator" default="separator"/>
-    <fontcolor name="whitespace" default="whitespace"/>
-    <fontcolor name="method-declaration" default="method">
+    <fontcolor name="autoconf-obsolete" default="keyword" bgColor="red" foreColor="white">
         <font style="bold" />
     </fontcolor>
-    <fontcolor name="text" default="identifier"/>
+    <fontcolor name="autoconf-ah-keyword" default="keyword" />
+    <fontcolor name="autoconf-am-keyword" default="keyword" />
+    <fontcolor name="autoconf-as-keyword" default="keyword" />
+    <fontcolor name="autoconf-au-keyword" default="keyword" />
+    <fontcolor name="autoconf-ac-generic-keyword" default="keyword" />
+    <fontcolor name="autoconf-ah-generic-keyword" default="keyword" />
+    <fontcolor name="autoconf-am-generic-keyword" default="keyword" />
+    <fontcolor name="autoconf-an-generic-keyword" default="keyword" />
+    <fontcolor name="autoconf-as-generic-keyword" default="keyword" />
+    <fontcolor name="autoconf-ax-generic-keyword" default="keyword" />
+    <fontcolor name="unknown-keyword" default="keyword" />
+    <fontcolor name="m4-keyword" default="keyword" />
 </fontscolors>

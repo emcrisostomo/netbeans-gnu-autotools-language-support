@@ -16,12 +16,10 @@
  */
 package org.netbeans.gnu.autotools.autoconf;
 
-import org.netbeans.gnu.autotools.autoconf.parser.ACParser;
 import org.netbeans.api.lexer.Language;
 import org.netbeans.gnu.autotools.autoconf.lexer.ACTokenId;
 import org.netbeans.modules.csl.spi.DefaultLanguageConfig;
 import org.netbeans.modules.csl.spi.LanguageRegistration;
-import org.netbeans.modules.parsing.spi.Parser;
 
 /**
  *
@@ -40,8 +38,8 @@ public class AutoconfLanguage extends DefaultLanguageConfig {
         return "AC";
     }
 
-    @Override
-    public Parser getParser() {
-        return new ACParser();
-    }
+//    @Override
+//    public Parser getParser() {
+//        return new ACParser();
+//    }
 }

@@ -17,8 +17,6 @@
 package org.netbeans.gnu.autotools.autoconf.file;
 
 import java.io.IOException;
-import org.netbeans.core.spi.multiview.MultiViewElement;
-import org.netbeans.core.spi.multiview.text.MultiViewEditorElement;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
@@ -28,9 +26,7 @@ import org.openide.loaders.DataObject;
 import org.openide.loaders.DataObjectExistsException;
 import org.openide.loaders.MultiDataObject;
 import org.openide.loaders.MultiFileLoader;
-import org.openide.util.Lookup;
 import org.openide.util.NbBundle.Messages;
-import org.openide.windows.TopComponent;
 
 @Messages({
     "LBL_AC_LOADER=Files of AC"
@@ -110,18 +106,4 @@ public class ACDataObject extends MultiDataObject {
     protected int associateLookup() {
         return 1;
     }
-
-    @MultiViewElement.Registration(
-            displayName = "#LBL_AC_EDITOR",
-            iconBase = "org/netbeans/gnu/autotools/autoconf/file/JavaIcon.gif",
-            mimeType = "text/x-autoconf",
-            persistenceType = TopComponent.PERSISTENCE_ONLY_OPENED,
-            preferredID = "AC",
-            position = 1000
-    )
-    @Messages("LBL_AC_EDITOR=Source")
-    public static MultiViewEditorElement createEditor(Lookup lkp) {
-        return new MultiViewEditorElement(lkp);
-    }
-
 }

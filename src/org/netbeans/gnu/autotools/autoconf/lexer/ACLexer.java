@@ -16,6 +16,7 @@
  */
 package org.netbeans.gnu.autotools.autoconf.lexer;
 
+import java.util.logging.Logger;
 import org.netbeans.gnu.autotools.autoconf.lexer.javacc.AutoconfParserTokenManager;
 import org.netbeans.gnu.autotools.autoconf.lexer.javacc.JavaCharStream;
 import org.netbeans.gnu.autotools.autoconf.lexer.javacc.Token;
@@ -27,6 +28,10 @@ import org.netbeans.spi.lexer.LexerRestartInfo;
  * @author Enrico M. Crisostomo
  */
 class ACLexer implements Lexer<ACTokenId> {
+
+    public static final String VERBOSE_PROPERTY = ACLexer.class.getName() + ".verbose";
+    private static final boolean isVerbose = Boolean.valueOf(System.getProperty(VERBOSE_PROPERTY));
+    private static final Logger logger = Logger.getLogger(ACLexer.class.getName());
 
     private final LexerRestartInfo<ACTokenId> info;
     private final AutoconfParserTokenManager javaParserTokenManager;
@@ -40,6 +45,10 @@ class ACLexer implements Lexer<ACTokenId> {
     @Override
     public org.netbeans.api.lexer.Token<ACTokenId> nextToken() {
         Token token = javaParserTokenManager.getNextToken();
+
+        if (isVerbose) {
+            logger.info((token == null) ? "token: null" : token.image + ":" + token.kind);
+        }
 
         if (info.input().readLength() < 1) {
             return null;

@@ -16,7 +16,7 @@
  */
 @TemplateRegistration(
         folder = "Autotools",
-        content = "ACTemplate.ac",
+        content = "configure.ac",
         displayName = "Autoconf file")
 package org.netbeans.gnu.autotools.autoconf.file;
 

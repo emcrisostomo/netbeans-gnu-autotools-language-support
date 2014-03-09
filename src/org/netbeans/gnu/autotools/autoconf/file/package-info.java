@@ -14,7 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-@TemplateRegistration(folder = "Other", content = "ACTemplate.ac", displayName = "Autoconf file")
+@TemplateRegistration(
+        folder = "Autotools",
+        content = "ACTemplate.ac",
+        displayName = "Autoconf file")
 package org.netbeans.gnu.autotools.autoconf.file;
 
 import org.netbeans.api.templates.TemplateRegistration;

@@ -21,6 +21,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.netbeans.gnu.autotools.autoconf.lexer.javacc.AutoconfParserConstants;
 import org.netbeans.spi.lexer.LanguageHierarchy;
 import org.netbeans.spi.lexer.Lexer;
 import org.netbeans.spi.lexer.LexerRestartInfo;
@@ -592,9 +593,9 @@ public class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
             new ACTokenId("AS_MACRO", "autoconf-as-generic-keyword", regExCounter++),
             new ACTokenId("AS_VARIABLE", "autoconf-as-generic-keyword", regExCounter++),
             // Autoconf AU_* macro
-            new ACTokenId("AU_MACRO_PRIVATE", "autoconf-as-generic-keyword", regExCounter++),
-            new ACTokenId("AU_MACRO", "autoconf-as-generic-keyword", regExCounter++),
-            new ACTokenId("AU_VARIABLE", "autoconf-as-generic-keyword", regExCounter++),
+            new ACTokenId("AU_MACRO_PRIVATE", "autoconf-au-generic-keyword", regExCounter++),
+            new ACTokenId("AU_MACRO", "autoconf-au-generic-keyword", regExCounter++),
+            new ACTokenId("AU_VARIABLE", "autoconf-au-generic-keyword", regExCounter++),
             // Autoconf AX_* macro
             new ACTokenId("AX_MACRO_PRIVATE", "autoconf-ax-generic-keyword", regExCounter++),
             new ACTokenId("AX_MACRO", "autoconf-ax-generic-keyword", regExCounter++),
@@ -611,7 +612,7 @@ public class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
             new ACTokenId("LETTER", "identifier", regExCounter++),
             new ACTokenId("PART_LETTER", "identifier", regExCounter++),
             // Text
-            new ACTokenId("TEXT", "text", 551)
+            new ACTokenId("TEXT", "text", AutoconfParserConstants.TEXT)
         });
 
         idToToken = new HashMap<Integer, ACTokenId>();

@@ -62,8 +62,7 @@ TOKEN_MGR_DECLS : {
 TOKEN : 
 {
   < LBRACKET: "[" > { 
-    m4NestingDepth = 1 ; 
-    System.out.println("Open");
+    m4NestingDepth = 1;
   } : MCOMMENT
 }
 
@@ -72,7 +71,6 @@ TOKEN :
 {
   < MLBRACKET: "[" > {
     m4NestingDepth += 1; 
-    System.out.println("Open Nested: " + m4NestingDepth);
   }
 }
 
@@ -80,13 +78,11 @@ TOKEN :
 TOKEN :
 {
   < MRBRACKET: "]" > {
-    System.out.println("Close Nested: " + m4NestingDepth);
-    m4NestingDepth -= 1;
-
     if (m4NestingDepth == 1)
     {
       SwitchTo( DEFAULT );
     }
+    m4NestingDepth -= 1;
   }
 }
 
@@ -94,7 +90,6 @@ TOKEN :
 TOKEN :
 {
   < RBRACKET: "]" > {
-    System.out.println("Closing.");
     m4NestingDepth = 0;
   }
 }
@@ -127,6 +122,7 @@ TOKEN :
 | < RETURN: "return" >
 | < SHORT: "short" >
 | < SWITCH: "switch" >
+| < TEST: "test" >
 | < THEN: "then" >
 | < TRUE: "true" >
 | < TRY: "try" >

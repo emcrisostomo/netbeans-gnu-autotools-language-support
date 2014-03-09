@@ -32,7 +32,7 @@
     <folder name="OptionsDialog">
         <folder name="PreviewExamples">
             <folder name="text">
-                <file name="x-autoconf" url="autoconf/file/ACTemplate.ac"/>
+                <file name="x-autoconf" url="autoconf/file/ACPreview.ac"/>
             </folder>
         </folder>
         <folder name="PreviewExamples">

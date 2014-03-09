@@ -2,21 +2,12 @@
 AC_PREREQ([2.69]) # Autoconf macro
 AM_INIT_AUTOMAKE([-Wall -Werror gnu]) # AM macro
 
-# Configure language
 AC_AIX # Obsolete macro
 
-AH_BOTTOM # AH macro
+AH_BOTTOM            # AH macro
+AH_GENERIC           # Autoconf generic AH macro
 
-# Configure C++ compiler
-AX_CXX_COMPILE_STDCXX_11(noext) # AX macro
-
-AS_BOURNE_COMPATIBLE # m4sh AS macro
-AU_ALIAS             # AU macro
-AN_GENERIC           # AN macro
-AB_UNKNOWN           # Unknown macro
-m4_macro             # m4 macro
-
-AM_CONDITIONAL(
+AM_CONDITIONAL(      # Autoconf AM macro
   [USE_CORESERVICES],
   [test "x${ac_cv_header_CoreServices_CoreServices_h}" = "xyes"])
 
@@ -34,5 +25,17 @@ then
     ]
   )
 fi
+
+AM_GENERIC      # Autoconf generic AM macro
+AN_GENERIC      # Autoconf generic AN macro
+AS_BOX          # Autoconf AS macro
+AS_GENERIC      # Autoconf generic AS macro
+AU_ALIAS        # Autoconf AU macro
+AU_GENERIC      # Autoconf generic AU macro
+AB_UNKNOWN      # Autoconf generic A? macro
+m4_macro        # Autoconf m4 macro
+
+# Configure C++ compiler
+AX_CXX_COMPILE_STDCXX_11(noext) # AX macro
 
 AC_OUTPUT

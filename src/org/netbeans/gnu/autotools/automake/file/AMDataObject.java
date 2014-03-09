@@ -106,5 +106,4 @@ public class AMDataObject extends MultiDataObject {
     protected int associateLookup() {
         return 1;
     }
-
 }

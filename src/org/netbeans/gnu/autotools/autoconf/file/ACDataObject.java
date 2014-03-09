@@ -99,7 +99,7 @@ public class ACDataObject extends MultiDataObject {
     public ACDataObject(FileObject pf, MultiFileLoader loader)
             throws DataObjectExistsException, IOException {
         super(pf, loader);
-        registerEditor("text/x-autoconf", true);
+        registerEditor("text/x-autoconf", false);
     }
 
     @Override

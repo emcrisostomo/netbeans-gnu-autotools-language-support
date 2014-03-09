@@ -16,12 +16,10 @@
  */
 package org.netbeans.gnu.autotools.automake;
 
-//import org.netbeans.gnu.autotools.automake.parser.AMParser;
 import org.netbeans.api.lexer.Language;
 import org.netbeans.gnu.autotools.automake.lexer.AMTokenId;
 import org.netbeans.modules.csl.spi.DefaultLanguageConfig;
 import org.netbeans.modules.csl.spi.LanguageRegistration;
-import org.netbeans.modules.parsing.spi.Parser;
 
 /**
  *

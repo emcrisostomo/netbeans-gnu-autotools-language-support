@@ -32,7 +32,7 @@ public class AutomakeParser {}
 
 PARSER_END(AutomakeParser)
 
-/* WHITE SPACE */
+/* White Space */
 
 TOKEN :
 {
@@ -41,17 +41,17 @@ TOKEN :
 | "\t"
 | "\n"
 | "\r"
-| "\f">
+| "\f" >
 }
 
-/* COMMENTS */
+/* Comments */
 
 TOKEN :
 {
-  <SINGLE_LINE_COMMENT: "#" (~["\n", "\r"])* ("\n" | "\r" | "\r\n")?>
+  <SINGLE_LINE_COMMENT: "##" (~["\n", "\r"])* ("\n" | "\r" | "\r\n")?>
 }
 
-/* RESERVED WORDS AND LITERALS */
+/* Reserved words */
 
 TOKEN :
 {
@@ -62,6 +62,7 @@ TOKEN :
 | < CONTINUE: "continue" >
 | < _DEFAULT: "default" >
 | < DO: "do" >
+| < DONE: "done" >
 | < DOUBLE: "double" >
 | < ELSE: "else" >
 | < FALSE: "false" >
@@ -70,35 +71,38 @@ TOKEN :
 | < FOR: "for" >
 | < GOTO: "goto" >
 | < IF: "if" >
+| < ENDIF: "endif" >
+| < FI: "fi" >
 | < INT: "int" >
 | < LONG: "long" >
 | < NULL: "null" >
 | < RETURN: "return" >
 | < SHORT: "short" >
 | < SWITCH: "switch" >
+| < TEST: "test" >
+| < THEN: "then" >
 | < TRUE: "true" >
 | < TRY: "try" >
 | < VOID: "void" >
 | < WHILE: "while" >
 }
 
-/* SEPARATORS */
+/* Separators */
 
 TOKEN :
 {
   < LPAREN: "(" >
 | < RPAREN: ")" >
-| < LBRACE: "{" >
-| < RBRACE: "}" >
 | < LBRACKET: "[" >
 | < RBRACKET: "]" >
+| < LBRACE: "{" >
+| < RBRACE: "}" >
 | < SEMICOLON: ";" >
 | < COMMA: "," >
 | < DOT: "." >
-| < AT: "@" >
 }
 
-/* OPERATORS */
+/* Operators */
 
 TOKEN :
 {
@@ -138,24 +142,7 @@ TOKEN :
 | < ELLIPSIS: "..." >
 }
 
-/* Automake macros */
-
-TOKEN :
-{
-  < AC_PREREQ: "AC_PREREQ" >
-| < AC_INIT: "AC_INIT" >
-| < AC_COPYRIGHT: "AC_COPYRIGHT" >
-| < AC_REVISION: "AC_REVISION" >
-| < AC_CONFIG_SRCDIR: "AC_CONFIG_SRCDIR" >
-| < AC_CONFIG_AUX_DIR: "AC_CONFIG_AUX_DIR" >
-| < AC_CONFIG_FILES: "AC_CONFIG_FILES" >
-| < AC_CONFIG_MACRO_DIRS: "AC_CONFIG_MACRO_DIRS" >
-| < AC_LANG: "AC_LANG" >
-| < AC_PROG_CC: "AC_PROG_CC" >
-| < AC_PROG_CXX: "AC_PROG_CXX" >
-}
-
-/* LITERALS */
+/* Literals */
 
 TOKEN :
 {
@@ -217,15 +204,9 @@ TOKEN :
       )*
       "\""
   >
- |
-  < M4_LITERAL:
-      "[" 
-      (   (~["]"])      )*
-      "]"
-  >
 }
 
-/* IDENTIFIERS */
+/* Identifiers */
 
 TOKEN :
 {
@@ -233,21 +214,21 @@ TOKEN :
 |
   < #LETTER:
     [  
-       "$",
-       "A"-"Z",
-       "_",
-       "a"-"z"
+      "$",
+      "A"-"Z",
+      "_",
+      "a"-"z"
      ]
   >
 |
   < #PART_LETTER:
-      [  
-         "$",
-         "0"-"9",
-         "A"-"Z",
-         "_",
-         "a"-"z"
-      ]
+    [  
+      "$",
+      "0"-"9",
+      "A"-"Z",
+      "_",
+      "a"-"z"
+    ]
   >
 }
 

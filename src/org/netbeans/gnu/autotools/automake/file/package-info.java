@@ -14,7 +14,10 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-@TemplateRegistration(folder = "Other", content = "AMTemplate.am", displayName = "Automake template")
+@TemplateRegistration(
+        folder = "Autotools",
+        content = "Makefile.am",
+        displayName = "Automake configuration file")
 package org.netbeans.gnu.autotools.automake.file;
 
 import org.netbeans.api.templates.TemplateRegistration;

@@ -42,6 +42,11 @@ public class AMLanguageHierarchy extends LanguageHierarchy<AMTokenId> {
             new AMTokenId("EOF", "whitespace", regExCounter++),
             new AMTokenId("WHITESPACE", "whitespace", regExCounter++),
             new AMTokenId("SINGLE_LINE_COMMENT", "comment", regExCounter++),
+            // Automake variables
+            new AMTokenId("AUTOMAKE_SHELL_VARIABLE", "keyword", regExCounter++),
+            new AMTokenId("AUTOMAKE_VARIABLE", "keyword", regExCounter++),
+            new AMTokenId("NAME", "keyword", regExCounter++),
+            new AMTokenId("PRIMARY", "keyword", regExCounter++),
             // Reserved words
             new AMTokenId("BOOLEAN", "keyword", regExCounter++),
             new AMTokenId("BREAK", "keyword", regExCounter++),

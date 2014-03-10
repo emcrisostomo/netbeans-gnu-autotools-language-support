@@ -48,7 +48,31 @@ TOKEN :
 
 TOKEN :
 {
-  <SINGLE_LINE_COMMENT: "##" (~["\n", "\r"])* ("\n" | "\r" | "\r\n")?>
+  < SINGLE_LINE_COMMENT: "##" (~["\n", "\r"])* ("\n" | "\r" | "\r\n")? >
+}
+
+/* Automake variables */
+
+TOKEN :
+{
+  < AUTOMAKE_SHELL_VARIABLE: "$(" (~["\n", "\r"])* ")" >
+}
+
+TOKEN :
+{
+  < AUTOMAKE_VARIABLE: (<NAME>)* "_" (<PRIMARY>)* >
+|
+  < #NAME:
+    [  
+      "a"-"z"
+    ]
+  >
+|
+  < #PRIMARY:
+    [  
+      "A"-"Z"
+    ]
+  >
 }
 
 /* Reserved words */

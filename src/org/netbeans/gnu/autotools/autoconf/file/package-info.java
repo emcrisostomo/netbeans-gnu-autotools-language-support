@@ -17,7 +17,7 @@
 @TemplateRegistration(
         folder = "Autotools",
         content = "configure.ac",
-        displayName = "Autoconf file")
+        displayName = "Autoconf configuration file")
 package org.netbeans.gnu.autotools.autoconf.file;
 
 import org.netbeans.api.templates.TemplateRegistration;

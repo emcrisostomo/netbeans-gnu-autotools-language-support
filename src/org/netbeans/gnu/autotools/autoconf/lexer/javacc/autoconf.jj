@@ -32,7 +32,7 @@ public class AutoconfParser {}
 
 PARSER_END(AutoconfParser)
 
-/* WHITE SPACE */
+/* White Space */
 
 TOKEN :
 {
@@ -41,10 +41,10 @@ TOKEN :
 | "\t"
 | "\n"
 | "\r"
-| "\f">
+| "\f" >
 }
 
-/* COMMENTS */
+/* Comments */
 
 <DEFAULT>
 TOKEN :
@@ -130,7 +130,7 @@ TOKEN :
 | < WHILE: "while" >
 }
 
-/* SEPARATORS */
+/* Separators */
 
 <*>
 TOKEN :
@@ -144,7 +144,7 @@ TOKEN :
 | < DOT: "." >
 }
 
-/* OPERATORS */
+/* Operators */
 
 <*>
 TOKEN :
@@ -197,7 +197,7 @@ TOKEN :
 | < EMPTY_QG:    "@&t@" >
 }
 
-/* LITERALS */
+/* Literals */
 
 <*>
 TOKEN :

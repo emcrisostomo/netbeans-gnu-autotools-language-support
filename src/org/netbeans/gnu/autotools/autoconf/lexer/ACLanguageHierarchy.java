@@ -71,6 +71,7 @@ public class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
             new ACTokenId("RETURN", "keyword", regExCounter++),
             new ACTokenId("SHORT", "keyword", regExCounter++),
             new ACTokenId("SWITCH", "keyword", regExCounter++),
+            new ACTokenId("TEST", "keyword", regExCounter++),
             new ACTokenId("THEN", "keyword", regExCounter++),
             new ACTokenId("TRUE", "keyword", regExCounter++),
             new ACTokenId("TRY", "keyword", regExCounter++),

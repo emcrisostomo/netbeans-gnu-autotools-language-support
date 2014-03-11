@@ -8,7 +8,7 @@
                 <folder name="FontsColors">
                     <folder name="NetBeans">
                         <folder name="Defaults">
-                            <file name="FontAndColors.xml" url="FontAndColors.xml">
+                            <file name="ACFontAndColors.xml" url="ACFontAndColors.xml">
                                 <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.autotools.Bundle"/>
                             </file>
                         </folder>
@@ -20,7 +20,7 @@
                 <folder name="FontsColors">
                     <folder name="NetBeans">
                         <folder name="Defaults">
-                            <file name="FontAndColors.xml" url="FontAndColors.xml">
+                            <file name="AMFontAndColors.xml" url="AMFontAndColors.xml">
                                 <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.autotools.Bundle"/>
                             </file>
                         </folder>

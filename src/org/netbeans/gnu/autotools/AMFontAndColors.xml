@@ -17,4 +17,7 @@
     <fontcolor name="automake" default="keyword">
         <font style="bold" />
     </fontcolor>
+    <fontcolor name="automake-variable" default="keyword" foreColor="orange">
+        <font style="bold" />
+    </fontcolor>
 </fontscolors>

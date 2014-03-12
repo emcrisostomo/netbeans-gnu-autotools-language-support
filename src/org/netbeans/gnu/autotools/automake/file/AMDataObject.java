@@ -17,6 +17,8 @@
 package org.netbeans.gnu.autotools.automake.file;
 
 import java.io.IOException;
+import org.netbeans.core.spi.multiview.MultiViewElement;
+import org.netbeans.core.spi.multiview.text.MultiViewEditorElement;
 import org.openide.awt.ActionID;
 import org.openide.awt.ActionReference;
 import org.openide.awt.ActionReferences;
@@ -26,7 +28,9 @@ import org.openide.loaders.DataObject;
 import org.openide.loaders.DataObjectExistsException;
 import org.openide.loaders.MultiDataObject;
 import org.openide.loaders.MultiFileLoader;
+import org.openide.util.Lookup;
 import org.openide.util.NbBundle.Messages;
+import org.openide.windows.TopComponent;
 
 @Messages({
     "LBL_AM_LOADER=Files of AM"
@@ -99,11 +103,24 @@ public class AMDataObject extends MultiDataObject {
     public AMDataObject(FileObject pf, MultiFileLoader loader)
             throws DataObjectExistsException, IOException {
         super(pf, loader);
-        registerEditor("text/x-automake", false);
+        registerEditor("text/x-automake", true);
     }
 
     @Override
     protected int associateLookup() {
         return 1;
+    }
+    
+    @MultiViewElement.Registration(
+            displayName = "#LBL_AM_EDITOR",
+            iconBase = "org/netbeans/gnu/autotools/automake/file/JavaIcon.gif",
+            mimeType = "text/x-automake",
+            persistenceType = TopComponent.PERSISTENCE_ONLY_OPENED,
+            preferredID = "AC",
+            position = 1000
+    )
+    @Messages("LBL_AM_EDITOR=Source")
+    public static MultiViewEditorElement createEditor(Lookup lkp) {
+        return new MultiViewEditorElement(lkp);
     }
 }

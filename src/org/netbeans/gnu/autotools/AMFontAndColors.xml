@@ -14,10 +14,6 @@
     <fontcolor name="text" default="identifier"/>
     <fontcolor name="errors" default="error"/>
     <fontcolor name="separator" default="separator"/>
-    <fontcolor name="automake" default="keyword">
-        <font style="bold" />
-    </fontcolor>
-    <fontcolor name="automake-variable" default="keyword" foreColor="orange">
-        <font style="bold" />
-    </fontcolor>
+    <fontcolor name="automake" default="keyword" foreColor="magenta"/>
+    <fontcolor name="automake-variable" default="keyword" foreColor="orange"/>
 </fontscolors>

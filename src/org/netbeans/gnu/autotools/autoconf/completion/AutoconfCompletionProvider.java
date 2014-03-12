@@ -37,6 +37,8 @@ import org.openide.util.Exceptions;
 @MimeRegistration(mimeType = "text/x-autoconf", service = CompletionProvider.class)
 public class AutoconfCompletionProvider implements CompletionProvider {
 
+    private static final AutoconfMacros macroNames[] = AutoconfMacros.values();
+    
     @Override
     public CompletionTask createTask(int queryType, JTextComponent jtc) {
         if (queryType != CompletionProvider.COMPLETION_QUERY_TYPE) {
@@ -56,6 +58,7 @@ public class AutoconfCompletionProvider implements CompletionProvider {
                     final char[] line = bDoc.getText(lineStartOffset, caretOffset - lineStartOffset).toCharArray();
                     final int whiteOffset = indexOfWhite(line);
                     filter = new String(line, whiteOffset + 1, line.length - whiteOffset - 1);
+                    
                     if (whiteOffset > 0) {
                         startOffset = lineStartOffset + whiteOffset + 1;
                     } else {
@@ -65,11 +68,9 @@ public class AutoconfCompletionProvider implements CompletionProvider {
                     Exceptions.printStackTrace(ex);
                 }
 
-                // Iterate through the available locales
-                // and assign each country display name
-                // to a CompletionResultSet:
-                AutoconfMacros macroNames[] = AutoconfMacros.values();
-                
+                // Iterate through the available autoconf macro names
+                // and assign each macro text satisfying the filter
+                // to a CompletionResultSet:                
                 for (AutoconfMacros macro : macroNames) {
                     final String text = macro.getText();
                     //Here we test whether the country starts with the filter defined above:
@@ -79,6 +80,7 @@ public class AutoconfCompletionProvider implements CompletionProvider {
                         completionResultSet.addItem(new AutoconfCompletionItem(text, startOffset, caretOffset));
                     }
                 }
+                
                 completionResultSet.finish();
             }
         }, jtc);

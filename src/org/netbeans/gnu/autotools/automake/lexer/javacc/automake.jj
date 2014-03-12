@@ -62,6 +62,8 @@ TOKEN :
 {
   < AUTOMAKE_VARIABLE: (<NAME>)* "_" (<PRIMARY>)* >
 |
+  < AUTOMATE_EXTRA_VARIABLE: "EXTRA_"  (<PRIMARY>)* >
+|
   < #NAME:
     [  
       "a"-"z","_"

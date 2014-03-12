@@ -45,6 +45,7 @@ public class AMLanguageHierarchy extends LanguageHierarchy<AMTokenId> {
             // Automake variables
             new AMTokenId("AUTOMAKE_SHELL_VARIABLE", "automake-variable", regExCounter++),
             new AMTokenId("AUTOMAKE_VARIABLE", "automake", regExCounter++),
+            new AMTokenId("AUTOMATE_EXTRA_VARIABLE", "automake", regExCounter++),
             new AMTokenId("NAME", "automake", regExCounter++),
             new AMTokenId("PRIMARY", "automake", regExCounter++),
             // Reserved words

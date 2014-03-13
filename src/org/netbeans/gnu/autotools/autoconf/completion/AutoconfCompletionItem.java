@@ -42,14 +42,14 @@ import org.openide.util.ImageUtilities;
  */
 public class AutoconfCompletionItem implements CompletionItem {
 
-    /* private */ final String text;
+    /* private */ AutoconfMacros macro;
     private final int dotOffset;
     //private static final ImageIcon fieldIcon = new ImageIcon(ImageUtilities.loadImage("org/netbeans/gnu/autotools/icon.png"));
     private static final Color fieldColor = Color.decode("0x0000B2");
     private final int caretOffset;
 
-    public AutoconfCompletionItem(String text, int dotOffset, int caretOffset) {
-        this.text = text;
+    public AutoconfCompletionItem(AutoconfMacros macro, int dotOffset, int caretOffset) {
+        this.macro = macro;
         this.dotOffset = dotOffset;
         this.caretOffset = caretOffset;
     }
@@ -61,7 +61,7 @@ public class AutoconfCompletionItem implements CompletionItem {
         //Here we remove the characters starting at the start offset
             //and ending at the point where the caret is currently found:
             doc.remove(dotOffset, caretOffset - dotOffset);
-            doc.insertString(dotOffset, text, null);
+            doc.insertString(dotOffset, macro.getText(), null);
             Completion.get().hideAll();
         } catch (BadLocationException ex) {
             Exceptions.printStackTrace(ex);
@@ -75,13 +75,13 @@ public class AutoconfCompletionItem implements CompletionItem {
 
     @Override
     public int getPreferredWidth(Graphics graphics, Font font) {
-        return CompletionUtilities.getPreferredWidth(text, null, graphics, font);
+        return CompletionUtilities.getPreferredWidth(macro.getText(), null, graphics, font);
     }
 
     @Override
     public void render(Graphics g, Font defaultFont, Color defaultColor,
             Color backgroundColor, int width, int height, boolean selected) {
-        CompletionUtilities.renderHtml(null /* fieldIcon */, text, null, g, defaultFont,
+        CompletionUtilities.renderHtml(null /* fieldIcon */, macro.getText(), null, g, defaultFont,
                 (selected ? Color.white : fieldColor), width, height, selected);
     }
 
@@ -102,7 +102,7 @@ public class AutoconfCompletionItem implements CompletionItem {
             @Override
             protected void query(CompletionResultSet completionResultSet, Document document, int i) {
                 JToolTip toolTip = new JToolTip();
-                toolTip.setTipText("Press Enter to insert \"" + text + "\"");
+                toolTip.setTipText("Press Enter to insert \"" + macro.getText() + "\"");
                 completionResultSet.setToolTip(toolTip);
                 completionResultSet.finish();
             }
@@ -121,11 +121,11 @@ public class AutoconfCompletionItem implements CompletionItem {
 
     @Override
     public CharSequence getSortText() {
-        return text;
+        return macro.getText();
     }
 
     @Override
     public CharSequence getInsertPrefix() {
-        return text;
+        return macro.getText();
     }
 }

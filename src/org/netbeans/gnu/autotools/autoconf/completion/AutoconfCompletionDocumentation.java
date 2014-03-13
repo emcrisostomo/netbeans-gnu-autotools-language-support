@@ -33,7 +33,6 @@ class AutoconfCompletionDocumentation implements CompletionDocumentation {
 
     private final AutoconfCompletionItem item;
     private final String DOC_PACKAGE = "documentation";
-    private final String DOC_EXT = "html";
 
     public AutoconfCompletionDocumentation(AutoconfCompletionItem item) {
         this.item = item;
@@ -65,12 +64,11 @@ class AutoconfCompletionDocumentation implements CompletionDocumentation {
     }
 
     private String readDocument() throws IOException {
-        String resourceName = DOC_PACKAGE + "/" + item.text.toLowerCase() + "." + DOC_EXT;
-        System.out.println(resourceName);
+        String resourceName = DOC_PACKAGE + "/" + item.macro.getDocUrl();
         InputStream is = this.getClass().getResourceAsStream(resourceName);
 
         if (is == null) {
-            return "<Not found>";
+            return "Documentation is missing.";
         }
 
         InputStreamReader isr = new InputStreamReader(is);

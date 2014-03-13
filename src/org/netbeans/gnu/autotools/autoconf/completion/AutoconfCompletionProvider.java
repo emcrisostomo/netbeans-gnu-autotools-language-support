@@ -79,7 +79,7 @@ public class AutoconfCompletionProvider implements CompletionProvider {
                     if (!text.equals("") && text.startsWith(filter)) {
                         //Here we include the start offset, so that we'll be able to figure out
                         //the number of characters that we'll need to remove:
-                        completionResultSet.addItem(new AutoconfCompletionItem(text, startOffset, caretOffset));
+                        completionResultSet.addItem(new AutoconfCompletionItem(macro, startOffset, caretOffset));
                     }
                 }
 

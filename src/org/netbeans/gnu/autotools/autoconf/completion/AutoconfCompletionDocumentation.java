@@ -16,9 +16,14 @@
  */
 package org.netbeans.gnu.autotools.autoconf.completion;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.URL;
 import javax.swing.Action;
 import org.netbeans.spi.editor.completion.CompletionDocumentation;
+import org.openide.util.Exceptions;
 
 /**
  *
@@ -27,6 +32,8 @@ import org.netbeans.spi.editor.completion.CompletionDocumentation;
 class AutoconfCompletionDocumentation implements CompletionDocumentation {
 
     private final AutoconfCompletionItem item;
+    private final String DOC_PACKAGE = "documentation";
+    private final String DOC_EXT = "html";
 
     public AutoconfCompletionDocumentation(AutoconfCompletionItem item) {
         this.item = item;
@@ -34,7 +41,12 @@ class AutoconfCompletionDocumentation implements CompletionDocumentation {
 
     @Override
     public String getText() {
-        return "Information about " + item.text;
+        try {
+            return readDocument();
+        } catch (IOException ex) {
+            Exceptions.printStackTrace(ex);
+            return "An error occurred.";
+        }
     }
 
     @Override
@@ -50,5 +62,28 @@ class AutoconfCompletionDocumentation implements CompletionDocumentation {
     @Override
     public Action getGotoSourceAction() {
         return null;
+    }
+
+    private String readDocument() throws IOException {
+        String resourceName = DOC_PACKAGE + "/" + item.text.toLowerCase() + "." + DOC_EXT;
+        System.out.println(resourceName);
+        InputStream is = this.getClass().getResourceAsStream(resourceName);
+
+        if (is == null) {
+            return "<Not found>";
+        }
+
+        InputStreamReader isr = new InputStreamReader(is);
+        BufferedReader br = new BufferedReader(isr);
+
+        StringBuilder doc = new StringBuilder(1024);
+        String currentLine = br.readLine();
+
+        while (currentLine != null) {
+            doc.append(currentLine);
+            currentLine = br.readLine();
+        }
+
+        return doc.toString();
     }
 }

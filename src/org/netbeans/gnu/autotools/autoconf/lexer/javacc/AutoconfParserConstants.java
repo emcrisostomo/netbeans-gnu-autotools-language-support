@@ -313,445 +313,445 @@ public interface AutoconfParserConstants {
   /** RegularExpression Id. */
   int AC_CONFIG_FILES = 151;
   /** RegularExpression Id. */
-  int AC_CONFIG_HEADERS = 152;
+  int AC_CONFIG_LIBOBJ_DIR = 152;
   /** RegularExpression Id. */
-  int AC_CONFIG_LIBOBJ_DIR = 153;
+  int AC_CONFIG_LINKS = 153;
   /** RegularExpression Id. */
-  int AC_CONFIG_LINKS = 154;
+  int AC_CONFIG_MACRO_DIR = 154;
   /** RegularExpression Id. */
-  int AC_CONFIG_MACRO_DIR = 155;
+  int AC_CONFIG_MACRO_DIRS = 155;
   /** RegularExpression Id. */
-  int AC_CONFIG_MACRO_DIRS = 156;
+  int AC_CONFIG_SRCDIR = 156;
   /** RegularExpression Id. */
-  int AC_CONFIG_SRCDIR = 157;
+  int AC_CONFIG_SUBDIRS = 157;
   /** RegularExpression Id. */
-  int AC_CONFIG_SUBDIRS = 158;
+  int AC_COPYRIGHT = 158;
   /** RegularExpression Id. */
-  int AC_COPYRIGHT = 159;
+  int AC_DEFINE = 159;
   /** RegularExpression Id. */
-  int AC_DEFINE = 160;
+  int AC_DEFINE_UNQUOTED = 160;
   /** RegularExpression Id. */
-  int AC_DEFINE_UNQUOTED = 161;
+  int AC_DEFUN = 161;
   /** RegularExpression Id. */
-  int AC_DEFUN = 162;
+  int AC_DEFUN_ONCE = 162;
   /** RegularExpression Id. */
-  int AC_DEFUN_ONCE = 163;
+  int AC_DIAGNOSE = 163;
   /** RegularExpression Id. */
-  int AC_DIAGNOSE = 164;
+  int AC_DISABLE_OPTION_CHECKING = 164;
   /** RegularExpression Id. */
-  int AC_DISABLE_OPTION_CHECKING = 165;
+  int AC_EGREP_CPP = 165;
   /** RegularExpression Id. */
-  int AC_EGREP_CPP = 166;
+  int AC_EGREP_HEADER = 166;
   /** RegularExpression Id. */
-  int AC_EGREP_HEADER = 167;
+  int AC_ERLANG_CHECK_LIB = 167;
   /** RegularExpression Id. */
-  int AC_ERLANG_CHECK_LIB = 168;
+  int AC_ERLANG_NEED_ERL = 168;
   /** RegularExpression Id. */
-  int AC_ERLANG_NEED_ERL = 169;
+  int AC_ERLANG_NEED_ERLC = 169;
   /** RegularExpression Id. */
-  int AC_ERLANG_NEED_ERLC = 170;
+  int AC_ERLANG_PATH_ERL = 170;
   /** RegularExpression Id. */
-  int AC_ERLANG_PATH_ERL = 171;
+  int AC_ERLANG_PATH_ERLC = 171;
   /** RegularExpression Id. */
-  int AC_ERLANG_PATH_ERLC = 172;
+  int AC_ERLANG_SUBST_ERTS_VER = 172;
   /** RegularExpression Id. */
-  int AC_ERLANG_SUBST_ERTS_VER = 173;
+  int AC_ERLANG_SUBST_INSTALL_LIB_DIR = 173;
   /** RegularExpression Id. */
-  int AC_ERLANG_SUBST_INSTALL_LIB_DIR = 174;
+  int AC_ERLANG_SUBST_INSTALL_LIB_SUBDIR = 174;
   /** RegularExpression Id. */
-  int AC_ERLANG_SUBST_INSTALL_LIB_SUBDIR = 175;
+  int AC_ERLANG_SUBST_LIB_DIR = 175;
   /** RegularExpression Id. */
-  int AC_ERLANG_SUBST_LIB_DIR = 176;
+  int AC_ERLANG_SUBST_ROOT_DIR = 176;
   /** RegularExpression Id. */
-  int AC_ERLANG_SUBST_ROOT_DIR = 177;
+  int AC_F77_DUMMY_MAIN = 177;
   /** RegularExpression Id. */
-  int AC_F77_DUMMY_MAIN = 178;
+  int AC_F77_FUNC = 178;
   /** RegularExpression Id. */
-  int AC_F77_FUNC = 179;
+  int AC_F77_IMPLICIT_NONE = 179;
   /** RegularExpression Id. */
-  int AC_F77_IMPLICIT_NONE = 180;
+  int AC_F77_LIBRARY_LDFLAGS = 180;
   /** RegularExpression Id. */
-  int AC_F77_LIBRARY_LDFLAGS = 181;
+  int AC_F77_MAIN = 181;
   /** RegularExpression Id. */
-  int AC_F77_MAIN = 182;
+  int AC_F77_WRAPPERS = 182;
   /** RegularExpression Id. */
-  int AC_F77_WRAPPERS = 183;
+  int AC_FATAL = 183;
   /** RegularExpression Id. */
-  int AC_FATAL = 184;
+  int AC_FC_CHECK_BOUNDS = 184;
   /** RegularExpression Id. */
-  int AC_FC_CHECK_BOUNDS = 185;
+  int AC_FC_DUMMY_MAIN = 185;
   /** RegularExpression Id. */
-  int AC_FC_DUMMY_MAIN = 186;
+  int AC_FC_FIXEDFORM = 186;
   /** RegularExpression Id. */
-  int AC_FC_FIXEDFORM = 187;
+  int AC_FC_FREEFORM = 187;
   /** RegularExpression Id. */
-  int AC_FC_FREEFORM = 188;
+  int AC_FC_FUNC = 188;
   /** RegularExpression Id. */
-  int AC_FC_FUNC = 189;
+  int AC_FC_IMPLICIT_NONE = 189;
   /** RegularExpression Id. */
-  int AC_FC_IMPLICIT_NONE = 190;
+  int AC_FC_LIBRARY_LDFLAGS = 190;
   /** RegularExpression Id. */
-  int AC_FC_LIBRARY_LDFLAGS = 191;
+  int AC_FC_LINE_LENGTH = 191;
   /** RegularExpression Id. */
-  int AC_FC_LINE_LENGTH = 192;
+  int AC_FC_MAIN = 192;
   /** RegularExpression Id. */
-  int AC_FC_MAIN = 193;
+  int AC_FC_MODULE_EXTENSION = 193;
   /** RegularExpression Id. */
-  int AC_FC_MODULE_EXTENSION = 194;
+  int AC_FC_MODULE_FLAG = 194;
   /** RegularExpression Id. */
-  int AC_FC_MODULE_FLAG = 195;
+  int AC_FC_MODULE_OUTPUT_FLAG = 195;
   /** RegularExpression Id. */
-  int AC_FC_MODULE_OUTPUT_FLAG = 196;
+  int AC_FC_PP_DEFINE = 196;
   /** RegularExpression Id. */
-  int AC_FC_PP_DEFINE = 197;
+  int AC_FC_PP_SRCEXT = 197;
   /** RegularExpression Id. */
-  int AC_FC_PP_SRCEXT = 198;
+  int AC_FC_SRCEXT = 198;
   /** RegularExpression Id. */
-  int AC_FC_SRCEXT = 199;
+  int AC_FC_WRAPPERS = 199;
   /** RegularExpression Id. */
-  int AC_FC_WRAPPERS = 200;
+  int AC_FUNC_ALLOCA = 200;
   /** RegularExpression Id. */
-  int AC_FUNC_ALLOCA = 201;
+  int AC_FUNC_CHOWN = 201;
   /** RegularExpression Id. */
-  int AC_FUNC_CHOWN = 202;
+  int AC_FUNC_CLOSEDIR_VOID = 202;
   /** RegularExpression Id. */
-  int AC_FUNC_CLOSEDIR_VOID = 203;
+  int AC_FUNC_ERROR_AT_LINE = 203;
   /** RegularExpression Id. */
-  int AC_FUNC_ERROR_AT_LINE = 204;
+  int AC_FUNC_FNMATCH = 204;
   /** RegularExpression Id. */
-  int AC_FUNC_FNMATCH = 205;
+  int AC_FUNC_FNMATCH_GNU = 205;
   /** RegularExpression Id. */
-  int AC_FUNC_FNMATCH_GNU = 206;
+  int AC_FUNC_FORK = 206;
   /** RegularExpression Id. */
-  int AC_FUNC_FORK = 207;
+  int AC_FUNC_FSEEKO = 207;
   /** RegularExpression Id. */
-  int AC_FUNC_FSEEKO = 208;
+  int AC_FUNC_GETGROUPS = 208;
   /** RegularExpression Id. */
-  int AC_FUNC_GETGROUPS = 209;
+  int AC_FUNC_GETLOADAVG = 209;
   /** RegularExpression Id. */
-  int AC_FUNC_GETLOADAVG = 210;
+  int AC_FUNC_GETMNTENT = 210;
   /** RegularExpression Id. */
-  int AC_FUNC_GETMNTENT = 211;
+  int AC_FUNC_GETPGRP = 211;
   /** RegularExpression Id. */
-  int AC_FUNC_GETPGRP = 212;
+  int AC_FUNC_LSTAT_FOLLOWS_SLASHED_SYMLINK = 212;
   /** RegularExpression Id. */
-  int AC_FUNC_LSTAT_FOLLOWS_SLASHED_SYMLINK = 213;
+  int AC_FUNC_MALLOC = 213;
   /** RegularExpression Id. */
-  int AC_FUNC_MALLOC = 214;
+  int AC_FUNC_MBRTOWC = 214;
   /** RegularExpression Id. */
-  int AC_FUNC_MBRTOWC = 215;
+  int AC_FUNC_MEMCMP = 215;
   /** RegularExpression Id. */
-  int AC_FUNC_MEMCMP = 216;
+  int AC_FUNC_MKTIME = 216;
   /** RegularExpression Id. */
-  int AC_FUNC_MKTIME = 217;
+  int AC_FUNC_MMAP = 217;
   /** RegularExpression Id. */
-  int AC_FUNC_MMAP = 218;
+  int AC_FUNC_OBSTACK = 218;
   /** RegularExpression Id. */
-  int AC_FUNC_OBSTACK = 219;
+  int AC_FUNC_REALLOC = 219;
   /** RegularExpression Id. */
-  int AC_FUNC_REALLOC = 220;
+  int AC_FUNC_SELECT_ARGTYPES = 220;
   /** RegularExpression Id. */
-  int AC_FUNC_SELECT_ARGTYPES = 221;
+  int AC_FUNC_SETPGRP = 221;
   /** RegularExpression Id. */
-  int AC_FUNC_SETPGRP = 222;
+  int AC_FUNC_STAT = 222;
   /** RegularExpression Id. */
-  int AC_FUNC_STAT = 223;
+  int AC_FUNC_LSTAT = 223;
   /** RegularExpression Id. */
-  int AC_FUNC_LSTAT = 224;
+  int AC_FUNC_STRCOLL = 224;
   /** RegularExpression Id. */
-  int AC_FUNC_STRCOLL = 225;
+  int AC_FUNC_STRERROR_R = 225;
   /** RegularExpression Id. */
-  int AC_FUNC_STRERROR_R = 226;
+  int AC_FUNC_STRFTIME = 226;
   /** RegularExpression Id. */
-  int AC_FUNC_STRFTIME = 227;
+  int AC_FUNC_STRTOD = 227;
   /** RegularExpression Id. */
-  int AC_FUNC_STRTOD = 228;
+  int AC_FUNC_STRTOLD = 228;
   /** RegularExpression Id. */
-  int AC_FUNC_STRTOLD = 229;
+  int AC_FUNC_STRNLEN = 229;
   /** RegularExpression Id. */
-  int AC_FUNC_STRNLEN = 230;
+  int AC_FUNC_UTIME_NULL = 230;
   /** RegularExpression Id. */
-  int AC_FUNC_UTIME_NULL = 231;
+  int AC_FUNC_VPRINTF = 231;
   /** RegularExpression Id. */
-  int AC_FUNC_VPRINTF = 232;
+  int AC_HEADER_ASSERT = 232;
   /** RegularExpression Id. */
-  int AC_HEADER_ASSERT = 233;
+  int AC_HEADER_DIRENT = 233;
   /** RegularExpression Id. */
-  int AC_HEADER_DIRENT = 234;
+  int AC_HEADER_MAJOR = 234;
   /** RegularExpression Id. */
-  int AC_HEADER_MAJOR = 235;
+  int AC_HEADER_RESOLV = 235;
   /** RegularExpression Id. */
-  int AC_HEADER_RESOLV = 236;
+  int AC_HEADER_STAT = 236;
   /** RegularExpression Id. */
-  int AC_HEADER_STAT = 237;
+  int AC_HEADER_STDBOOL = 237;
   /** RegularExpression Id. */
-  int AC_HEADER_STDBOOL = 238;
+  int AC_HEADER_STDC = 238;
   /** RegularExpression Id. */
-  int AC_HEADER_STDC = 239;
+  int AC_HEADER_SYS_WAIT = 239;
   /** RegularExpression Id. */
-  int AC_HEADER_SYS_WAIT = 240;
+  int AC_HEADER_TIME = 240;
   /** RegularExpression Id. */
-  int AC_HEADER_TIME = 241;
+  int AC_HEADER_TIOCGWINSZ = 241;
   /** RegularExpression Id. */
-  int AC_HEADER_TIOCGWINSZ = 242;
+  int AC_INCLUDES_DEFAULT = 242;
   /** RegularExpression Id. */
-  int AC_INCLUDES_DEFAULT = 243;
+  int AC_INIT = 243;
   /** RegularExpression Id. */
-  int AC_INIT = 244;
+  int AC_LANG = 244;
   /** RegularExpression Id. */
-  int AC_LANG = 245;
+  int AC_LANG_ASSERT = 245;
   /** RegularExpression Id. */
-  int AC_LANG_ASSERT = 246;
+  int AC_LANG_CALL = 246;
   /** RegularExpression Id. */
-  int AC_LANG_CALL = 247;
+  int AC_LANG_CONFTEST = 247;
   /** RegularExpression Id. */
-  int AC_LANG_CONFTEST = 248;
+  int AC_LANG_DEFINES_PROVIDED = 248;
   /** RegularExpression Id. */
-  int AC_LANG_DEFINES_PROVIDED = 249;
+  int AC_LANG_FUNC_LINK_TRY = 249;
   /** RegularExpression Id. */
-  int AC_LANG_FUNC_LINK_TRY = 250;
+  int AC_LANG_POP = 250;
   /** RegularExpression Id. */
-  int AC_LANG_POP = 251;
+  int AC_LANG_PROGRAM = 251;
   /** RegularExpression Id. */
-  int AC_LANG_PROGRAM = 252;
+  int AC_LANG_PUSH = 252;
   /** RegularExpression Id. */
-  int AC_LANG_PUSH = 253;
+  int AC_LANG_SOURCE = 253;
   /** RegularExpression Id. */
-  int AC_LANG_SOURCE = 254;
+  int AC_LANG_WERROR = 254;
   /** RegularExpression Id. */
-  int AC_LANG_WERROR = 255;
+  int AC_LIBOBJ = 255;
   /** RegularExpression Id. */
-  int AC_LIBOBJ = 256;
+  int AC_LIBSOURCE = 256;
   /** RegularExpression Id. */
-  int AC_LIBSOURCE = 257;
+  int AC_LIBSOURCES = 257;
   /** RegularExpression Id. */
-  int AC_LIBSOURCES = 258;
+  int AC_LINK_IFELSE = 258;
   /** RegularExpression Id. */
-  int AC_LINK_IFELSE = 259;
+  int AC_MSG_CHECKING = 259;
   /** RegularExpression Id. */
-  int AC_MSG_CHECKING = 260;
+  int AC_MSG_ERROR = 260;
   /** RegularExpression Id. */
-  int AC_MSG_ERROR = 261;
+  int AC_MSG_FAILURE = 261;
   /** RegularExpression Id. */
-  int AC_MSG_FAILURE = 262;
+  int AC_MSG_NOTICE = 262;
   /** RegularExpression Id. */
-  int AC_MSG_NOTICE = 263;
+  int AC_MSG_RESULT = 263;
   /** RegularExpression Id. */
-  int AC_MSG_RESULT = 264;
+  int AC_MSG_WARN = 264;
   /** RegularExpression Id. */
-  int AC_MSG_WARN = 265;
+  int AC_OPENMP = 265;
   /** RegularExpression Id. */
-  int AC_OPENMP = 266;
+  int AC_OUTPUT = 266;
   /** RegularExpression Id. */
-  int AC_OUTPUT = 267;
+  int AC_PACKAGE_BUGREPORT = 267;
   /** RegularExpression Id. */
-  int AC_PACKAGE_BUGREPORT = 268;
+  int AC_PACKAGE_NAME = 268;
   /** RegularExpression Id. */
-  int AC_PACKAGE_NAME = 269;
+  int AC_PACKAGE_STRING = 269;
   /** RegularExpression Id. */
-  int AC_PACKAGE_STRING = 270;
+  int AC_PACKAGE_TARNAME = 270;
   /** RegularExpression Id. */
-  int AC_PACKAGE_TARNAME = 271;
+  int AC_PACKAGE_URL = 271;
   /** RegularExpression Id. */
-  int AC_PACKAGE_URL = 272;
+  int AC_PACKAGE_VERSION = 272;
   /** RegularExpression Id. */
-  int AC_PACKAGE_VERSION = 273;
+  int AC_PATH_PROG = 273;
   /** RegularExpression Id. */
-  int AC_PATH_PROG = 274;
+  int AC_PATH_PROGS = 274;
   /** RegularExpression Id. */
-  int AC_PATH_PROGS = 275;
+  int AC_PATH_PROGS_FEATURE_CHECK = 275;
   /** RegularExpression Id. */
-  int AC_PATH_PROGS_FEATURE_CHECK = 276;
+  int AC_PATH_TARGET_TOOL = 276;
   /** RegularExpression Id. */
-  int AC_PATH_TARGET_TOOL = 277;
+  int AC_PATH_TOOL = 277;
   /** RegularExpression Id. */
-  int AC_PATH_TOOL = 278;
+  int AC_PATH_X = 278;
   /** RegularExpression Id. */
-  int AC_PATH_X = 279;
+  int AC_PATH_XTRA = 279;
   /** RegularExpression Id. */
-  int AC_PATH_XTRA = 280;
+  int AC_PREFIX_DEFAULT = 280;
   /** RegularExpression Id. */
-  int AC_PREFIX_DEFAULT = 281;
+  int AC_PREFIX_PROGRAM = 281;
   /** RegularExpression Id. */
-  int AC_PREFIX_PROGRAM = 282;
+  int AC_PREPROC_IFELSE = 282;
   /** RegularExpression Id. */
-  int AC_PREPROC_IFELSE = 283;
+  int AC_PREREQ = 283;
   /** RegularExpression Id. */
-  int AC_PREREQ = 284;
+  int AC_PRESERVE_HELP_ORDER = 284;
   /** RegularExpression Id. */
-  int AC_PRESERVE_HELP_ORDER = 285;
+  int AC_PROG_AWK = 285;
   /** RegularExpression Id. */
-  int AC_PROG_AWK = 286;
+  int AC_PROG_CC = 286;
   /** RegularExpression Id. */
-  int AC_PROG_CC = 287;
+  int AC_PROG_CC_C_O = 287;
   /** RegularExpression Id. */
-  int AC_PROG_CC_C_O = 288;
+  int AC_PROG_CC_C89 = 288;
   /** RegularExpression Id. */
-  int AC_PROG_CC_C89 = 289;
+  int AC_PROG_CC_C99 = 289;
   /** RegularExpression Id. */
-  int AC_PROG_CC_C99 = 290;
+  int AC_PROG_CC_STDC = 290;
   /** RegularExpression Id. */
-  int AC_PROG_CC_STDC = 291;
+  int AC_PROG_CPP = 291;
   /** RegularExpression Id. */
-  int AC_PROG_CPP = 292;
+  int AC_PROG_CPP_WERROR = 292;
   /** RegularExpression Id. */
-  int AC_PROG_CPP_WERROR = 293;
+  int AC_PROG_CXX = 293;
   /** RegularExpression Id. */
-  int AC_PROG_CXX = 294;
+  int AC_PROG_CXX_C_O = 294;
   /** RegularExpression Id. */
-  int AC_PROG_CXX_C_O = 295;
+  int AC_PROG_CXXCPP = 295;
   /** RegularExpression Id. */
-  int AC_PROG_CXXCPP = 296;
+  int AC_PROG_EGREP = 296;
   /** RegularExpression Id. */
-  int AC_PROG_EGREP = 297;
+  int AC_PROG_F77 = 297;
   /** RegularExpression Id. */
-  int AC_PROG_F77 = 298;
+  int AC_PROG_F77_C_O = 298;
   /** RegularExpression Id. */
-  int AC_PROG_F77_C_O = 299;
+  int AC_PROG_FC = 299;
   /** RegularExpression Id. */
-  int AC_PROG_FC = 300;
+  int AC_PROG_FC_C_O = 300;
   /** RegularExpression Id. */
-  int AC_PROG_FC_C_O = 301;
+  int AC_PROG_FGREP = 301;
   /** RegularExpression Id. */
-  int AC_PROG_FGREP = 302;
+  int AC_PROG_GCC_TRADITIONAL = 302;
   /** RegularExpression Id. */
-  int AC_PROG_GCC_TRADITIONAL = 303;
+  int AC_PROG_GO = 303;
   /** RegularExpression Id. */
-  int AC_PROG_GO = 304;
+  int AC_PROG_GREP = 304;
   /** RegularExpression Id. */
-  int AC_PROG_GREP = 305;
+  int AC_PROG_INSTALL = 305;
   /** RegularExpression Id. */
-  int AC_PROG_INSTALL = 306;
+  int AC_PROG_LEX = 306;
   /** RegularExpression Id. */
-  int AC_PROG_LEX = 307;
+  int AC_PROG_LN_S = 307;
   /** RegularExpression Id. */
-  int AC_PROG_LN_S = 308;
+  int AC_PROG_MAKE_SET = 308;
   /** RegularExpression Id. */
-  int AC_PROG_MAKE_SET = 309;
+  int AC_PROG_MKDIR_P = 309;
   /** RegularExpression Id. */
-  int AC_PROG_MKDIR_P = 310;
+  int AC_PROG_OBJC = 310;
   /** RegularExpression Id. */
-  int AC_PROG_OBJC = 311;
+  int AC_PROG_OBJCPP = 311;
   /** RegularExpression Id. */
-  int AC_PROG_OBJCPP = 312;
+  int AC_PROG_OBJCXX = 312;
   /** RegularExpression Id. */
-  int AC_PROG_OBJCXX = 313;
+  int AC_PROG_OBJCXXCPP = 313;
   /** RegularExpression Id. */
-  int AC_PROG_OBJCXXCPP = 314;
+  int AC_PROG_RANLIB = 314;
   /** RegularExpression Id. */
-  int AC_PROG_RANLIB = 315;
+  int AC_PROG_SED = 315;
   /** RegularExpression Id. */
-  int AC_PROG_SED = 316;
+  int AC_PROG_YACC = 316;
   /** RegularExpression Id. */
-  int AC_PROG_YACC = 317;
+  int AC_REPLACE_FNMATCH = 317;
   /** RegularExpression Id. */
-  int AC_REPLACE_FNMATCH = 318;
+  int AC_REPLACE_FUNCS = 318;
   /** RegularExpression Id. */
-  int AC_REPLACE_FUNCS = 319;
+  int AC_REQUIRE = 319;
   /** RegularExpression Id. */
-  int AC_REQUIRE = 320;
+  int AC_REQUIRE_AUX_FILE = 320;
   /** RegularExpression Id. */
-  int AC_REQUIRE_AUX_FILE = 321;
+  int AC_REQUIRE_CPP = 321;
   /** RegularExpression Id. */
-  int AC_REQUIRE_CPP = 322;
+  int AC_REVISION = 322;
   /** RegularExpression Id. */
-  int AC_REVISION = 323;
+  int AC_RUN_IFELSE = 323;
   /** RegularExpression Id. */
-  int AC_RUN_IFELSE = 324;
+  int AC_SEARCH_LIBS = 324;
   /** RegularExpression Id. */
-  int AC_SEARCH_LIBS = 325;
+  int AC_STRUCT_DIRENT_D_INO = 325;
   /** RegularExpression Id. */
-  int AC_STRUCT_DIRENT_D_INO = 326;
+  int AC_STRUCT_DIRENT_D_TYPE = 326;
   /** RegularExpression Id. */
-  int AC_STRUCT_DIRENT_D_TYPE = 327;
+  int AC_STRUCT_ST_BLOCKS = 327;
   /** RegularExpression Id. */
-  int AC_STRUCT_ST_BLOCKS = 328;
+  int AC_STRUCT_TM = 328;
   /** RegularExpression Id. */
-  int AC_STRUCT_TM = 329;
+  int AC_STRUCT_TIMEZONE = 329;
   /** RegularExpression Id. */
-  int AC_STRUCT_TIMEZONE = 330;
+  int AC_SUBST = 330;
   /** RegularExpression Id. */
-  int AC_SUBST = 331;
+  int AC_SUBST_FILE = 331;
   /** RegularExpression Id. */
-  int AC_SUBST_FILE = 332;
+  int AC_SYS_INTERPRETER = 332;
   /** RegularExpression Id. */
-  int AC_SYS_INTERPRETER = 333;
+  int AC_SYS_LARGEFILE = 333;
   /** RegularExpression Id. */
-  int AC_SYS_LARGEFILE = 334;
+  int AC_SYS_LONG_FILE_NAMES = 334;
   /** RegularExpression Id. */
-  int AC_SYS_LONG_FILE_NAMES = 335;
+  int AC_SYS_POSIX_TERMIOS = 335;
   /** RegularExpression Id. */
-  int AC_SYS_POSIX_TERMIOS = 336;
+  int AC_TYPE_GETGROUPS = 336;
   /** RegularExpression Id. */
-  int AC_TYPE_GETGROUPS = 337;
+  int AC_TYPE_INT8_T = 337;
   /** RegularExpression Id. */
-  int AC_TYPE_INT8_T = 338;
+  int AC_TYPE_INT16_T = 338;
   /** RegularExpression Id. */
-  int AC_TYPE_INT16_T = 339;
+  int AC_TYPE_INT32_T = 339;
   /** RegularExpression Id. */
-  int AC_TYPE_INT32_T = 340;
+  int AC_TYPE_INT64_T = 340;
   /** RegularExpression Id. */
-  int AC_TYPE_INT64_T = 341;
+  int AC_TYPE_INTMAX_T = 341;
   /** RegularExpression Id. */
-  int AC_TYPE_INTMAX_T = 342;
+  int AC_TYPE_INTPTR_T = 342;
   /** RegularExpression Id. */
-  int AC_TYPE_INTPTR_T = 343;
+  int AC_TYPE_LONG_DOUBLE = 343;
   /** RegularExpression Id. */
-  int AC_TYPE_LONG_DOUBLE = 344;
+  int AC_TYPE_LONG_DOUBLE_WIDER = 344;
   /** RegularExpression Id. */
-  int AC_TYPE_LONG_DOUBLE_WIDER = 345;
+  int AC_TYPE_LONG_LONG_INT = 345;
   /** RegularExpression Id. */
-  int AC_TYPE_LONG_LONG_INT = 346;
+  int AC_TYPE_MBSTATE_T = 346;
   /** RegularExpression Id. */
-  int AC_TYPE_MBSTATE_T = 347;
+  int AC_TYPE_MODE_T = 347;
   /** RegularExpression Id. */
-  int AC_TYPE_MODE_T = 348;
+  int AC_TYPE_OFF_T = 348;
   /** RegularExpression Id. */
-  int AC_TYPE_OFF_T = 349;
+  int AC_TYPE_PID_T = 349;
   /** RegularExpression Id. */
-  int AC_TYPE_PID_T = 350;
+  int AC_TYPE_SIZE_T = 350;
   /** RegularExpression Id. */
-  int AC_TYPE_SIZE_T = 351;
+  int AC_TYPE_SSIZE_T = 351;
   /** RegularExpression Id. */
-  int AC_TYPE_SSIZE_T = 352;
+  int AC_TYPE_UID_T = 352;
   /** RegularExpression Id. */
-  int AC_TYPE_UID_T = 353;
+  int AC_TYPE_UINT8_T = 353;
   /** RegularExpression Id. */
-  int AC_TYPE_UINT8_T = 354;
+  int AC_TYPE_UINT16_T = 354;
   /** RegularExpression Id. */
-  int AC_TYPE_UINT16_T = 355;
+  int AC_TYPE_UINT32_T = 355;
   /** RegularExpression Id. */
-  int AC_TYPE_UINT32_T = 356;
+  int AC_TYPE_UINT64_T = 356;
   /** RegularExpression Id. */
-  int AC_TYPE_UINT64_T = 357;
+  int AC_TYPE_UINTMAX_T = 357;
   /** RegularExpression Id. */
-  int AC_TYPE_UINTMAX_T = 358;
+  int AC_TYPE_UINTPTR_T = 358;
   /** RegularExpression Id. */
-  int AC_TYPE_UINTPTR_T = 359;
+  int AC_TYPE_UNSIGNED_LONG_LONG_INT = 359;
   /** RegularExpression Id. */
-  int AC_TYPE_UNSIGNED_LONG_LONG_INT = 360;
+  int AC_USE_SYSTEM_EXTENSIONS = 360;
   /** RegularExpression Id. */
-  int AC_USE_SYSTEM_EXTENSIONS = 361;
+  int AC_WARNING = 361;
   /** RegularExpression Id. */
-  int AC_WARNING = 362;
+  int AC_AIX = 362;
   /** RegularExpression Id. */
-  int AC_AIX = 363;
+  int AC_ALLOCA = 363;
   /** RegularExpression Id. */
-  int AC_ALLOCA = 364;
+  int AC_ARG_ARRAY = 364;
   /** RegularExpression Id. */
-  int AC_ARG_ARRAY = 365;
+  int AC_C_CROSS = 365;
   /** RegularExpression Id. */
-  int AC_C_CROSS = 366;
+  int AC_C_LONG_DOUBLE = 366;
   /** RegularExpression Id. */
-  int AC_C_LONG_DOUBLE = 367;
+  int AC_CANONICAL_SYSTEM = 367;
   /** RegularExpression Id. */
-  int AC_CANONICAL_SYSTEM = 368;
+  int AC_CHAR_UNSIGNED = 368;
   /** RegularExpression Id. */
-  int AC_CHAR_UNSIGNED = 369;
+  int AC_CHECKING = 369;
   /** RegularExpression Id. */
-  int AC_CHECKING = 370;
+  int AC_COMPILE_CHECK = 370;
   /** RegularExpression Id. */
-  int AC_COMPILE_CHECK = 371;
+  int AC_CONFIG_HEADERS = 371;
   /** RegularExpression Id. */
   int AC_CONST = 372;
   /** RegularExpression Id. */
@@ -1272,7 +1272,6 @@ public interface AutoconfParserConstants {
     "\"AC_CONFIG_COMMANDS_PRE\"",
     "\"AC_CONFIG_COMMANDS_POST\"",
     "\"AC_CONFIG_FILES\"",
-    "\"AC_CONFIG_HEADERS\"",
     "\"AC_CONFIG_LIBOBJ_DIR\"",
     "\"AC_CONFIG_LINKS\"",
     "\"AC_CONFIG_MACRO_DIR\"",
@@ -1492,6 +1491,7 @@ public interface AutoconfParserConstants {
     "\"AC_CHAR_UNSIGNED\"",
     "\"AC_CHECKING\"",
     "\"AC_COMPILE_CHECK\"",
+    "\"AC_CONFIG_HEADERS\"",
     "\"AC_CONST\"",
     "\"AC_CROSS_CHECK\"",
     "\"AC_CYGWIN\"",

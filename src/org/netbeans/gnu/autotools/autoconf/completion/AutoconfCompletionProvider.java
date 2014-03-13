@@ -16,7 +16,6 @@
  */
 package org.netbeans.gnu.autotools.autoconf.completion;
 
-import java.util.Locale;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
 import javax.swing.text.Element;
@@ -38,7 +37,7 @@ import org.openide.util.Exceptions;
 public class AutoconfCompletionProvider implements CompletionProvider {
 
     private static final AutoconfMacros macroNames[] = AutoconfMacros.values();
-    
+
     @Override
     public CompletionTask createTask(int queryType, JTextComponent jtc) {
         if (queryType != CompletionProvider.COMPLETION_QUERY_TYPE) {
@@ -47,7 +46,10 @@ public class AutoconfCompletionProvider implements CompletionProvider {
 
         return new AsyncCompletionTask(new AsyncCompletionQuery() {
             @Override
-            protected void query(CompletionResultSet completionResultSet, Document document, int caretOffset) {
+            protected void query(
+                    CompletionResultSet completionResultSet,
+                    Document document,
+                    int caretOffset) {
 
                 String filter = null;
                 int startOffset = caretOffset - 1;
@@ -58,7 +60,7 @@ public class AutoconfCompletionProvider implements CompletionProvider {
                     final char[] line = bDoc.getText(lineStartOffset, caretOffset - lineStartOffset).toCharArray();
                     final int whiteOffset = indexOfWhite(line);
                     filter = new String(line, whiteOffset + 1, line.length - whiteOffset - 1);
-                    
+
                     if (whiteOffset > 0) {
                         startOffset = lineStartOffset + whiteOffset + 1;
                     } else {
@@ -80,7 +82,7 @@ public class AutoconfCompletionProvider implements CompletionProvider {
                         completionResultSet.addItem(new AutoconfCompletionItem(text, startOffset, caretOffset));
                     }
                 }
-                
+
                 completionResultSet.finish();
             }
         }, jtc);

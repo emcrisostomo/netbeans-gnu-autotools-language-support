@@ -1,0 +1,2 @@
+cat token-file | sed -E 's/^\|?[[:blank:]]*\<[[:blank:]]*.*: *\"//' | sed -E 's/(.*)\".*/\1\(\"\1\"\),/' > enums.txt
+cat token-file | sed -E 's/^\|?[[:blank:]]*\<[[:blank:]]*.*: *\"//' | sed -E 's/\".*//' | tr '[:upper:]' '[:lower:]' | while read i ; do touch $i.html; done

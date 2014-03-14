@@ -37,9 +37,4 @@ public class AutoconfLanguage extends DefaultLanguageConfig {
     public String getDisplayName() {
         return "AC";
     }
-
-//    @Override
-//    public Parser getParser() {
-//        return new ACParser();
-//    }
 }

@@ -452,7 +452,6 @@ public enum AutoconfMacros {
     AC_YYTEXT_POINTER("AC_YYTEXT_POINTER", "Obsolete-Macros.html", true);
 
     private final String text;
-
     private final String docUrl;
     private final boolean obsolete;
 
@@ -461,7 +460,7 @@ public enum AutoconfMacros {
         this.docUrl = docUrl;
         this.obsolete = false;
     }
-    
+
     private AutoconfMacros(String text, String docUrl, boolean obsolete) {
         this.text = text;
         this.docUrl = docUrl;

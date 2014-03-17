@@ -17,9 +17,7 @@
     <fontcolor name="autoconf" default="keyword">
         <font style="bold" />
     </fontcolor>
-    <fontcolor name="autoconf-obsolete" default="keyword" bgColor="blue" foreColor="white">
-        <font style="bold" />
-    </fontcolor>
+    <fontcolor name="autoconf-obsolete" default="autoconf" strikeThrough="black"/>
     <fontcolor name="autoconf-ah-keyword" default="keyword" foreColor="pink">
         <font style="bold" />
     </fontcolor>

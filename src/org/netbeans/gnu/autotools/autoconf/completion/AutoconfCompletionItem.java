@@ -58,8 +58,8 @@ public class AutoconfCompletionItem implements CompletionItem {
     public void defaultAction(JTextComponent component) {
         try {
             StyledDocument doc = (StyledDocument) component.getDocument();
-        //Here we remove the characters starting at the start offset
-            //and ending at the point where the caret is currently found:
+            // Here we remove the characters starting at the start offset
+            // and ending at the point where the caret is currently found:
             doc.remove(dotOffset, caretOffset - dotOffset);
             doc.insertString(dotOffset, macro.getText(), null);
             Completion.get().hideAll();
@@ -81,8 +81,16 @@ public class AutoconfCompletionItem implements CompletionItem {
     @Override
     public void render(Graphics g, Font defaultFont, Color defaultColor,
             Color backgroundColor, int width, int height, boolean selected) {
-        CompletionUtilities.renderHtml(null /* fieldIcon */, macro.getText(), null, g, defaultFont,
-                (selected ? Color.white : fieldColor), width, height, selected);
+        CompletionUtilities.renderHtml(
+                null /* fieldIcon */, 
+                macro.getText(),
+                (macro.isObsolete() ? "Obsolete" : null),
+                g,
+                defaultFont,
+                (selected ? Color.white : fieldColor), 
+                width, 
+                height, 
+                selected);
     }
 
     @Override

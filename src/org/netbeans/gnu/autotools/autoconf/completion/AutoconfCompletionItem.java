@@ -82,14 +82,14 @@ public class AutoconfCompletionItem implements CompletionItem {
     public void render(Graphics g, Font defaultFont, Color defaultColor,
             Color backgroundColor, int width, int height, boolean selected) {
         CompletionUtilities.renderHtml(
-                null /* fieldIcon */, 
-                macro.getText(),
+                null /* fieldIcon */,
+                getCompletionItemText(),
                 (macro.isObsolete() ? "Obsolete" : null),
                 g,
                 defaultFont,
-                (selected ? Color.white : fieldColor), 
-                width, 
-                height, 
+                (selected ? Color.white : fieldColor),
+                width,
+                height,
                 selected);
     }
 
@@ -135,5 +135,21 @@ public class AutoconfCompletionItem implements CompletionItem {
     @Override
     public CharSequence getInsertPrefix() {
         return macro.getText();
+    }
+
+    private String getCompletionItemText() {
+        StringBuilder sb = new StringBuilder();
+        
+        if (macro.isObsolete()) {
+            sb.append("<s>");
+        }
+
+        sb.append(macro.getText());
+
+        if (macro.isObsolete()) {
+            sb.append("</s>");
+        }
+
+        return sb.toString();
     }
 }

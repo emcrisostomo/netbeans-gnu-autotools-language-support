@@ -289,60 +289,62 @@ public enum AutoconfMacros {
     AC_TYPE_UNSIGNED_LONG_LONG_INT("AC_TYPE_UNSIGNED_LONG_LONG_INT", "Particular-Types.html"),
     AC_USE_SYSTEM_EXTENSIONS("AC_USE_SYSTEM_EXTENSIONS", "Posix-Variants.html"),
     AC_WARNING("AC_WARNING", "Reporting-Messages.html"),
-    AH_BOTTOM("AH_BOTTOM", ""),
-    AH_HEADER("AH_HEADER", ""),
-    AH_TEMPLATE("AH_TEMPLATE", ""),
-    AH_TOP("AH_TOP", ""),
-    AH_VERBATIM("AH_VERBATIM", ""),
+    AH_BOTTOM("AH_BOTTOM", "Autoheader-Macros.html"),
+    AH_HEADER("AH_HEADER", "Configuration-Headers.html"),
+    AH_TEMPLATE("AH_TEMPLATE", "Autoheader-Macros.html"),
+    AH_TOP("AH_TOP", "Autoheader-Macros.html"),
+    AH_VERBATIM("AH_VERBATIM", "Autoheader-Macros.html"),
     AM_INIT_AUTOMAKE("AM_INIT_AUTOMAKE", ""),
     AM_CONDITIONAL("AM_CONDITIONAL", ""),
-    AS_BOURNE_COMPATIBLE("AS_BOURNE_COMPATIBLE", ""),
-    AS_BOX("AS_BOX", ""),
-    AS_CASE("AS_CASE", ""),
-    AS_DIRNAME("AS_DIRNAME", ""),
-    AS_ECHO("AS_ECHO", ""),
-    AS_ECHO_N("AS_ECHO_N", ""),
-    AS_ESCAPE("AS_ESCAPE", ""),
-    AS_EXECUTABLE_P("AS_EXECUTABLE_P", ""),
-    AS_EXIT("AS_EXIT", ""),
-    AS_HELP_STRING("AS_HELP_STRING", ""),
-    AS_IF("AS_IF", ""),
-    AS_INIT("AS_INIT", ""),
-    AS_INIT_GENERATED("AS_INIT_GENERATED", ""),
-    AS_LINENO_PREPARE("AS_LINENO_PREPARE", ""),
-    AS_LITERAL_IF("AS_LITERAL_IF", ""),
-    AS_LITERAL_WORD_IF("AS_LITERAL_WORD_IF", ""),
-    AS_ME_PREPARE("AS_ME_PREPARE", ""),
-    AS_MESSAGE_FD("AS_MESSAGE_FD", ""),
-    AS_MESSAGE_LOG_FD("AS_MESSAGE_LOG_FD", ""),
-    AS_MKDIR_P("AS_MKDIR_P", ""),
-    AS_ORIGINAL_STDIN_FD("AS_ORIGINAL_STDIN_FD", ""),
-    AS_SET_CATFILE("AS_SET_CATFILE", ""),
-    AS_SET_STATUS("AS_SET_STATUS", ""),
-    AS_SHELL_SANITIZE("AS_SHELL_SANITIZE", ""),
-    AS_TMPDIR("AS_TMPDIR", ""),
-    AS_TR_CPP("AS_TR_CPP", ""),
-    AS_TR_SH("AS_TR_SH", ""),
-    AS_UNSET("AS_UNSET", ""),
-    AS_VAR_APPEND("AS_VAR_APPEND", ""),
-    AS_VAR_ARITH("AS_VAR_ARITH", ""),
-    AS_VAR_COPY("AS_VAR_COPY", ""),
-    AS_VAR_IF("AS_VAR_IF", ""),
-    AS_VAR_POPDEF("AS_VAR_POPDEF", ""),
-    AS_VAR_PUSHDEF("AS_VAR_PUSHDEF", ""),
-    AS_VAR_SET("AS_VAR_SET", ""),
-    AS_VAR_SET_IF("AS_VAR_SET_IF", ""),
-    AS_VAR_TEST_SET("AS_VAR_TEST_SET", ""),
-    AS_VERSION_COMPARE("AS_VERSION_COMPARE", ""),
-    AU_ALIAS("AU_ALIAS", ""),
-    AU_DEFUN("AU_DEFUN", "");
+    AS_BOURNE_COMPATIBLE("AS_BOURNE_COMPATIBLE", "Initialization-Macros.html"),
+    AS_BOX("AS_BOX", "Common-Shell-Constructs.html"),
+    AS_CASE("AS_CASE", "Common-Shell-Constructs.html"),
+    AS_DIRNAME("AS_DIRNAME", "Common-Shell-Constructs.html"),
+    AS_ECHO("AS_ECHO", "Common-Shell-Constructs.html"),
+    AS_ECHO_N("AS_ECHO_N", "Common-Shell-Constructs.html"),
+    AS_ESCAPE("AS_ESCAPE", "Common-Shell-Constructs.html"),
+    AS_EXECUTABLE_P("AS_EXECUTABLE_P", "Common-Shell-Constructs.html"),
+    AS_EXIT("AS_EXIT", "Common-Shell-Constructs.html"),
+    AS_HELP_STRING("AS_HELP_STRING", "Pretty-Help-Strings.html"),
+    AS_IF("AS_IF", "Common-Shell-Constructs.html"),
+    AS_INIT("AS_INIT", "Initialization-Macros.html"),
+    AS_INIT_GENERATED("AS_INIT_GENERATED", "Initialization-Macros.html"),
+    AS_LINENO_PREPARE("AS_LINENO_PREPARE", "Initialization-Macros.html"),
+    AS_LITERAL_IF("AS_LITERAL_IF", "Polymorphic-Variables.html"),
+    AS_LITERAL_WORD_IF("AS_LITERAL_WORD_IF", "Polymorphic-Variables.html"),
+    AS_ME_PREPARE("AS_ME_PREPARE", "Initialization-Macros.html"),
+    AS_MESSAGE_FD("AS_MESSAGE_FD", "File-Descriptor-Macros.html"),
+    AS_MESSAGE_LOG_FD("AS_MESSAGE_LOG_FD", "File-Descriptor-Macros.html"),
+    AS_MKDIR_P("AS_MKDIR_P", "Common-Shell-Constructs.html"),
+    AS_ORIGINAL_STDIN_FD("AS_ORIGINAL_STDIN_FD", "File-Descriptor-Macros.html"),
+    AS_SET_CATFILE("AS_SET_CATFILE", "Common-Shell-Constructs.html"),
+    AS_SET_STATUS("AS_SET_STATUS", "Common-Shell-Constructs.html"),
+    AS_SHELL_SANITIZE("AS_SHELL_SANITIZE", "Initialization-Macros.html"),
+    AS_TMPDIR("AS_TMPDIR", "Initialization-Macros.html"),
+    AS_TR_CPP("AS_TR_CPP", "Common-Shell-Constructs.html"),
+    AS_TR_SH("AS_TR_SH", "Common-Shell-Constructs.html"),
+    AS_UNSET("AS_UNSET", "Common-Shell-Constructs.html"),
+    AS_VAR_APPEND("AS_VAR_APPEND", "Polymorphic-Variables.html"),
+    AS_VAR_ARITH("AS_VAR_ARITH", "Polymorphic-Variables.html"),
+    AS_VAR_COPY("AS_VAR_COPY", "Polymorphic-Variables.html"),
+    AS_VAR_IF("AS_VAR_IF", "Polymorphic-Variables.html"),
+    AS_VAR_POPDEF("AS_VAR_POPDEF", "Polymorphic-Variables.html"),
+    AS_VAR_PUSHDEF("AS_VAR_PUSHDEF", "Polymorphic-Variables.html"),
+    AS_VAR_SET("AS_VAR_SET", "Polymorphic-Variables.html"),
+    AS_VAR_SET_IF("AS_VAR_SET_IF", "Polymorphic-Variables.html"),
+    AS_VAR_TEST_SET("AS_VAR_TEST_SET", "Polymorphic-Variables.html"),
+    AS_VERSION_COMPARE("AS_VERSION_COMPARE", "Common-Shell-Constructs.html"),
+    AU_ALIAS("AU_ALIAS", "Obsoleting-Macros.html"),
+    AU_DEFUN("AU_DEFUN", "Obsoleting-Macros.html");
 
     private final String text;
     private final String docUrl;
+    private final boolean obsolete;
 
     private AutoconfMacros(String text, String docUrl) {
         this.text = text;
         this.docUrl = docUrl;
+        this.obsolete = false;
     }
 
     public String getText() {
@@ -351,5 +353,9 @@ public enum AutoconfMacros {
 
     public String getDocUrl() {
         return this.docUrl;
+    }
+
+    public boolean isObsolete() {
+        return this.obsolete;
     }
 }

@@ -973,145 +973,167 @@ public interface AutoconfParserConstants {
   /** RegularExpression Id. */
   int AM_CONDITIONAL = 481;
   /** RegularExpression Id. */
-  int AS_BOURNE_COMPATIBLE = 482;
+  int AM_PATH_LISPDIR = 482;
   /** RegularExpression Id. */
-  int AS_BOX = 483;
+  int AM_PROG_AR = 483;
   /** RegularExpression Id. */
-  int AS_CASE = 484;
+  int AM_PROG_AS = 484;
   /** RegularExpression Id. */
-  int AS_DIRNAME = 485;
+  int AM_PROG_CC_C_O = 485;
   /** RegularExpression Id. */
-  int AS_ECHO = 486;
+  int AM_PROG_LEX = 486;
   /** RegularExpression Id. */
-  int AS_ECHO_N = 487;
+  int AM_PROG_GCJ = 487;
   /** RegularExpression Id. */
-  int AS_ESCAPE = 488;
+  int AM_PROG_UPC = 488;
   /** RegularExpression Id. */
-  int AS_EXECUTABLE_P = 489;
+  int AM_MISSING_PROG = 489;
   /** RegularExpression Id. */
-  int AS_EXIT = 490;
+  int AM_SILENT_RULES = 490;
   /** RegularExpression Id. */
-  int AS_HELP_STRING = 491;
+  int AM_WITH_DMALLOC = 491;
   /** RegularExpression Id. */
-  int AS_IF = 492;
+  int AM_PROG_MKDIR_P = 492;
   /** RegularExpression Id. */
-  int AS_INIT = 493;
+  int AS_BOURNE_COMPATIBLE = 493;
   /** RegularExpression Id. */
-  int AS_INIT_GENERATED = 494;
+  int AS_BOX = 494;
   /** RegularExpression Id. */
-  int AS_LINENO_PREPARE = 495;
+  int AS_CASE = 495;
   /** RegularExpression Id. */
-  int AS_LITERAL_IF = 496;
+  int AS_DIRNAME = 496;
   /** RegularExpression Id. */
-  int AS_LITERAL_WORD_IF = 497;
+  int AS_ECHO = 497;
   /** RegularExpression Id. */
-  int AS_ME_PREPARE = 498;
+  int AS_ECHO_N = 498;
   /** RegularExpression Id. */
-  int AS_MESSAGE_FD = 499;
+  int AS_ESCAPE = 499;
   /** RegularExpression Id. */
-  int AS_MESSAGE_LOG_FD = 500;
+  int AS_EXECUTABLE_P = 500;
   /** RegularExpression Id. */
-  int AS_MKDIR_P = 501;
+  int AS_EXIT = 501;
   /** RegularExpression Id. */
-  int AS_ORIGINAL_STDIN_FD = 502;
+  int AS_HELP_STRING = 502;
   /** RegularExpression Id. */
-  int AS_SET_CATFILE = 503;
+  int AS_IF = 503;
   /** RegularExpression Id. */
-  int AS_SET_STATUS = 504;
+  int AS_INIT = 504;
   /** RegularExpression Id. */
-  int AS_SHELL_SANITIZE = 505;
+  int AS_INIT_GENERATED = 505;
   /** RegularExpression Id. */
-  int AS_TMPDIR = 506;
+  int AS_LINENO_PREPARE = 506;
   /** RegularExpression Id. */
-  int AS_TR_CPP = 507;
+  int AS_LITERAL_IF = 507;
   /** RegularExpression Id. */
-  int AS_TR_SH = 508;
+  int AS_LITERAL_WORD_IF = 508;
   /** RegularExpression Id. */
-  int AS_UNSET = 509;
+  int AS_ME_PREPARE = 509;
   /** RegularExpression Id. */
-  int AS_VAR_APPEND = 510;
+  int AS_MESSAGE_FD = 510;
   /** RegularExpression Id. */
-  int AS_VAR_ARITH = 511;
+  int AS_MESSAGE_LOG_FD = 511;
   /** RegularExpression Id. */
-  int AS_VAR_COPY = 512;
+  int AS_MKDIR_P = 512;
   /** RegularExpression Id. */
-  int AS_VAR_IF = 513;
+  int AS_ORIGINAL_STDIN_FD = 513;
   /** RegularExpression Id. */
-  int AS_VAR_POPDEF = 514;
+  int AS_SET_CATFILE = 514;
   /** RegularExpression Id. */
-  int AS_VAR_PUSHDEF = 515;
+  int AS_SET_STATUS = 515;
   /** RegularExpression Id. */
-  int AS_VAR_SET = 516;
+  int AS_SHELL_SANITIZE = 516;
   /** RegularExpression Id. */
-  int AS_VAR_SET_IF = 517;
+  int AS_TMPDIR = 517;
   /** RegularExpression Id. */
-  int AS_VAR_TEST_SET = 518;
+  int AS_TR_CPP = 518;
   /** RegularExpression Id. */
-  int AS_VERSION_COMPARE = 519;
+  int AS_TR_SH = 519;
   /** RegularExpression Id. */
-  int AU_ALIAS = 520;
+  int AS_UNSET = 520;
   /** RegularExpression Id. */
-  int AU_DEFUN = 521;
+  int AS_VAR_APPEND = 521;
   /** RegularExpression Id. */
-  int AC_MACRO_PRIVATE = 522;
+  int AS_VAR_ARITH = 522;
   /** RegularExpression Id. */
-  int AC_MACRO = 523;
+  int AS_VAR_COPY = 523;
   /** RegularExpression Id. */
-  int AC_VARIABLE = 524;
+  int AS_VAR_IF = 524;
   /** RegularExpression Id. */
-  int AH_MACRO_PRIVATE = 525;
+  int AS_VAR_POPDEF = 525;
   /** RegularExpression Id. */
-  int AH_MACRO = 526;
+  int AS_VAR_PUSHDEF = 526;
   /** RegularExpression Id. */
-  int AH_VARIABLE = 527;
+  int AS_VAR_SET = 527;
   /** RegularExpression Id. */
-  int AM_MACRO_PRIVATE = 528;
+  int AS_VAR_SET_IF = 528;
   /** RegularExpression Id. */
-  int AM_MACRO = 529;
+  int AS_VAR_TEST_SET = 529;
   /** RegularExpression Id. */
-  int AM_VARIABLE = 530;
+  int AS_VERSION_COMPARE = 530;
   /** RegularExpression Id. */
-  int AN_MACRO_PRIVATE = 531;
+  int AU_ALIAS = 531;
   /** RegularExpression Id. */
-  int AN_MACRO = 532;
+  int AU_DEFUN = 532;
   /** RegularExpression Id. */
-  int AN_VARIABLE = 533;
+  int AC_MACRO_PRIVATE = 533;
   /** RegularExpression Id. */
-  int AS_MACRO_PRIVATE = 534;
+  int AC_MACRO = 534;
   /** RegularExpression Id. */
-  int AS_MACRO = 535;
+  int AC_VARIABLE = 535;
   /** RegularExpression Id. */
-  int AS_VARIABLE = 536;
+  int AH_MACRO_PRIVATE = 536;
   /** RegularExpression Id. */
-  int AU_MACRO_PRIVATE = 537;
+  int AH_MACRO = 537;
   /** RegularExpression Id. */
-  int AU_MACRO = 538;
+  int AH_VARIABLE = 538;
   /** RegularExpression Id. */
-  int AU_VARIABLE = 539;
+  int AM_MACRO_PRIVATE = 539;
   /** RegularExpression Id. */
-  int AX_MACRO_PRIVATE = 540;
+  int AM_MACRO = 540;
   /** RegularExpression Id. */
-  int AX_MACRO = 541;
+  int AM_VARIABLE = 541;
   /** RegularExpression Id. */
-  int AX_VARIABLE = 542;
+  int AN_MACRO_PRIVATE = 542;
   /** RegularExpression Id. */
-  int UNKNOWN_MACRO_PRIVATE = 543;
+  int AN_MACRO = 543;
   /** RegularExpression Id. */
-  int UNKNOWN_MACRO = 544;
+  int AN_VARIABLE = 544;
   /** RegularExpression Id. */
-  int UNKNOWN_VARIABLE = 545;
+  int AS_MACRO_PRIVATE = 545;
   /** RegularExpression Id. */
-  int MF_MACRO_PRIVATE = 546;
+  int AS_MACRO = 546;
   /** RegularExpression Id. */
-  int MF_MACRO = 547;
+  int AS_VARIABLE = 547;
   /** RegularExpression Id. */
-  int IDENTIFIER = 548;
+  int AU_MACRO_PRIVATE = 548;
   /** RegularExpression Id. */
-  int LETTER = 549;
+  int AU_MACRO = 549;
   /** RegularExpression Id. */
-  int PART_LETTER = 550;
+  int AU_VARIABLE = 550;
   /** RegularExpression Id. */
-  int TEXT = 552;
+  int AX_MACRO_PRIVATE = 551;
+  /** RegularExpression Id. */
+  int AX_MACRO = 552;
+  /** RegularExpression Id. */
+  int AX_VARIABLE = 553;
+  /** RegularExpression Id. */
+  int UNKNOWN_MACRO_PRIVATE = 554;
+  /** RegularExpression Id. */
+  int UNKNOWN_MACRO = 555;
+  /** RegularExpression Id. */
+  int UNKNOWN_VARIABLE = 556;
+  /** RegularExpression Id. */
+  int MF_MACRO_PRIVATE = 557;
+  /** RegularExpression Id. */
+  int MF_MACRO = 558;
+  /** RegularExpression Id. */
+  int IDENTIFIER = 559;
+  /** RegularExpression Id. */
+  int LETTER = 560;
+  /** RegularExpression Id. */
+  int PART_LETTER = 561;
+  /** RegularExpression Id. */
+  int TEXT = 563;
 
   /** Lexical state. */
   int DEFAULT = 0;
@@ -1602,6 +1624,17 @@ public interface AutoconfParserConstants {
     "\"AH_VERBATIM\"",
     "\"AM_INIT_AUTOMAKE\"",
     "\"AM_CONDITIONAL\"",
+    "\"AM_PATH_LISPDIR\"",
+    "\"AM_PROG_AR\"",
+    "\"AM_PROG_AS\"",
+    "\"AM_PROG_CC_C_O\"",
+    "\"AM_PROG_LEX\"",
+    "\"AM_PROG_GCJ\"",
+    "\"AM_PROG_UPC\"",
+    "\"AM_MISSING_PROG\"",
+    "\"AM_SILENT_RULES\"",
+    "\"AM_WITH_DMALLOC\"",
+    "\"AM_PROG_MKDIR_P\"",
     "\"AS_BOURNE_COMPATIBLE\"",
     "\"AS_BOX\"",
     "\"AS_CASE\"",
@@ -1671,7 +1704,7 @@ public interface AutoconfParserConstants {
     "<IDENTIFIER>",
     "<LETTER>",
     "<PART_LETTER>",
-    "<token of kind 551>",
+    "<token of kind 562>",
     "<TEXT>",
   };
 

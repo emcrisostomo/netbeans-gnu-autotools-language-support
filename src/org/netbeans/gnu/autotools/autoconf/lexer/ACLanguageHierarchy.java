@@ -531,6 +531,18 @@ public class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
             // Autoconf AM macros
             new ACTokenId("AM_INIT_AUTOMAKE", "autoconf-am-keyword", regExCounter++),
             new ACTokenId("AM_CONDITIONAL", "autoconf-am-keyword", regExCounter++),
+            new ACTokenId("AM_PATH_LISPDIR", "autoconf-am-keyword", regExCounter++),
+            new ACTokenId("AM_PROG_AR", "autoconf-am-keyword", regExCounter++),
+            new ACTokenId("AM_PROG_AS", "autoconf-am-keyword", regExCounter++),
+            new ACTokenId("AM_PROG_CC_C_O", "autoconf-am-keyword", regExCounter++),
+            new ACTokenId("AM_PROG_LEX", "autoconf-am-keyword", regExCounter++),
+            new ACTokenId("AM_PROG_GCJ", "autoconf-am-keyword", regExCounter++),
+            new ACTokenId("AM_PROG_UPC", "autoconf-am-keyword", regExCounter++),
+            new ACTokenId("AM_MISSING_PROG", "autoconf-am-keyword", regExCounter++),
+            new ACTokenId("AM_SILENT_RULES", "autoconf-am-keyword", regExCounter++),
+            new ACTokenId("AM_WITH_DMALLOC", "autoconf-am-keyword", regExCounter++),
+            // Autoconf AM obsolete macros
+            new ACTokenId("AM_PROG_MKDIR_P", "autoconf-am-obsolete-keyword", regExCounter++),
             // m4sh macros
             new ACTokenId("AS_BOURNE_COMPATIBLE", "autoconf-as-keyword", regExCounter++),
             new ACTokenId("AS_BOX", "autoconf-as-keyword", regExCounter++),

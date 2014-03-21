@@ -42,7 +42,7 @@ import org.openide.windows.TopComponent;
 )
 @DataObject.Registration(
         mimeType = "text/x-automake",
-        iconBase = "org/netbeans/gnu/autotools/automake/file/JavaIcon.gif",
+        iconBase = "org/netbeans/gnu/autotools/resources/heckert_gnu.png",
         displayName = "#LBL_AM_LOADER",
         position = 300
 )
@@ -113,7 +113,7 @@ public class AMDataObject extends MultiDataObject {
     
     @MultiViewElement.Registration(
             displayName = "#LBL_AM_EDITOR",
-            iconBase = "org/netbeans/gnu/autotools/automake/file/JavaIcon.gif",
+            iconBase = "org/netbeans/gnu/autotools/resources/heckert_gnu.png",
             mimeType = "text/x-automake",
             persistenceType = TopComponent.PERSISTENCE_ONLY_OPENED,
             preferredID = "AC",

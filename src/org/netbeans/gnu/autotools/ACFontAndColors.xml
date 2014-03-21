@@ -24,6 +24,7 @@
     <fontcolor name="autoconf-am-keyword" default="keyword" foreColor="magenta">
         <font style="bold" />
     </fontcolor>
+    <fontcolor name="autoconf-am-obsolete-keyword" default="autoconf-am-keyword" strikeThrough="black"/>
     <fontcolor name="autoconf-as-keyword" default="keyword" foreColor="orange">
         <font style="bold" />
     </fontcolor>

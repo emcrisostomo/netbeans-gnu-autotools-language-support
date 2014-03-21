@@ -44,7 +44,7 @@ public class AutoconfCompletionItem implements CompletionItem {
 
     /* private */ AutoconfMacros macro;
     private final int dotOffset;
-    //private static final ImageIcon fieldIcon = new ImageIcon(ImageUtilities.loadImage("org/netbeans/gnu/autotools/icon.png"));
+    private static final ImageIcon fieldIcon = new ImageIcon(ImageUtilities.loadImage("org/netbeans/gnu/autotools/resources/red_dot.png"));
     private static final Color fieldColor = Color.decode("0x0000B2");
     private final int caretOffset;
 
@@ -75,14 +75,18 @@ public class AutoconfCompletionItem implements CompletionItem {
 
     @Override
     public int getPreferredWidth(Graphics graphics, Font font) {
-        return CompletionUtilities.getPreferredWidth(macro.getText(), null, graphics, font);
+        return CompletionUtilities.getPreferredWidth(
+                getCompletionItemText(), 
+                (macro.isObsolete() ? "Obsolete" : null), 
+                graphics, 
+                font);
     }
 
     @Override
     public void render(Graphics g, Font defaultFont, Color defaultColor,
             Color backgroundColor, int width, int height, boolean selected) {
         CompletionUtilities.renderHtml(
-                null /* fieldIcon */,
+                fieldIcon,
                 getCompletionItemText(),
                 (macro.isObsolete() ? "Obsolete" : null),
                 g,

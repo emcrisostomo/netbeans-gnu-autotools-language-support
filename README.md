@@ -22,8 +22,8 @@ However, the authors haven't thoroughly tested this plugin on either multiple
 NetBeans installation nor operating systems.  User feedback is greatly
 appreciated.
 
-Getting the GNU Autotools Language Support
-------------------------------------------
+Getting the GNU Autotools Language Support Plugin
+-------------------------------------------------
 
 NetBeans plugin are packaged as `.nbm` files for distribution and a proper
 distribution file will be provided by the authors for every release.

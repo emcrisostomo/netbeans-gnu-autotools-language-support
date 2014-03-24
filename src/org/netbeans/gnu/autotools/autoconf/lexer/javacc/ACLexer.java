@@ -16,6 +16,7 @@
  */
 package org.netbeans.gnu.autotools.autoconf.lexer.javacc;
 
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.netbeans.gnu.autotools.autoconf.lexer.ACLanguageHierarchy;
 import org.netbeans.gnu.autotools.autoconf.lexer.ACTokenId;
@@ -66,7 +67,12 @@ public class ACLexer implements Lexer<ACTokenId> {
 
     @Override
     public Object state() {
-        return null;
+        if (isVerbose) {
+            logger.log(Level.INFO, "Lexer state: {0}", javaParserTokenManager.curLexState);
+            logger.log(Level.INFO, "Lexer nesting depth: {0}", javaParserTokenManager.m4NestingDepth);
+        }
+
+        return new ACLexerState(javaParserTokenManager.m4NestingDepth, javaParserTokenManager.curLexState);
     }
 
     @Override

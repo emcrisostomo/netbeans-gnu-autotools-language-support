@@ -14,12 +14,11 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.netbeans.gnu.autotools.autoconf.lexer;
+package org.netbeans.gnu.autotools.autoconf.lexer.javacc;
 
 import java.util.logging.Logger;
-import org.netbeans.gnu.autotools.autoconf.lexer.javacc.AutoconfParserTokenManager;
-import org.netbeans.gnu.autotools.autoconf.lexer.javacc.JavaCharStream;
-import org.netbeans.gnu.autotools.autoconf.lexer.javacc.Token;
+import org.netbeans.gnu.autotools.autoconf.lexer.ACLanguageHierarchy;
+import org.netbeans.gnu.autotools.autoconf.lexer.ACTokenId;
 import org.netbeans.spi.lexer.Lexer;
 import org.netbeans.spi.lexer.LexerRestartInfo;
 
@@ -27,7 +26,7 @@ import org.netbeans.spi.lexer.LexerRestartInfo;
  *
  * @author Enrico M. Crisostomo
  */
-class ACLexer implements Lexer<ACTokenId> {
+public class ACLexer implements Lexer<ACTokenId> {
 
     public static final String VERBOSE_PROPERTY = ACLexer.class.getName() + ".verbose";
     private static final boolean isVerbose = Boolean.valueOf(System.getProperty(VERBOSE_PROPERTY));
@@ -36,10 +35,18 @@ class ACLexer implements Lexer<ACTokenId> {
     private final LexerRestartInfo<ACTokenId> info;
     private final AutoconfParserTokenManager javaParserTokenManager;
 
-    ACLexer(LexerRestartInfo<ACTokenId> info) {
+    public ACLexer(LexerRestartInfo<ACTokenId> info) {
         this.info = info;
         JavaCharStream stream = new JavaCharStream(info.input());
-        javaParserTokenManager = new AutoconfParserTokenManager(stream);
+
+        ACLexerState lexState = (ACLexerState) info.state();
+
+        if (lexState == null) {
+            javaParserTokenManager = new AutoconfParserTokenManager(stream);
+        } else {
+            javaParserTokenManager = new AutoconfParserTokenManager(stream, lexState.state);
+            javaParserTokenManager.m4NestingDepth = lexState.m4NestingDepth;
+        }
     }
 
     @Override
@@ -64,5 +71,16 @@ class ACLexer implements Lexer<ACTokenId> {
 
     @Override
     public void release() {
+    }
+
+    private class ACLexerState {
+
+        private int m4NestingDepth;
+        private int state;
+
+        private ACLexerState(int m4NestingDepth, int state) {
+            this.m4NestingDepth = m4NestingDepth;
+            this.state = state;
+        }
     }
 }

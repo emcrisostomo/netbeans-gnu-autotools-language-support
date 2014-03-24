@@ -21,6 +21,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.netbeans.gnu.autotools.autoconf.lexer.javacc.ACLexer;
 import org.netbeans.gnu.autotools.autoconf.lexer.javacc.AutoconfParserConstants;
 import org.netbeans.spi.lexer.LanguageHierarchy;
 import org.netbeans.spi.lexer.Lexer;
@@ -635,7 +636,7 @@ public class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
         }
     }
 
-    static synchronized ACTokenId getToken(int id) {
+    public static synchronized ACTokenId getToken(int id) {
         if (idToToken == null) {
             init();
         }

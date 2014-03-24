@@ -47,7 +47,7 @@ public class ACSyntaxErrorHighlightingTask extends ParserResultTask {
             ACParserResult sjResult = (ACParserResult) result;
             List<ParseException> syntaxErrors = sjResult.getAutoconfParser().syntaxErrors;
             Document document = result.getSnapshot().getSource().getDocument(false);
-            List<ErrorDescription> errors = new ArrayList<ErrorDescription>();
+            List<ErrorDescription> errors = new ArrayList<>();
             
             for (ParseException syntaxError : syntaxErrors) {
                 Token token = syntaxError.currentToken;
@@ -72,9 +72,7 @@ public class ACSyntaxErrorHighlightingTask extends ParserResultTask {
                 errors.add(errorDescription);
             }
             HintsController.setErrors(document, "autoconf", errors);
-        } catch (BadLocationException ex1) {
-            Exceptions.printStackTrace(ex1);
-        } catch (org.netbeans.modules.parsing.spi.ParseException ex1) {
+        } catch (BadLocationException | org.netbeans.modules.parsing.spi.ParseException ex1) {
             Exceptions.printStackTrace(ex1);
         }
     }

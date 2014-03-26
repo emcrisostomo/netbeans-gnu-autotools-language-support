@@ -29,7 +29,7 @@ import org.netbeans.modules.csl.spi.LanguageRegistration;
 public class AutoconfLanguage extends DefaultLanguageConfig {
 
     @Override
-    public Language getLexerLanguage() {
+    public Language<ACTokenId> getLexerLanguage() {
         return ACTokenId.getLanguage();
     }
 

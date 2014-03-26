@@ -39,7 +39,7 @@ import org.openide.util.Exceptions;
  *
  * @author Enrico M. Crisostomo
  */
-public class ACSyntaxErrorHighlightingTask extends ParserResultTask {
+public class ACSyntaxErrorHighlightingTask extends ParserResultTask<Parser.Result> {
 
     @Override
     public void run(Parser.Result result, SchedulerEvent event) {

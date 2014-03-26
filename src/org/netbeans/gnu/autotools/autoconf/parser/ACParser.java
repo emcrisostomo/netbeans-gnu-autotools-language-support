@@ -47,6 +47,7 @@ public class ACParser extends Parser {
         this.snapshot = snapshot;
         Reader reader = new StringReader(snapshot.getText().toString());
         autoconfParser = new AutoconfParser(reader);
+        
         try {
             autoconfParser.CompilationUnit();
         } catch (ParseException ex) {
@@ -57,10 +58,6 @@ public class ACParser extends Parser {
     @Override
     public Result getResult(Task task) {
         return new ACParserResult(snapshot, autoconfParser);
-    }
-
-    @Override
-    public void cancel() {
     }
 
     @Override
@@ -95,7 +92,7 @@ public class ACParser extends Parser {
 
         @Override
         public List<? extends Error> getDiagnostics() {
-            return new ArrayList();
+            return new ArrayList<>();
         }
     }
 

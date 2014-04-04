@@ -15,10 +15,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-grammar m4;
+grammar autoconf;
 
 @header {
-package org.netbeans.gnu.m4.antlr.v1;
+package org.netbeans.gnu.autotools.antlr;
 }
 
 @lexer::members {

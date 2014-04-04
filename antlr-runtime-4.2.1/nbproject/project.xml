@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://www.netbeans.org/ns/project/1">
+    <type>org.netbeans.modules.apisupport.project</type>
+    <configuration>
+        <data xmlns="http://www.netbeans.org/ns/nb-module-project/3">
+            <code-name-base>org.netbeans.gnu.autotools.antlr.v4</code-name-base>
+            <suite-component/>
+            <module-dependencies/>
+            <friend-packages>
+                <friend>org.netbeans.gnu.autotools</friend>
+                <package>org.abego.treelayout</package>
+                <package>org.abego.treelayout.internal.util</package>
+                <package>org.abego.treelayout.internal.util.java.lang</package>
+                <package>org.abego.treelayout.internal.util.java.lang.string</package>
+                <package>org.abego.treelayout.internal.util.java.util</package>
+                <package>org.abego.treelayout.util</package>
+                <package>org.antlr.v4.runtime</package>
+                <package>org.antlr.v4.runtime.atn</package>
+                <package>org.antlr.v4.runtime.dfa</package>
+                <package>org.antlr.v4.runtime.misc</package>
+                <package>org.antlr.v4.runtime.tree</package>
+                <package>org.antlr.v4.runtime.tree.gui</package>
+                <package>org.antlr.v4.runtime.tree.pattern</package>
+                <package>org.antlr.v4.runtime.tree.xpath</package>
+            </friend-packages>
+            <class-path-extension>
+                <runtime-relative-path>ext/antlr-runtime-4.2.1.jar</runtime-relative-path>
+                <binary-origin>release/modules/ext/antlr-runtime-4.2.1.jar</binary-origin>
+            </class-path-extension>
+        </data>
+    </configuration>
+</project>

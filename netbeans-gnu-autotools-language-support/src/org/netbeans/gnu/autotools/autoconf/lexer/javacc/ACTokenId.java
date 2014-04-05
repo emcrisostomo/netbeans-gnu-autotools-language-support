@@ -14,8 +14,9 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.netbeans.gnu.autotools.autoconf.lexer;
+package org.netbeans.gnu.autotools.autoconf.lexer.javacc;
 
+import org.netbeans.gnu.autotools.autoconf.lexer.javacc.ACLanguageHierarchy;
 import org.netbeans.api.lexer.Language;
 import org.netbeans.api.lexer.TokenId;
 

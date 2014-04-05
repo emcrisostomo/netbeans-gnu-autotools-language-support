@@ -18,8 +18,6 @@ package org.netbeans.gnu.autotools.autoconf.lexer.javacc;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.netbeans.gnu.autotools.autoconf.lexer.ACLanguageHierarchy;
-import org.netbeans.gnu.autotools.autoconf.lexer.ACTokenId;
 import org.netbeans.spi.lexer.Lexer;
 import org.netbeans.spi.lexer.LexerRestartInfo;
 

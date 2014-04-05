@@ -17,7 +17,7 @@
 package org.netbeans.gnu.autotools.autoconf;
 
 import org.netbeans.api.lexer.Language;
-import org.netbeans.gnu.autotools.autoconf.lexer.ACTokenId;
+import org.netbeans.gnu.autotools.autoconf.lexer.javacc.ACTokenId;
 import org.netbeans.modules.csl.spi.DefaultLanguageConfig;
 import org.netbeans.modules.csl.spi.LanguageRegistration;
 

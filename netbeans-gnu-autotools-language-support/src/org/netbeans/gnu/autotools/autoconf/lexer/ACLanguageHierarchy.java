@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.netbeans.gnu.autotools.autoconf.lexer.antlr;
+package org.netbeans.gnu.autotools.autoconf.lexer;
 
 import java.util.Arrays;
 import java.util.Collection;

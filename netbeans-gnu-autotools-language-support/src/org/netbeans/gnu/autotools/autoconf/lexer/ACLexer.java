@@ -28,6 +28,7 @@ import org.netbeans.spi.lexer.LexerRestartInfo;
  * @author Enrico M. Crisostomo
  */
 public class ACLexer implements Lexer<ACTokenId> {
+
     private static final Logger logger = Logger.getLogger(ACLexer.class.getName());
 
     private final LexerRestartInfo<ACTokenId> info;
@@ -40,8 +41,8 @@ public class ACLexer implements Lexer<ACTokenId> {
         lexer = new autoconfLexer(stream);
 
         Object state = info.state();
-        if (state instanceof M4LexerState) {
-            M4LexerState m4State = (M4LexerState) state;
+        if (state instanceof ACLexerState) {
+            ACLexerState m4State = (ACLexerState) state;
             lexer.quoteLevel = m4State.quoteLevel;
             lexer.quoted = m4State.quoted;
         }
@@ -66,19 +67,19 @@ public class ACLexer implements Lexer<ACTokenId> {
 
     @Override
     public Object state() {
-        return new M4LexerState(lexer.quoteLevel);
+        return new ACLexerState(lexer.quoteLevel);
     }
 
     @Override
     public void release() {
     }
 
-    private static class M4LexerState {
+    private static class ACLexerState {
 
         private final int quoteLevel;
         private final boolean quoted;
 
-        public M4LexerState(int quoteLevel) {
+        public ACLexerState(int quoteLevel) {
             this.quoteLevel = quoteLevel;
             this.quoted = quoteLevel > 0;
         }

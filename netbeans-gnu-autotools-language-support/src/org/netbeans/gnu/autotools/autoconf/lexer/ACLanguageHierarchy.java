@@ -61,13 +61,11 @@ public final class ACLanguageHierarchy extends LanguageHierarchy<ACTokenId> {
     }
 
     public static ACTokenId getToken(int id) {
-
         return idToToken.get(id);
     }
 
     @Override
     protected Collection<ACTokenId> createTokenIds() {
-
         return tokens;
     }
 

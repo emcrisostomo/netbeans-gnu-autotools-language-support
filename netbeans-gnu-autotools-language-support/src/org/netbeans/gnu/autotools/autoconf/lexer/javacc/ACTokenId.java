@@ -16,7 +16,6 @@
  */
 package org.netbeans.gnu.autotools.autoconf.lexer.javacc;
 
-import org.netbeans.gnu.autotools.autoconf.lexer.javacc.ACLanguageHierarchy;
 import org.netbeans.api.lexer.Language;
 import org.netbeans.api.lexer.TokenId;
 

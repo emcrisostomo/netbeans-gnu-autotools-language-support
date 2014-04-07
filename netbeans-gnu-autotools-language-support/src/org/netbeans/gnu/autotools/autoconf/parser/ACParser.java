@@ -16,21 +16,18 @@
  */
 package org.netbeans.gnu.autotools.autoconf.parser;
 
-import org.netbeans.gnu.autotools.autoconf.parser.javacc.AutoconfParser;
-import org.netbeans.gnu.autotools.autoconf.parser.javacc.ParseException;
-import java.io.Reader;
-import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.event.ChangeListener;
-import org.netbeans.modules.csl.api.Error;
+import org.antlr.v4.runtime.ANTLRInputStream;
+import org.antlr.v4.runtime.CommonTokenStream;
+import org.netbeans.gnu.autotools.antlr.autoconfLexer;
+import org.netbeans.gnu.autotools.antlr.autoconfParser;
 import org.netbeans.modules.csl.spi.ParserResult;
 import org.netbeans.modules.parsing.api.Snapshot;
 import org.netbeans.modules.parsing.api.Task;
+import org.netbeans.modules.parsing.spi.ParseException;
 import org.netbeans.modules.parsing.spi.Parser;
-import org.netbeans.modules.parsing.spi.Parser.Result;
 import org.netbeans.modules.parsing.spi.SourceModificationEvent;
 
 /**
@@ -40,24 +37,26 @@ import org.netbeans.modules.parsing.spi.SourceModificationEvent;
 public class ACParser extends Parser {
 
     private Snapshot snapshot;
-    private AutoconfParser autoconfParser;
+    private autoconfParser parser;
+    private autoconfParser.CompilationUnitContext compilationUnit;
 
-    @Override
-    public void parse(Snapshot snapshot, Task task, SourceModificationEvent event) {
-        this.snapshot = snapshot;
-        Reader reader = new StringReader(snapshot.getText().toString());
-        autoconfParser = new AutoconfParser(reader);
-        
-        try {
-            autoconfParser.CompilationUnit();
-        } catch (ParseException ex) {
-            Logger.getLogger(ACParser.class.getName()).log(Level.WARNING, null, ex);
-        }
+    public ACParser() {
     }
 
     @Override
-    public Result getResult(Task task) {
-        return new ACParserResult(snapshot, autoconfParser);
+    public void parse(Snapshot snapshot, Task task, SourceModificationEvent event) throws ParseException {
+        this.snapshot = snapshot;
+
+        ANTLRInputStream is = new ANTLRInputStream(snapshot.getText().toString());
+        autoconfLexer lexer = new autoconfLexer(is);
+        CommonTokenStream tokenStream = new CommonTokenStream(lexer);
+        parser = new autoconfParser(tokenStream);
+        compilationUnit = parser.compilationUnit();
+    }
+
+    @Override
+    public Parser.Result getResult(Task task) throws ParseException {
+        return new ACParserResult(snapshot, parser, compilationUnit);
     }
 
     @Override
@@ -70,30 +69,31 @@ public class ACParser extends Parser {
 
     public static class ACParserResult extends ParserResult {
 
-        private final AutoconfParser autoconfParser;
-        private boolean valid = true;
+        private final autoconfParser.CompilationUnitContext compilationUnit;
+        private final autoconfParser parser;
 
-        ACParserResult(Snapshot snapshot, AutoconfParser javaParser) {
+        private ACParserResult(Snapshot snapshot, autoconfParser parser, autoconfParser.CompilationUnitContext compilationUnit) {
             super(snapshot);
-            this.autoconfParser = javaParser;
-        }
-
-        public AutoconfParser getAutoconfParser() throws org.netbeans.modules.parsing.spi.ParseException {
-            if (!valid) {
-                throw new org.netbeans.modules.parsing.spi.ParseException();
-            }
-            return autoconfParser;
+            this.parser = parser;
+            this.compilationUnit = compilationUnit;
         }
 
         @Override
         protected void invalidate() {
-            valid = false;
+
         }
 
         @Override
-        public List<? extends Error> getDiagnostics() {
+        public List<? extends org.netbeans.modules.csl.api.Error> getDiagnostics() {
             return new ArrayList<>();
         }
-    }
 
+        public autoconfParser.CompilationUnitContext getCompilationUnit() {
+            return compilationUnit;
+        }
+
+        public autoconfParser getParser() {
+            return parser;
+        }
+    }
 }

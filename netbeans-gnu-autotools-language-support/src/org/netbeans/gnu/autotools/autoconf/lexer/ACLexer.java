@@ -19,7 +19,7 @@ package org.netbeans.gnu.autotools.autoconf.lexer;
 import java.util.logging.Logger;
 import org.antlr.v4.runtime.Token;
 import org.netbeans.gnu.autotools.antlr.autoconfLexer;
-import org.netbeans.gnu.autotools.autoconf.antlr.support.ANTLRCharStream;
+import org.netbeans.gnu.autotools.antlr.support.ANTLRCharStream;
 import org.netbeans.spi.lexer.Lexer;
 import org.netbeans.spi.lexer.LexerRestartInfo;
 

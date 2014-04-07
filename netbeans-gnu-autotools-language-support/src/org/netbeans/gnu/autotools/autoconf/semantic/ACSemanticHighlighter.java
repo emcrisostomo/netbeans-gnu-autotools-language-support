@@ -28,7 +28,7 @@ import javax.swing.text.Document;
 import org.netbeans.api.lexer.Token;
 import org.netbeans.api.lexer.TokenId;
 import org.netbeans.gnu.autotools.antlr.autoconfParser.CompilationUnitContext;
-import org.netbeans.gnu.autotools.autoconf.antlr.support.ANTLRTokenToNetBeansTokenMapper;
+import org.netbeans.gnu.autotools.antlr.support.ANTLRTokenToNetBeansTokenMapper;
 import org.netbeans.gnu.autotools.autoconf.parser.ACParser;
 import org.netbeans.gnu.autotools.autoconf.semantic.ACColoringAttributes.Coloring;
 import org.netbeans.modules.parsing.spi.IndexingAwareParserResultTask;

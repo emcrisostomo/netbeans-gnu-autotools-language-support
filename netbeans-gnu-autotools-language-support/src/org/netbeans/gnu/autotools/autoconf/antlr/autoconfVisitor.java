@@ -1,6 +1,6 @@
 // Generated from autoconf.g4 by ANTLR 4.2.1
 
-package org.netbeans.gnu.autotools.antlr;
+package org.netbeans.gnu.autotools.autoconf.antlr;
 
 import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;

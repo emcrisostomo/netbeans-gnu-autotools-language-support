@@ -21,8 +21,8 @@ import java.util.Map;
 import java.util.logging.Logger;
 import org.antlr.v4.runtime.Token;
 import org.antlr.v4.runtime.tree.TerminalNode;
-import org.netbeans.gnu.autotools.antlr.autoconfBaseVisitor;
-import org.netbeans.gnu.autotools.antlr.autoconfParser;
+import org.netbeans.gnu.autotools.autoconf.antlr.autoconfBaseVisitor;
+import org.netbeans.gnu.autotools.autoconf.antlr.autoconfParser;
 import org.netbeans.gnu.autotools.autoconf.lexer.AutoconfKeyword;
 import org.netbeans.gnu.autotools.autoconf.lexer.AutoconfKeyword.Type;
 

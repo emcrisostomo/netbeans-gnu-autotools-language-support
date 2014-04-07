@@ -18,7 +18,7 @@
 grammar autoconf;
 
 @header {
-package org.netbeans.gnu.autotools.antlr;
+package org.netbeans.gnu.autotools.autoconf.antlr;
 }
 
 @lexer::members {

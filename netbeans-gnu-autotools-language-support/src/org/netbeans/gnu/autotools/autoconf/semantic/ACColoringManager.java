@@ -33,9 +33,8 @@ import org.netbeans.api.editor.mimelookup.MimeLookup;
 import org.netbeans.api.editor.mimelookup.MimePath;
 import org.netbeans.api.editor.settings.AttributesUtilities;
 import org.netbeans.api.editor.settings.FontColorSettings;
+import static org.netbeans.gnu.autotools.autoconf.semantic.ACColoringAttributes.*;
 import org.netbeans.gnu.autotools.autoconf.semantic.ACColoringAttributes.Coloring;
-import static org.netbeans.gnu.autotools.autoconf.semantic.ACColoringAttributes.INVOCATION;
-import static org.netbeans.gnu.autotools.autoconf.semantic.ACColoringAttributes.M4_BUILTIN;
 
 /**
  *
@@ -49,8 +48,20 @@ final class ACColoringManager {
     static {
         type2Coloring = new LinkedHashMap<>();
 
-        put("m4-builtin-macro", M4_BUILTIN);
-        put("m4-macro-invocation", INVOCATION);
+        put("autoconf", AC_BUILTIN);
+        put("autoconf-ah-keyword", AH_BUILTIN);
+        put("autoconf-am-keyword", AM_BUILTIN);
+        put("autoconf-as-keyword", AS_BUILTIN);
+        put("autoconf-au-keyword", AU_BUILTIN);
+        put("autoconf-obsolete", AC_OBSOLETE);
+        put("autoconf-am-obsolete-keyword", AM_OBSOLETE);
+        put("autoconf-ac-generic-keyword", AC_GENERIC);
+        put("autoconf-ah-generic-keyword", AH_GENERIC);
+        put("autoconf-am-generic-keyword", AM_GENERIC);
+        put("autoconf-an-generic-keyword", AN_GENERIC);
+        put("autoconf-as-generic-keyword", AS_GENERIC);
+        put("autoconf-au-generic-keyword", AU_GENERIC);
+        put("autoconf-ax-generic-keyword", AX_GENERIC);
     }
 
     private static void put(String coloring, ACColoringAttributes... attributes) {
@@ -60,7 +71,7 @@ final class ACColoringManager {
     }
 
     public static AttributeSet getColoringImpl(Coloring colorings) {
-        FontColorSettings fcs = MimeLookup.getLookup(MimePath.get("text/x-m4")).lookup(FontColorSettings.class);
+        FontColorSettings fcs = MimeLookup.getLookup(MimePath.get("text/x-autoconf")).lookup(FontColorSettings.class);
 
         if (fcs == null) {
             //in tests:

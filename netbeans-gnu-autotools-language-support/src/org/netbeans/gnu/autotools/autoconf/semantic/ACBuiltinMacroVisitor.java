@@ -16,12 +16,48 @@
  */
 package org.netbeans.gnu.autotools.autoconf.semantic;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.logging.Logger;
+import org.antlr.v4.runtime.Token;
+import org.antlr.v4.runtime.tree.TerminalNode;
 import org.netbeans.gnu.autotools.antlr.autoconfBaseVisitor;
+import org.netbeans.gnu.autotools.antlr.autoconfParser;
+import org.netbeans.gnu.autotools.autoconf.lexer.AutoconfKeyword;
+import org.netbeans.gnu.autotools.autoconf.lexer.AutoconfKeyword.Type;
 
 /**
  *
  * @author Enrico M. Crisostomo
  */
 class ACBuiltinMacroVisitor extends autoconfBaseVisitor<Void> {
-    
+
+    private static final Logger logger = Logger.getLogger(ACBuiltinMacroVisitor.class.getName());
+
+    private final Map<Token, Type> identifiers = new HashMap<>();
+
+    @Override
+    public Void visitExpression_with_params(autoconfParser.Expression_with_paramsContext ctx) {
+        processIdentifier(ctx.ID());
+
+        return super.visitExpression_with_params(ctx);
+    }
+
+    @Override
+    public Void visitExpression(autoconfParser.ExpressionContext ctx) {
+        processIdentifier(ctx.ID());
+
+        return super.visitExpression(ctx);
+    }
+
+    private void processIdentifier(final TerminalNode identifier) {
+        logger.fine(String.format("M4 Identifier found in expression with params: %s", identifier.getText()));
+
+        final Token symbol = identifier.getSymbol();
+        identifiers.put(symbol, AutoconfKeyword.getType(identifier.getText()));
+    }
+
+    public Map<Token, Type> getIdentifiers() {
+        return identifiers;
+    }
 }

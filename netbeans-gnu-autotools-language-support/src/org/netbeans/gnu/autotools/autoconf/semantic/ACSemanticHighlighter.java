@@ -23,12 +23,15 @@ import java.util.IdentityHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.text.Document;
 import org.netbeans.api.lexer.Token;
 import org.netbeans.api.lexer.TokenId;
 import org.netbeans.gnu.autotools.antlr.autoconfParser.CompilationUnitContext;
 import org.netbeans.gnu.autotools.antlr.support.ANTLRTokenToNetBeansTokenMapper;
+import org.netbeans.gnu.autotools.autoconf.lexer.AutoconfKeyword;
+import org.netbeans.gnu.autotools.autoconf.lexer.AutoconfKeyword.Type;
 import org.netbeans.gnu.autotools.autoconf.parser.ACParser;
 import org.netbeans.gnu.autotools.autoconf.semantic.ACColoringAttributes.Coloring;
 import org.netbeans.modules.parsing.spi.IndexingAwareParserResultTask;
@@ -44,6 +47,7 @@ import org.netbeans.spi.editor.hints.ErrorDescription;
  * @author Enrico M. Crisostomo
  */
 class ACSemanticHighlighter extends IndexingAwareParserResultTask<Parser.Result> {
+
     private static final Logger logger = Logger.getLogger(ACSemanticHighlighter.class.getName());
 
     ACSemanticHighlighter() {
@@ -73,16 +77,16 @@ class ACSemanticHighlighter extends IndexingAwareParserResultTask<Parser.Result>
         visitor.visit(compilationUnit);
 
         // Get visitor results
-        final Set<org.antlr.v4.runtime.Token> identifiers = null; // = visitor.getIdentifiers();
-        final Set<org.antlr.v4.runtime.Token> builtinIdentifiers = null; // = visitor.getBuiltinIdentifiers();
-        final Set<org.antlr.v4.runtime.Token> macroInvocations = null; // = visitor.getMacroInvocations();
+        Map<org.antlr.v4.runtime.Token, AutoconfKeyword.Type> identifiers = visitor.getIdentifiers();
 
         final ANTLRTokenToNetBeansTokenMapper mapper = new ANTLRTokenToNetBeansTokenMapper(doc);
 
         final Map<Token<? extends TokenId>, Coloring> newColoring = new IdentityHashMap<>();
         final Set<Token<? extends TokenId>> addedTokens = new HashSet<>();
 
-        for (org.antlr.v4.runtime.Token antlrToken : identifiers) {
+        for (Map.Entry<org.antlr.v4.runtime.Token, Type> entry : identifiers.entrySet()) {
+            final org.antlr.v4.runtime.Token antlrToken = entry.getKey();
+
             logger.fine(String.format(
                     "M4 Token Position: %d %d %d.",
                     antlrToken.getLine(),
@@ -95,18 +99,16 @@ class ACSemanticHighlighter extends IndexingAwareParserResultTask<Parser.Result>
                 continue;
             }
 
-            List<ACColoringAttributes> attributes = new ArrayList<>();
+            final List<ACColoringAttributes> attributes = new ArrayList<>();
+            final ACColoringAttributes tokenType = ACColoringAttributes.fromType(entry.getValue());
 
-            if (builtinIdentifiers.contains(antlrToken)) {
-                attributes.add(ACColoringAttributes.M4_BUILTIN);
-            }
+            logger.log(Level.FINE, "Token {0} coloring type: {1}", new Object[]{antlrToken.getText(), tokenType});
 
-            if (macroInvocations.contains(antlrToken)) {
-                attributes.add(ACColoringAttributes.INVOCATION);
+            if (tokenType != null) {
+                attributes.add(tokenType);
+                newColoring.put(token, collection2Coloring(attributes));
+                addedTokens.add(token);
             }
-                       
-            newColoring.put(token, collection2Coloring(attributes));
-            addedTokens.add(token);
         }
 
         ERROR_DESCRIPTION_SETTER.setColorings(doc, newColoring, addedTokens);

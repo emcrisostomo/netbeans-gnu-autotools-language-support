@@ -20,14 +20,27 @@ import java.util.Collection;
 import java.util.EnumSet;
 import java.util.Iterator;
 import java.util.Set;
+import org.netbeans.gnu.autotools.autoconf.lexer.AutoconfKeyword.Type;
 
 /**
  *
  * @author Enrico M. Crisostomo
  */
 enum ACColoringAttributes {
-    M4_BUILTIN,
-    INVOCATION;
+    AC_BUILTIN,
+    AH_BUILTIN,
+    AM_BUILTIN,
+    AS_BUILTIN,
+    AU_BUILTIN,
+    AC_OBSOLETE,
+    AM_OBSOLETE,
+    AC_GENERIC,
+    AH_GENERIC,
+    AM_GENERIC,
+    AN_GENERIC,
+    AS_GENERIC,
+    AU_GENERIC,
+    AX_GENERIC;
 
     public static Coloring empty() {
         return new Coloring();
@@ -40,6 +53,29 @@ enum ACColoringAttributes {
 
         return ci;
     }
+    
+    public static ACColoringAttributes fromType(Type type) {
+        switch (type)
+        {
+            case AC_BUILTIN: return AC_BUILTIN;
+            case AH_BUILTIN: return AH_BUILTIN;
+            case AM_BUILTIN: return AM_BUILTIN;
+            case AS_BUILTIN: return AS_BUILTIN;
+            case AU_BUILTIN: return AU_BUILTIN;
+            case AC_OBSOLETE: return AC_OBSOLETE;
+            case AM_OBSOLETE: return AM_OBSOLETE;
+            case AC_GENERIC: return AC_GENERIC;
+            case AH_GENERIC: return AH_GENERIC;
+            case AM_GENERIC: return AM_GENERIC;
+            case AN_GENERIC: return AN_GENERIC;
+            case AS_GENERIC: return AS_GENERIC;
+            case AU_GENERIC: return AU_GENERIC;
+            case AX_GENERIC: return AX_GENERIC;
+        }
+        
+        return null;
+    }
+         
 
     public static final class Coloring implements Collection<ACColoringAttributes> {
 
@@ -149,6 +185,5 @@ enum ACColoringAttributes {
 
             return false;
         }
-
     }
 }

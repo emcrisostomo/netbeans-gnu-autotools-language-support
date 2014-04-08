@@ -16,9 +16,6 @@
  */
 package org.netbeans.gnu.autotools.automake.lexer;
 
-import org.netbeans.gnu.autotools.automake.lexer.javacc.AutomakeParserTokenManager;
-import org.netbeans.gnu.autotools.automake.lexer.javacc.JavaCharStream;
-import org.netbeans.gnu.autotools.automake.lexer.javacc.Token;
 import org.netbeans.spi.lexer.Lexer;
 import org.netbeans.spi.lexer.LexerRestartInfo;
 
@@ -29,23 +26,14 @@ import org.netbeans.spi.lexer.LexerRestartInfo;
 class AMLexer implements Lexer<AMTokenId> {
 
     private final LexerRestartInfo<AMTokenId> info;
-    private final AutomakeParserTokenManager javaParserTokenManager;
 
     AMLexer(LexerRestartInfo<AMTokenId> info) {
         this.info = info;
-        JavaCharStream stream = new JavaCharStream(info.input());
-        javaParserTokenManager = new AutomakeParserTokenManager(stream);
     }
 
     @Override
     public org.netbeans.api.lexer.Token<AMTokenId> nextToken() {
-        Token token = javaParserTokenManager.getNextToken();
-
-        if (info.input().readLength() < 1) {
-            return null;
-        }
-
-        return info.tokenFactory().createToken(AMLanguageHierarchy.getToken(token.kind));
+        return info.tokenFactory().createToken(AMLanguageHierarchy.getToken(0));
     }
 
     @Override

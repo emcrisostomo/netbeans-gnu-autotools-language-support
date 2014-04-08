@@ -21,7 +21,6 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import org.netbeans.gnu.autotools.automake.lexer.javacc.AutomakeParserConstants;
 import org.netbeans.spi.lexer.LanguageHierarchy;
 import org.netbeans.spi.lexer.Lexer;
 import org.netbeans.spi.lexer.LexerRestartInfo;
@@ -141,7 +140,7 @@ public class AMLanguageHierarchy extends LanguageHierarchy<AMTokenId> {
             new AMTokenId("LETTER", "identifier", regExCounter++),
             new AMTokenId("PART_LETTER", "identifier", regExCounter++),
             // Text
-            new AMTokenId("TEXT", "text", AutomakeParserConstants.TEXT)
+            new AMTokenId("TEXT", "text", regExCounter)
         });
 
         idToToken = new HashMap<Integer, AMTokenId>();

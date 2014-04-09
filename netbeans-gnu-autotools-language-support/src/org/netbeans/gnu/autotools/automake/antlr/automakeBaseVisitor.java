@@ -1,4 +1,4 @@
-// Generated from automake.g4 by ANTLR 4.2.1
+// Generated from automake.g4 by ANTLR 4.2.2
 
 package org.netbeans.gnu.autotools.automake.antlr;
 

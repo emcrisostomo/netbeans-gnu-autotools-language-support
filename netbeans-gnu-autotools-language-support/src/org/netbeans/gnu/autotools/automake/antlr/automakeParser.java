@@ -1,4 +1,4 @@
-// Generated from automake.g4 by ANTLR 4.2.1
+// Generated from automake.g4 by ANTLR 4.2.2
 
 package org.netbeans.gnu.autotools.automake.antlr;
 
@@ -96,7 +96,7 @@ public class automakeParser extends Parser {
 			setState(29);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
-			while ( _alt!=2 && _alt!=-1 ) {
+			while ( _alt!=2 && _alt!=ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
@@ -614,7 +614,7 @@ public class automakeParser extends Parser {
 			setState(79);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
-			while ( _alt!=1 && _alt!=-1 ) {
+			while ( _alt!=1 && _alt!=ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1+1 ) {
 					{
 					{
@@ -679,7 +679,7 @@ public class automakeParser extends Parser {
 			setState(87);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
-			while ( _alt!=1 && _alt!=-1 ) {
+			while ( _alt!=1 && _alt!=ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1+1 ) {
 					{
 					{
@@ -826,7 +826,7 @@ public class automakeParser extends Parser {
 			{
 			setState(93); 
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
+			_alt = 1+1;
 			do {
 				switch (_alt) {
 				case 1+1:
@@ -847,7 +847,7 @@ public class automakeParser extends Parser {
 				setState(95); 
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
-			} while ( _alt!=1 && _alt!=-1 );
+			} while ( _alt!=1 && _alt!=ATN.INVALID_ALT_NUMBER );
 			}
 		}
 		catch (RecognitionException re) {

@@ -45,7 +45,7 @@ line
     ;
 
 target
-    : ID ':' prerequisiteList
+    : ID COLON prerequisiteList
     ;
 
 prerequisiteList
@@ -57,12 +57,12 @@ filename
     ;
 
 variable
-    : '$(' ID ')'
-    | '${' ID '}'
+    : DOLLAR LPAREN ID RPAREN
+    | DOLLAR LBRACE ID RBRACE
     ;
 
 recipe
-    : '\t' recipeText
+    : TAB recipeText
     ;
 
 recipeText
@@ -70,7 +70,7 @@ recipeText
     ;
 
 variableAssignment
-    : ID ('=' | '+=' | ':=') (.)*?
+    : variable (ASSIGN | PLUSASSIGN | DEFINE) (.)*?
     ;
 
 statement
@@ -130,6 +130,8 @@ ESC
 DOLLAR:     '$'  { readTab = false; } ;
 LPAREN:     '('  { readTab = false; } ;
 RPAREN:     ')'  { readTab = false; } ;
+LBRACE:     '{'  { readTab = false; } ;
+RBRACE:     '}'  { readTab = false; } ;
 PLUSASSIGN: '+=' { readTab = false; } ;
 DEFINE:     ':=' { readTab = false; } ;
 ASSIGN:     '='  { readTab = false; } ;

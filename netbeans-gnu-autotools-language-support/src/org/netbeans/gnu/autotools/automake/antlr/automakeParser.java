@@ -17,12 +17,12 @@ public class automakeParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		T__2=1, T__1=2, T__0=3, SINGLE_LINE_COMMENT=4, STRING=5, AM_VARIABLE=6, 
-		ID=7, DOLLAR=8, LPAREN=9, RPAREN=10, PLUSASSIGN=11, DEFINE=12, ASSIGN=13, 
-		COLON=14, ENL=15, NL=16, TAB=17, HORIZONTAL_WHITESPACE=18, ANY=19;
+		SINGLE_LINE_COMMENT=1, STRING=2, AM_VARIABLE=3, ID=4, DOLLAR=5, LPAREN=6, 
+		RPAREN=7, LBRACE=8, RBRACE=9, PLUSASSIGN=10, DEFINE=11, ASSIGN=12, COLON=13, 
+		ENL=14, NL=15, TAB=16, HORIZONTAL_WHITESPACE=17, ANY=18;
 	public static final String[] tokenNames = {
-		"<INVALID>", "'$('", "'${'", "'}'", "SINGLE_LINE_COMMENT", "STRING", "AM_VARIABLE", 
-		"ID", "'$'", "'('", "')'", "'+='", "':='", "'='", "':'", "ENL", "NL", 
+		"<INVALID>", "SINGLE_LINE_COMMENT", "STRING", "AM_VARIABLE", "ID", "'$'", 
+		"'('", "')'", "'{'", "'}'", "'+='", "':='", "'='", "':'", "ENL", "NL", 
 		"'\t'", "HORIZONTAL_WHITESPACE", "ANY"
 	};
 	public static final int
@@ -321,6 +321,7 @@ public class automakeParser extends Parser {
 
 	public static class TargetContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(automakeParser.ID, 0); }
+		public TerminalNode COLON() { return getToken(automakeParser.COLON, 0); }
 		public PrerequisiteListContext prerequisiteList() {
 			return getRuleContext(PrerequisiteListContext.class,0);
 		}
@@ -401,7 +402,7 @@ public class automakeParser extends Parser {
 			setState(58);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << 1) | (1L << 2) | (1L << ID))) != 0)) {
+			while (_la==ID || _la==DOLLAR) {
 				{
 				{
 				setState(55); filename();
@@ -460,8 +461,7 @@ public class automakeParser extends Parser {
 				setState(61); match(ID);
 				}
 				break;
-			case 1:
-			case 2:
+			case DOLLAR:
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(62); variable();
@@ -484,6 +484,11 @@ public class automakeParser extends Parser {
 
 	public static class VariableContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(automakeParser.ID, 0); }
+		public TerminalNode RBRACE() { return getToken(automakeParser.RBRACE, 0); }
+		public TerminalNode LPAREN() { return getToken(automakeParser.LPAREN, 0); }
+		public TerminalNode LBRACE() { return getToken(automakeParser.LBRACE, 0); }
+		public TerminalNode DOLLAR() { return getToken(automakeParser.DOLLAR, 0); }
+		public TerminalNode RPAREN() { return getToken(automakeParser.RPAREN, 0); }
 		public VariableContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -507,26 +512,27 @@ public class automakeParser extends Parser {
 		VariableContext _localctx = new VariableContext(_ctx, getState());
 		enterRule(_localctx, 14, RULE_variable);
 		try {
-			setState(71);
-			switch (_input.LA(1)) {
+			setState(73);
+			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(65); match(1);
-				setState(66); match(ID);
-				setState(67); match(RPAREN);
+				setState(65); match(DOLLAR);
+				setState(66); match(LPAREN);
+				setState(67); match(ID);
+				setState(68); match(RPAREN);
 				}
 				break;
+
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(68); match(2);
-				setState(69); match(ID);
-				setState(70); match(3);
+				setState(69); match(DOLLAR);
+				setState(70); match(LBRACE);
+				setState(71); match(ID);
+				setState(72); match(RBRACE);
 				}
 				break;
-			default:
-				throw new NoViableAltException(this);
 			}
 		}
 		catch (RecognitionException re) {
@@ -541,6 +547,7 @@ public class automakeParser extends Parser {
 	}
 
 	public static class RecipeContext extends ParserRuleContext {
+		public TerminalNode TAB() { return getToken(automakeParser.TAB, 0); }
 		public RecipeTextContext recipeText() {
 			return getRuleContext(RecipeTextContext.class,0);
 		}
@@ -569,8 +576,8 @@ public class automakeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(73); match(TAB);
-			setState(74); recipeText();
+			setState(75); match(TAB);
+			setState(76); recipeText();
 			}
 		}
 		catch (RecognitionException re) {
@@ -611,19 +618,19 @@ public class automakeParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(79);
+			setState(81);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
 			while ( _alt!=1 && _alt!=ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1+1 ) {
 					{
 					{
-					setState(76);
+					setState(78);
 					matchWildcard();
 					}
 					} 
 				}
-				setState(81);
+				setState(83);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
 			}
@@ -641,7 +648,12 @@ public class automakeParser extends Parser {
 	}
 
 	public static class VariableAssignmentContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(automakeParser.ID, 0); }
+		public TerminalNode ASSIGN() { return getToken(automakeParser.ASSIGN, 0); }
+		public TerminalNode DEFINE() { return getToken(automakeParser.DEFINE, 0); }
+		public TerminalNode PLUSASSIGN() { return getToken(automakeParser.PLUSASSIGN, 0); }
+		public VariableContext variable() {
+			return getRuleContext(VariableContext.class,0);
+		}
 		public VariableAssignmentContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
@@ -669,26 +681,26 @@ public class automakeParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(82); match(ID);
-			setState(83);
+			setState(84); variable();
+			setState(85);
 			_la = _input.LA(1);
 			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << PLUSASSIGN) | (1L << DEFINE) | (1L << ASSIGN))) != 0)) ) {
 			_errHandler.recoverInline(this);
 			}
 			consume();
-			setState(87);
+			setState(89);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
 			while ( _alt!=1 && _alt!=ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1+1 ) {
 					{
 					{
-					setState(84);
+					setState(86);
 					matchWildcard();
 					}
 					} 
 				}
-				setState(89);
+				setState(91);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
 			}
@@ -734,7 +746,7 @@ public class automakeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(90); any();
+			setState(92); any();
 			}
 		}
 		catch (RecognitionException re) {
@@ -824,7 +836,7 @@ public class automakeParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(93); 
+			setState(95); 
 			_errHandler.sync(this);
 			_alt = 1+1;
 			do {
@@ -832,7 +844,7 @@ public class automakeParser extends Parser {
 				case 1+1:
 					{
 					{
-					setState(92);
+					setState(94);
 					_la = _input.LA(1);
 					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << AM_VARIABLE) | (1L << ID) | (1L << DOLLAR) | (1L << LPAREN) | (1L << RPAREN) | (1L << PLUSASSIGN) | (1L << DEFINE) | (1L << ASSIGN) | (1L << COLON) | (1L << TAB) | (1L << ANY))) != 0)) ) {
 					_errHandler.recoverInline(this);
@@ -844,7 +856,7 @@ public class automakeParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(95); 
+				setState(97); 
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
 			} while ( _alt!=1 && _alt!=ATN.INVALID_ALT_NUMBER );
@@ -862,31 +874,31 @@ public class automakeParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\25d\4\2\t\2\4\3\t"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\24f\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
 		"\f\t\f\4\r\t\r\4\16\t\16\3\2\7\2\36\n\2\f\2\16\2!\13\2\3\2\5\2$\n\2\3"+
 		"\2\3\2\3\3\3\3\3\3\3\3\5\3,\n\3\3\4\3\4\3\5\3\5\3\5\3\5\5\5\64\n\5\3\6"+
 		"\3\6\3\6\3\6\3\7\7\7;\n\7\f\7\16\7>\13\7\3\b\3\b\5\bB\n\b\3\t\3\t\3\t"+
-		"\3\t\3\t\3\t\5\tJ\n\t\3\n\3\n\3\n\3\13\7\13P\n\13\f\13\16\13S\13\13\3"+
-		"\f\3\f\3\f\7\fX\n\f\f\f\16\f[\13\f\3\r\3\r\3\16\6\16`\n\16\r\16\16\16"+
-		"a\3\16\5QYa\2\17\2\4\6\b\n\f\16\20\22\24\26\30\32\2\4\3\2\r\17\5\2\7\20"+
-		"\23\23\25\25b\2\37\3\2\2\2\4+\3\2\2\2\6-\3\2\2\2\b\63\3\2\2\2\n\65\3\2"+
-		"\2\2\f<\3\2\2\2\16A\3\2\2\2\20I\3\2\2\2\22K\3\2\2\2\24Q\3\2\2\2\26T\3"+
-		"\2\2\2\30\\\3\2\2\2\32_\3\2\2\2\34\36\5\4\3\2\35\34\3\2\2\2\36!\3\2\2"+
-		"\2\37\35\3\2\2\2\37 \3\2\2\2 #\3\2\2\2!\37\3\2\2\2\"$\5\6\4\2#\"\3\2\2"+
-		"\2#$\3\2\2\2$%\3\2\2\2%&\7\2\2\3&\3\3\2\2\2\'(\5\b\5\2()\7\22\2\2),\3"+
-		"\2\2\2*,\7\22\2\2+\'\3\2\2\2+*\3\2\2\2,\5\3\2\2\2-.\5\b\5\2.\7\3\2\2\2"+
-		"/\64\5\n\6\2\60\64\5\22\n\2\61\64\5\26\f\2\62\64\5\30\r\2\63/\3\2\2\2"+
-		"\63\60\3\2\2\2\63\61\3\2\2\2\63\62\3\2\2\2\64\t\3\2\2\2\65\66\7\t\2\2"+
-		"\66\67\7\20\2\2\678\5\f\7\28\13\3\2\2\29;\5\16\b\2:9\3\2\2\2;>\3\2\2\2"+
-		"<:\3\2\2\2<=\3\2\2\2=\r\3\2\2\2><\3\2\2\2?B\7\t\2\2@B\5\20\t\2A?\3\2\2"+
-		"\2A@\3\2\2\2B\17\3\2\2\2CD\7\3\2\2DE\7\t\2\2EJ\7\f\2\2FG\7\4\2\2GH\7\t"+
-		"\2\2HJ\7\5\2\2IC\3\2\2\2IF\3\2\2\2J\21\3\2\2\2KL\7\23\2\2LM\5\24\13\2"+
-		"M\23\3\2\2\2NP\13\2\2\2ON\3\2\2\2PS\3\2\2\2QR\3\2\2\2QO\3\2\2\2R\25\3"+
-		"\2\2\2SQ\3\2\2\2TU\7\t\2\2UY\t\2\2\2VX\13\2\2\2WV\3\2\2\2X[\3\2\2\2YZ"+
-		"\3\2\2\2YW\3\2\2\2Z\27\3\2\2\2[Y\3\2\2\2\\]\5\32\16\2]\31\3\2\2\2^`\t"+
-		"\3\2\2_^\3\2\2\2`a\3\2\2\2ab\3\2\2\2a_\3\2\2\2b\33\3\2\2\2\f\37#+\63<"+
-		"AIQYa";
+		"\3\t\3\t\3\t\3\t\3\t\5\tL\n\t\3\n\3\n\3\n\3\13\7\13R\n\13\f\13\16\13U"+
+		"\13\13\3\f\3\f\3\f\7\fZ\n\f\f\f\16\f]\13\f\3\r\3\r\3\16\6\16b\n\16\r\16"+
+		"\16\16c\3\16\5S[c\2\17\2\4\6\b\n\f\16\20\22\24\26\30\32\2\4\3\2\f\16\6"+
+		"\2\4\t\f\17\22\22\24\24d\2\37\3\2\2\2\4+\3\2\2\2\6-\3\2\2\2\b\63\3\2\2"+
+		"\2\n\65\3\2\2\2\f<\3\2\2\2\16A\3\2\2\2\20K\3\2\2\2\22M\3\2\2\2\24S\3\2"+
+		"\2\2\26V\3\2\2\2\30^\3\2\2\2\32a\3\2\2\2\34\36\5\4\3\2\35\34\3\2\2\2\36"+
+		"!\3\2\2\2\37\35\3\2\2\2\37 \3\2\2\2 #\3\2\2\2!\37\3\2\2\2\"$\5\6\4\2#"+
+		"\"\3\2\2\2#$\3\2\2\2$%\3\2\2\2%&\7\2\2\3&\3\3\2\2\2\'(\5\b\5\2()\7\21"+
+		"\2\2),\3\2\2\2*,\7\21\2\2+\'\3\2\2\2+*\3\2\2\2,\5\3\2\2\2-.\5\b\5\2.\7"+
+		"\3\2\2\2/\64\5\n\6\2\60\64\5\22\n\2\61\64\5\26\f\2\62\64\5\30\r\2\63/"+
+		"\3\2\2\2\63\60\3\2\2\2\63\61\3\2\2\2\63\62\3\2\2\2\64\t\3\2\2\2\65\66"+
+		"\7\6\2\2\66\67\7\17\2\2\678\5\f\7\28\13\3\2\2\29;\5\16\b\2:9\3\2\2\2;"+
+		">\3\2\2\2<:\3\2\2\2<=\3\2\2\2=\r\3\2\2\2><\3\2\2\2?B\7\6\2\2@B\5\20\t"+
+		"\2A?\3\2\2\2A@\3\2\2\2B\17\3\2\2\2CD\7\7\2\2DE\7\b\2\2EF\7\6\2\2FL\7\t"+
+		"\2\2GH\7\7\2\2HI\7\n\2\2IJ\7\6\2\2JL\7\13\2\2KC\3\2\2\2KG\3\2\2\2L\21"+
+		"\3\2\2\2MN\7\22\2\2NO\5\24\13\2O\23\3\2\2\2PR\13\2\2\2QP\3\2\2\2RU\3\2"+
+		"\2\2ST\3\2\2\2SQ\3\2\2\2T\25\3\2\2\2US\3\2\2\2VW\5\20\t\2W[\t\2\2\2XZ"+
+		"\13\2\2\2YX\3\2\2\2Z]\3\2\2\2[\\\3\2\2\2[Y\3\2\2\2\\\27\3\2\2\2][\3\2"+
+		"\2\2^_\5\32\16\2_\31\3\2\2\2`b\t\3\2\2a`\3\2\2\2bc\3\2\2\2cd\3\2\2\2c"+
+		"a\3\2\2\2d\33\3\2\2\2\f\37#+\63<AKS[c";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

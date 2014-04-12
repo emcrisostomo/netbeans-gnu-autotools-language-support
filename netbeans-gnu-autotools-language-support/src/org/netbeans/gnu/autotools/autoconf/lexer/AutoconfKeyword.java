@@ -96,6 +96,7 @@ public final class AutoconfKeyword {
         acBuiltins.add("AC_CONFIG_COMMANDS_PRE");
         acBuiltins.add("AC_CONFIG_COMMANDS_POST");
         acBuiltins.add("AC_CONFIG_FILES");
+        acBuiltins.add("AC_CONFIG_HEADERS");
         acBuiltins.add("AC_CONFIG_LIBOBJ_DIR");
         acBuiltins.add("AC_CONFIG_LINKS");
         acBuiltins.add("AC_CONFIG_MACRO_DIR");
@@ -317,7 +318,6 @@ public final class AutoconfKeyword {
         acObsolete.add("AC_CHAR_UNSIGNED");
         acObsolete.add("AC_CHECKING");
         acObsolete.add("AC_COMPILE_CHECK");
-        acObsolete.add("AC_CONFIG_HEADERS");
         acObsolete.add("AC_CONST");
         acObsolete.add("AC_CROSS_CHECK");
         acObsolete.add("AC_CYGWIN");

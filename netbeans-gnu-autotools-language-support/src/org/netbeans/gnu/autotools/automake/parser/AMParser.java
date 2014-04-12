@@ -14,15 +14,15 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.netbeans.gnu.autotools.autoconf.parser;
+package org.netbeans.gnu.autotools.automake.parser;
 
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.event.ChangeListener;
 import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
-import org.netbeans.gnu.autotools.autoconf.antlr.autoconfLexer;
-import org.netbeans.gnu.autotools.autoconf.antlr.autoconfParser;
+import org.netbeans.gnu.autotools.automake.antlr.automakeLexer;
+import org.netbeans.gnu.autotools.automake.antlr.automakeParser;
 import org.netbeans.modules.csl.spi.ParserResult;
 import org.netbeans.modules.parsing.api.Snapshot;
 import org.netbeans.modules.parsing.api.Task;
@@ -32,28 +32,28 @@ import org.netbeans.modules.parsing.spi.SourceModificationEvent;
 
 /**
  *
- * @author Enrico M. Crisostomo
+ * @author enricomariacrisostomo
  */
-public class ACParser extends Parser {
+public class AMParser extends Parser {
 
     private Snapshot snapshot;
-    private autoconfParser parser;
-    private autoconfParser.CompilationUnitContext compilationUnit;
+    private automakeParser parser;
+    private automakeParser.CompilationUnitContext compilationUnit;
 
     @Override
     public void parse(Snapshot snapshot, Task task, SourceModificationEvent event) throws ParseException {
         this.snapshot = snapshot;
 
         ANTLRInputStream is = new ANTLRInputStream(snapshot.getText().toString());
-        autoconfLexer lexer = new autoconfLexer(is);
+        automakeLexer lexer = new automakeLexer(is);
         CommonTokenStream tokenStream = new CommonTokenStream(lexer);
-        parser = new autoconfParser(tokenStream);
+        parser = new automakeParser(tokenStream);
         compilationUnit = parser.compilationUnit();
     }
 
     @Override
     public Parser.Result getResult(Task task) throws ParseException {
-        return new ACParserResult(snapshot, parser, compilationUnit);
+        return new AMParserResult(snapshot, parser, compilationUnit);
     }
 
     @Override
@@ -64,12 +64,12 @@ public class ACParser extends Parser {
     public void removeChangeListener(ChangeListener changeListener) {
     }
 
-    public static class ACParserResult extends ParserResult {
+    public static class AMParserResult extends ParserResult {
 
-        private final autoconfParser.CompilationUnitContext compilationUnit;
-        private final autoconfParser parser;
+        private final automakeParser.CompilationUnitContext compilationUnit;
+        private final automakeParser parser;
 
-        private ACParserResult(Snapshot snapshot, autoconfParser parser, autoconfParser.CompilationUnitContext compilationUnit) {
+        private AMParserResult(Snapshot snapshot, automakeParser parser, automakeParser.CompilationUnitContext compilationUnit) {
             super(snapshot);
             this.parser = parser;
             this.compilationUnit = compilationUnit;
@@ -84,11 +84,11 @@ public class ACParser extends Parser {
             return new ArrayList<>();
         }
 
-        public autoconfParser.CompilationUnitContext getCompilationUnit() {
+        public automakeParser.CompilationUnitContext getCompilationUnit() {
             return compilationUnit;
         }
 
-        public autoconfParser getParser() {
+        public automakeParser getParser() {
             return parser;
         }
     }

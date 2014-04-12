@@ -40,7 +40,6 @@ statement
 
 quote
     : LBRACKET (statement | punctuation)* RBRACKET
-    | LQUOTE (statement | punctuation)* RQUOTE
     ;
 
 expr
@@ -93,8 +92,6 @@ RPAREN:   ')'  ;
 LBRACKET: '['  { ++quoteLevel; quoted = true; } ;
 RBRACKET: ']'  { --quoteLevel; if (quoteLevel < 0) quoteLevel = 0; if (quoteLevel == 0) quoted = false; } ;
 COMMA:    ','  ;
-LQUOTE:   '`'  { ++quoteLevel; quoted = true; } ;
-RQUOTE:   '\'' { --quoteLevel; if (quoteLevel < 0) quoteLevel = 0; if (quoteLevel == 0) quoted = false; } ;
 
 fragment
 M4_LETTER

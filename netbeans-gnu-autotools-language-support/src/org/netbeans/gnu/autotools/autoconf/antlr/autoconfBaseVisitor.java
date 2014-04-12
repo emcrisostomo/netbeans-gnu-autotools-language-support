@@ -1,4 +1,4 @@
-// Generated from autoconf.g4 by ANTLR 4.2.1
+// Generated from autoconf.g4 by ANTLR 4.2.2
 
 package org.netbeans.gnu.autotools.autoconf.antlr;
 

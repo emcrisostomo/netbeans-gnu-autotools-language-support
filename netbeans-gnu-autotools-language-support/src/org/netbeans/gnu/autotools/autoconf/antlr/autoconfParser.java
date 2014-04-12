@@ -1,4 +1,4 @@
-// Generated from autoconf.g4 by ANTLR 4.2.1
+// Generated from autoconf.g4 by ANTLR 4.2.2
 
 package org.netbeans.gnu.autotools.autoconf.antlr;
 
@@ -18,12 +18,10 @@ public class autoconfParser extends Parser {
 		new PredictionContextCache();
 	public static final int
 		DNL_COMMENT=1, SINGLE_LINE_COMMENT=2, ID=3, LPAREN=4, RPAREN=5, LBRACKET=6, 
-		RBRACKET=7, COMMA=8, LQUOTE=9, RQUOTE=10, WS=11, NL=12, HORIZONTAL_WHITESPACE=13, 
-		ANY=14;
+		RBRACKET=7, COMMA=8, WS=9, NL=10, HORIZONTAL_WHITESPACE=11, ANY=12;
 	public static final String[] tokenNames = {
 		"<INVALID>", "DNL_COMMENT", "SINGLE_LINE_COMMENT", "ID", "'('", "')'", 
-		"'['", "']'", "','", "'`'", "'''", "WS", "NL", "HORIZONTAL_WHITESPACE", 
-		"ANY"
+		"'['", "']'", "','", "WS", "NL", "HORIZONTAL_WHITESPACE", "ANY"
 	};
 	public static final int
 		RULE_compilationUnit = 0, RULE_statement = 1, RULE_quote = 2, RULE_expr = 3, 
@@ -96,13 +94,12 @@ public class autoconfParser extends Parser {
 			setState(22);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << LPAREN) | (1L << RPAREN) | (1L << LBRACKET) | (1L << COMMA) | (1L << LQUOTE) | (1L << WS) | (1L << NL) | (1L << ANY))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << LPAREN) | (1L << RPAREN) | (1L << LBRACKET) | (1L << COMMA) | (1L << WS) | (1L << NL) | (1L << ANY))) != 0)) {
 				{
 				setState(20);
 				switch (_input.LA(1)) {
 				case ID:
 				case LBRACKET:
-				case LQUOTE:
 				case WS:
 				case NL:
 				case ANY:
@@ -181,7 +178,6 @@ public class autoconfParser extends Parser {
 				}
 				break;
 			case LBRACKET:
-			case LQUOTE:
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(28); quote();
@@ -215,8 +211,6 @@ public class autoconfParser extends Parser {
 		public PunctuationContext punctuation(int i) {
 			return getRuleContext(PunctuationContext.class,i);
 		}
-		public TerminalNode RQUOTE() { return getToken(autoconfParser.RQUOTE, 0); }
-		public TerminalNode LQUOTE() { return getToken(autoconfParser.LQUOTE, 0); }
 		public List<PunctuationContext> punctuation() {
 			return getRuleContexts(PunctuationContext.class);
 		}
@@ -251,88 +245,41 @@ public class autoconfParser extends Parser {
 		enterRule(_localctx, 4, RULE_quote);
 		int _la;
 		try {
-			setState(50);
-			switch (_input.LA(1)) {
-			case LBRACKET:
-				enterOuterAlt(_localctx, 1);
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(32); match(LBRACKET);
+			setState(37);
+			_errHandler.sync(this);
+			_la = _input.LA(1);
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << LPAREN) | (1L << RPAREN) | (1L << LBRACKET) | (1L << COMMA) | (1L << WS) | (1L << NL) | (1L << ANY))) != 0)) {
 				{
-				setState(32); match(LBRACKET);
-				setState(37);
+				setState(35);
+				switch (_input.LA(1)) {
+				case ID:
+				case LBRACKET:
+				case WS:
+				case NL:
+				case ANY:
+					{
+					setState(33); statement();
+					}
+					break;
+				case LPAREN:
+				case RPAREN:
+				case COMMA:
+					{
+					setState(34); punctuation();
+					}
+					break;
+				default:
+					throw new NoViableAltException(this);
+				}
+				}
+				setState(39);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << LPAREN) | (1L << RPAREN) | (1L << LBRACKET) | (1L << COMMA) | (1L << LQUOTE) | (1L << WS) | (1L << NL) | (1L << ANY))) != 0)) {
-					{
-					setState(35);
-					switch (_input.LA(1)) {
-					case ID:
-					case LBRACKET:
-					case LQUOTE:
-					case WS:
-					case NL:
-					case ANY:
-						{
-						setState(33); statement();
-						}
-						break;
-					case LPAREN:
-					case RPAREN:
-					case COMMA:
-						{
-						setState(34); punctuation();
-						}
-						break;
-					default:
-						throw new NoViableAltException(this);
-					}
-					}
-					setState(39);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(40); match(RBRACKET);
-				}
-				break;
-			case LQUOTE:
-				enterOuterAlt(_localctx, 2);
-				{
-				setState(41); match(LQUOTE);
-				setState(46);
-				_errHandler.sync(this);
-				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << LPAREN) | (1L << RPAREN) | (1L << LBRACKET) | (1L << COMMA) | (1L << LQUOTE) | (1L << WS) | (1L << NL) | (1L << ANY))) != 0)) {
-					{
-					setState(44);
-					switch (_input.LA(1)) {
-					case ID:
-					case LBRACKET:
-					case LQUOTE:
-					case WS:
-					case NL:
-					case ANY:
-						{
-						setState(42); statement();
-						}
-						break;
-					case LPAREN:
-					case RPAREN:
-					case COMMA:
-						{
-						setState(43); punctuation();
-						}
-						break;
-					default:
-						throw new NoViableAltException(this);
-					}
-					}
-					setState(48);
-					_errHandler.sync(this);
-					_la = _input.LA(1);
-				}
-				setState(49); match(RQUOTE);
-				}
-				break;
-			default:
-				throw new NoViableAltException(this);
+			}
+			setState(40); match(RBRACKET);
 			}
 		}
 		catch (RecognitionException re) {
@@ -399,16 +346,16 @@ public class autoconfParser extends Parser {
 		ExprContext _localctx = new ExprContext(_ctx, getState());
 		enterRule(_localctx, 6, RULE_expr);
 		try {
-			setState(58);
-			switch ( getInterpreter().adaptivePredict(_input,8,_ctx) ) {
+			setState(48);
+			switch ( getInterpreter().adaptivePredict(_input,5,_ctx) ) {
 			case 1:
 				_localctx = new Expression_with_paramsContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(52); match(ID);
-				setState(53); match(LPAREN);
-				setState(54); exprParameters();
-				setState(55); match(RPAREN);
+				setState(42); match(ID);
+				setState(43); match(LPAREN);
+				setState(44); exprParameters();
+				setState(45); match(RPAREN);
 				}
 				break;
 
@@ -416,7 +363,7 @@ public class autoconfParser extends Parser {
 				_localctx = new ExpressionContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(57); match(ID);
+				setState(47); match(ID);
 				}
 				break;
 			}
@@ -469,42 +416,42 @@ public class autoconfParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(63);
+			setState(53);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << LPAREN) | (1L << LBRACKET) | (1L << LQUOTE) | (1L << WS) | (1L << NL) | (1L << ANY))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << LPAREN) | (1L << LBRACKET) | (1L << WS) | (1L << NL) | (1L << ANY))) != 0)) {
 				{
 				{
-				setState(60); exprParameter();
+				setState(50); exprParameter();
 				}
 				}
-				setState(65);
+				setState(55);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(75);
+			setState(65);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==COMMA) {
 				{
 				{
-				setState(66); match(COMMA);
-				setState(70);
+				setState(56); match(COMMA);
+				setState(60);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
-				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << LPAREN) | (1L << LBRACKET) | (1L << LQUOTE) | (1L << WS) | (1L << NL) | (1L << ANY))) != 0)) {
+				while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << LPAREN) | (1L << LBRACKET) | (1L << WS) | (1L << NL) | (1L << ANY))) != 0)) {
 					{
 					{
-					setState(67); exprParameter();
+					setState(57); exprParameter();
 					}
 					}
-					setState(72);
+					setState(62);
 					_errHandler.sync(this);
 					_la = _input.LA(1);
 				}
 				}
 				}
-				setState(77);
+				setState(67);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -551,23 +498,22 @@ public class autoconfParser extends Parser {
 		ExprParameterContext _localctx = new ExprParameterContext(_ctx, getState());
 		enterRule(_localctx, 10, RULE_exprParameter);
 		try {
-			setState(80);
+			setState(70);
 			switch (_input.LA(1)) {
 			case ID:
 			case LBRACKET:
-			case LQUOTE:
 			case WS:
 			case NL:
 			case ANY:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(78); statement();
+				setState(68); statement();
 				}
 				break;
 			case LPAREN:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(79); parenthesizedText();
+				setState(69); parenthesizedText();
 				}
 				break;
 			default:
@@ -632,38 +578,38 @@ public class autoconfParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(82); match(LPAREN);
-			setState(88);
+			setState(72); match(LPAREN);
+			setState(78);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
-			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << LPAREN) | (1L << LBRACKET) | (1L << LQUOTE) | (1L << WS) | (1L << NL) | (1L << ANY))) != 0)) {
+			while ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << ID) | (1L << LPAREN) | (1L << LBRACKET) | (1L << WS) | (1L << NL) | (1L << ANY))) != 0)) {
 				{
-				setState(86);
-				switch ( getInterpreter().adaptivePredict(_input,13,_ctx) ) {
+				setState(76);
+				switch ( getInterpreter().adaptivePredict(_input,10,_ctx) ) {
 				case 1:
 					{
-					setState(83); parenthesizedText();
+					setState(73); parenthesizedText();
 					}
 					break;
 
 				case 2:
 					{
-					setState(84); statement();
+					setState(74); statement();
 					}
 					break;
 
 				case 3:
 					{
-					setState(85); verbatimText();
+					setState(75); verbatimText();
 					}
 					break;
 				}
 				}
-				setState(90);
+				setState(80);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
-			setState(91); match(RPAREN);
+			setState(81); match(RPAREN);
 			}
 		}
 		catch (RecognitionException re) {
@@ -717,15 +663,15 @@ public class autoconfParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(94); 
+			setState(84); 
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,15,_ctx);
+			_alt = 1;
 			do {
 				switch (_alt) {
 				case 1:
 					{
 					{
-					setState(93);
+					setState(83);
 					_la = _input.LA(1);
 					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << WS) | (1L << NL) | (1L << ANY))) != 0)) ) {
 					_errHandler.recoverInline(this);
@@ -737,10 +683,10 @@ public class autoconfParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(96); 
+				setState(86); 
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,15,_ctx);
-			} while ( _alt!=2 && _alt!=-1 );
+				_alt = getInterpreter().adaptivePredict(_input,12,_ctx);
+			} while ( _alt!=2 && _alt!=ATN.INVALID_ALT_NUMBER );
 			}
 		}
 		catch (RecognitionException re) {
@@ -794,15 +740,15 @@ public class autoconfParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(99); 
+			setState(89); 
 			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,16,_ctx);
+			_alt = 1;
 			do {
 				switch (_alt) {
 				case 1:
 					{
 					{
-					setState(98);
+					setState(88);
 					_la = _input.LA(1);
 					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << LPAREN) | (1L << RPAREN) | (1L << COMMA))) != 0)) ) {
 					_errHandler.recoverInline(this);
@@ -814,10 +760,10 @@ public class autoconfParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(101); 
+				setState(91); 
 				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,16,_ctx);
-			} while ( _alt!=2 && _alt!=-1 );
+				_alt = getInterpreter().adaptivePredict(_input,13,_ctx);
+			} while ( _alt!=2 && _alt!=ATN.INVALID_ALT_NUMBER );
 			}
 		}
 		catch (RecognitionException re) {
@@ -832,33 +778,31 @@ public class autoconfParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\20j\4\2\t\2\4\3\t"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\16`\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\3\2\3\2\7\2"+
 		"\27\n\2\f\2\16\2\32\13\2\3\2\3\2\3\3\3\3\3\3\5\3!\n\3\3\4\3\4\3\4\7\4"+
-		"&\n\4\f\4\16\4)\13\4\3\4\3\4\3\4\3\4\7\4/\n\4\f\4\16\4\62\13\4\3\4\5\4"+
-		"\65\n\4\3\5\3\5\3\5\3\5\3\5\3\5\5\5=\n\5\3\6\7\6@\n\6\f\6\16\6C\13\6\3"+
-		"\6\3\6\7\6G\n\6\f\6\16\6J\13\6\7\6L\n\6\f\6\16\6O\13\6\3\7\3\7\5\7S\n"+
-		"\7\3\b\3\b\3\b\3\b\7\bY\n\b\f\b\16\b\\\13\b\3\b\3\b\3\t\6\ta\n\t\r\t\16"+
-		"\tb\3\n\6\nf\n\n\r\n\16\ng\3\n\2\2\13\2\4\6\b\n\f\16\20\22\2\4\4\2\r\16"+
-		"\20\20\4\2\6\7\n\ns\2\30\3\2\2\2\4 \3\2\2\2\6\64\3\2\2\2\b<\3\2\2\2\n"+
-		"A\3\2\2\2\fR\3\2\2\2\16T\3\2\2\2\20`\3\2\2\2\22e\3\2\2\2\24\27\5\4\3\2"+
-		"\25\27\5\22\n\2\26\24\3\2\2\2\26\25\3\2\2\2\27\32\3\2\2\2\30\26\3\2\2"+
-		"\2\30\31\3\2\2\2\31\33\3\2\2\2\32\30\3\2\2\2\33\34\7\2\2\3\34\3\3\2\2"+
-		"\2\35!\5\b\5\2\36!\5\6\4\2\37!\5\20\t\2 \35\3\2\2\2 \36\3\2\2\2 \37\3"+
-		"\2\2\2!\5\3\2\2\2\"\'\7\b\2\2#&\5\4\3\2$&\5\22\n\2%#\3\2\2\2%$\3\2\2\2"+
-		"&)\3\2\2\2\'%\3\2\2\2\'(\3\2\2\2(*\3\2\2\2)\'\3\2\2\2*\65\7\t\2\2+\60"+
-		"\7\13\2\2,/\5\4\3\2-/\5\22\n\2.,\3\2\2\2.-\3\2\2\2/\62\3\2\2\2\60.\3\2"+
-		"\2\2\60\61\3\2\2\2\61\63\3\2\2\2\62\60\3\2\2\2\63\65\7\f\2\2\64\"\3\2"+
-		"\2\2\64+\3\2\2\2\65\7\3\2\2\2\66\67\7\5\2\2\678\7\6\2\289\5\n\6\29:\7"+
-		"\7\2\2:=\3\2\2\2;=\7\5\2\2<\66\3\2\2\2<;\3\2\2\2=\t\3\2\2\2>@\5\f\7\2"+
-		"?>\3\2\2\2@C\3\2\2\2A?\3\2\2\2AB\3\2\2\2BM\3\2\2\2CA\3\2\2\2DH\7\n\2\2"+
-		"EG\5\f\7\2FE\3\2\2\2GJ\3\2\2\2HF\3\2\2\2HI\3\2\2\2IL\3\2\2\2JH\3\2\2\2"+
-		"KD\3\2\2\2LO\3\2\2\2MK\3\2\2\2MN\3\2\2\2N\13\3\2\2\2OM\3\2\2\2PS\5\4\3"+
-		"\2QS\5\16\b\2RP\3\2\2\2RQ\3\2\2\2S\r\3\2\2\2TZ\7\6\2\2UY\5\16\b\2VY\5"+
-		"\4\3\2WY\5\20\t\2XU\3\2\2\2XV\3\2\2\2XW\3\2\2\2Y\\\3\2\2\2ZX\3\2\2\2Z"+
-		"[\3\2\2\2[]\3\2\2\2\\Z\3\2\2\2]^\7\7\2\2^\17\3\2\2\2_a\t\2\2\2`_\3\2\2"+
-		"\2ab\3\2\2\2b`\3\2\2\2bc\3\2\2\2c\21\3\2\2\2df\t\3\2\2ed\3\2\2\2fg\3\2"+
-		"\2\2ge\3\2\2\2gh\3\2\2\2h\23\3\2\2\2\23\26\30 %\'.\60\64<AHMRXZbg";
+		"&\n\4\f\4\16\4)\13\4\3\4\3\4\3\5\3\5\3\5\3\5\3\5\3\5\5\5\63\n\5\3\6\7"+
+		"\6\66\n\6\f\6\16\69\13\6\3\6\3\6\7\6=\n\6\f\6\16\6@\13\6\7\6B\n\6\f\6"+
+		"\16\6E\13\6\3\7\3\7\5\7I\n\7\3\b\3\b\3\b\3\b\7\bO\n\b\f\b\16\bR\13\b\3"+
+		"\b\3\b\3\t\6\tW\n\t\r\t\16\tX\3\n\6\n\\\n\n\r\n\16\n]\3\n\2\2\13\2\4\6"+
+		"\b\n\f\16\20\22\2\4\4\2\13\f\16\16\4\2\6\7\n\nf\2\30\3\2\2\2\4 \3\2\2"+
+		"\2\6\"\3\2\2\2\b\62\3\2\2\2\n\67\3\2\2\2\fH\3\2\2\2\16J\3\2\2\2\20V\3"+
+		"\2\2\2\22[\3\2\2\2\24\27\5\4\3\2\25\27\5\22\n\2\26\24\3\2\2\2\26\25\3"+
+		"\2\2\2\27\32\3\2\2\2\30\26\3\2\2\2\30\31\3\2\2\2\31\33\3\2\2\2\32\30\3"+
+		"\2\2\2\33\34\7\2\2\3\34\3\3\2\2\2\35!\5\b\5\2\36!\5\6\4\2\37!\5\20\t\2"+
+		" \35\3\2\2\2 \36\3\2\2\2 \37\3\2\2\2!\5\3\2\2\2\"\'\7\b\2\2#&\5\4\3\2"+
+		"$&\5\22\n\2%#\3\2\2\2%$\3\2\2\2&)\3\2\2\2\'%\3\2\2\2\'(\3\2\2\2(*\3\2"+
+		"\2\2)\'\3\2\2\2*+\7\t\2\2+\7\3\2\2\2,-\7\5\2\2-.\7\6\2\2./\5\n\6\2/\60"+
+		"\7\7\2\2\60\63\3\2\2\2\61\63\7\5\2\2\62,\3\2\2\2\62\61\3\2\2\2\63\t\3"+
+		"\2\2\2\64\66\5\f\7\2\65\64\3\2\2\2\669\3\2\2\2\67\65\3\2\2\2\678\3\2\2"+
+		"\28C\3\2\2\29\67\3\2\2\2:>\7\n\2\2;=\5\f\7\2<;\3\2\2\2=@\3\2\2\2><\3\2"+
+		"\2\2>?\3\2\2\2?B\3\2\2\2@>\3\2\2\2A:\3\2\2\2BE\3\2\2\2CA\3\2\2\2CD\3\2"+
+		"\2\2D\13\3\2\2\2EC\3\2\2\2FI\5\4\3\2GI\5\16\b\2HF\3\2\2\2HG\3\2\2\2I\r"+
+		"\3\2\2\2JP\7\6\2\2KO\5\16\b\2LO\5\4\3\2MO\5\20\t\2NK\3\2\2\2NL\3\2\2\2"+
+		"NM\3\2\2\2OR\3\2\2\2PN\3\2\2\2PQ\3\2\2\2QS\3\2\2\2RP\3\2\2\2ST\7\7\2\2"+
+		"T\17\3\2\2\2UW\t\2\2\2VU\3\2\2\2WX\3\2\2\2XV\3\2\2\2XY\3\2\2\2Y\21\3\2"+
+		"\2\2Z\\\t\3\2\2[Z\3\2\2\2\\]\3\2\2\2][\3\2\2\2]^\3\2\2\2^\23\3\2\2\2\20"+
+		"\26\30 %\'\62\67>CHNPX]";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

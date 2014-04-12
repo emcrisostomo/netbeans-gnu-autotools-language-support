@@ -25,6 +25,9 @@ import org.netbeans.api.lexer.TokenId;
  */
 public class AMTokenId implements TokenId {
 
+    private static final Language<AMTokenId> language
+            = new AMLanguageHierarchy().language();
+
     private final String name;
     private final String primaryCategory;
     private final int id;
@@ -51,6 +54,6 @@ public class AMTokenId implements TokenId {
     }
 
     public static Language<AMTokenId> getLanguage() {
-        return new AMLanguageHierarchy().language();
+        return language;
     }
 }

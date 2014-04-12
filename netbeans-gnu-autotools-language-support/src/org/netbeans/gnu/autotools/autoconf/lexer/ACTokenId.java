@@ -25,8 +25,9 @@ import org.netbeans.api.lexer.TokenId;
  */
 public class ACTokenId implements TokenId {
 
-    private static final Language<ACTokenId> language = new ACLanguageHierarchy().language();
-    
+    private static final Language<ACTokenId> language
+            = new ACLanguageHierarchy().language();
+
     private final String name;
     private final String primaryCategory;
     private final int id;

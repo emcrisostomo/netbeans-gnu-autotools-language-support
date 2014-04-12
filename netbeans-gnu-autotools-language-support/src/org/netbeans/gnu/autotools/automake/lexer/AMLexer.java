@@ -16,6 +16,14 @@
  */
 package org.netbeans.gnu.autotools.automake.lexer;
 
+import java.util.logging.Logger;
+import org.antlr.v4.runtime.Token;
+import org.netbeans.gnu.autotools.antlr.support.ANTLRCharStream;
+import org.netbeans.gnu.autotools.autoconf.antlr.autoconfLexer;
+import org.netbeans.gnu.autotools.autoconf.lexer.ACLanguageHierarchy;
+import org.netbeans.gnu.autotools.autoconf.lexer.ACLexer;
+import org.netbeans.gnu.autotools.autoconf.lexer.ACTokenId;
+import org.netbeans.gnu.autotools.automake.antlr.automakeLexer;
 import org.netbeans.spi.lexer.Lexer;
 import org.netbeans.spi.lexer.LexerRestartInfo;
 
@@ -25,23 +33,56 @@ import org.netbeans.spi.lexer.LexerRestartInfo;
  */
 class AMLexer implements Lexer<AMTokenId> {
 
+    private static final Logger logger = Logger.getLogger(AMLexer.class.getName());
+
     private final LexerRestartInfo<AMTokenId> info;
+    private final automakeLexer lexer;
 
     AMLexer(LexerRestartInfo<AMTokenId> info) {
         this.info = info;
+        ANTLRCharStream stream = new ANTLRCharStream(info.input(), "M4");
+
+        lexer = new automakeLexer(stream);
+
+        Object state = info.state();
+        if (state instanceof AMLexer.AMLexerState) {
+            AMLexer.AMLexerState automakeState = (AMLexer.AMLexerState) state;
+            lexer.readTab = automakeState.readTab;
+        }
     }
 
     @Override
     public org.netbeans.api.lexer.Token<AMTokenId> nextToken() {
-        return info.tokenFactory().createToken(AMLanguageHierarchy.getToken(0));
+        Token token = lexer.nextToken();
+
+        logger.fine((token == null) ? "token: null" : token.getText() + ":" + token.getType());
+
+        if (token == null) {
+            throw new IllegalStateException("Token unexpectedly null.");
+        }
+
+        if (token.getType() == autoconfLexer.EOF) {
+            return null;
+        }
+
+        return info.tokenFactory().createToken(AMLanguageHierarchy.getToken(token.getType()));
     }
 
     @Override
     public Object state() {
-        return null;
+        return new AMLexer.AMLexerState(lexer.readTab);
     }
 
     @Override
     public void release() {
+    }
+
+    private static class AMLexerState {
+
+        private final boolean readTab;
+
+        public AMLexerState(boolean readTab) {
+            this.readTab = readTab;
+        }
     }
 }

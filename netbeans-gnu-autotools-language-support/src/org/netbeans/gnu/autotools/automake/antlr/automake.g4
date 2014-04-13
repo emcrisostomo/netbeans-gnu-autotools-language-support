@@ -53,7 +53,7 @@ condition
     ;
 
 elsestatement
-    : ELSE NL (row)+
+    : ELSE NL (row)+?
     ;
 
 target

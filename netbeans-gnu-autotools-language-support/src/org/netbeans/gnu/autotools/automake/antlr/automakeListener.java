@@ -22,6 +22,17 @@ public interface automakeListener extends ParseTreeListener {
 	void exitVariableAssignment(@NotNull automakeParser.VariableAssignmentContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link automakeParser#variableName}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariableName(@NotNull automakeParser.VariableNameContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link automakeParser#variableName}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariableName(@NotNull automakeParser.VariableNameContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link automakeParser#line}.
 	 * @param ctx the parse tree
 	 */

@@ -56,9 +56,18 @@ filename
     : ID | variable
     ;
 
+variableAssignment
+    :
+        variableName (ASSIGN | PLUSASSIGN | DEFINE) (.)*?
+    ;
+
+variableName
+    : ID
+    ;
+
 variable
-    : DOLLAR LPAREN ID RPAREN
-    | DOLLAR LBRACE ID RBRACE
+    : DOLLAR LPAREN variableName RPAREN
+    | DOLLAR LBRACE variableName RBRACE
     ;
 
 recipe
@@ -69,16 +78,25 @@ recipeText
     : (.)*?
     ;
 
-variableAssignment
-    : variable (ASSIGN | PLUSASSIGN | DEFINE) (.)*?
-    ;
-
 statement
     : any
     ;
 
 any
-    : (STRING | AM_VARIABLE | ID | DOLLAR | LPAREN | RPAREN | PLUSASSIGN | DEFINE | ASSIGN | COLON | TAB | ANY)+?
+    : ( STRING 
+      | AM_VARIABLE 
+      | ID 
+      | DOLLAR 
+      | LPAREN 
+      | RPAREN 
+      | LBRACE 
+      | RBRACE 
+      | PLUSASSIGN 
+      | DEFINE 
+      | ASSIGN 
+      | COLON 
+      | TAB 
+      | ANY)+?
     ;
 
 /* Lexer */

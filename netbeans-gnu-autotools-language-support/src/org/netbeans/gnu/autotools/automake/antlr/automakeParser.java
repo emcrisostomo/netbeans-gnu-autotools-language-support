@@ -27,13 +27,13 @@ public class automakeParser extends Parser {
 	};
 	public static final int
 		RULE_compilationUnit = 0, RULE_row = 1, RULE_unterminatedRow = 2, RULE_line = 3, 
-		RULE_target = 4, RULE_prerequisiteList = 5, RULE_filename = 6, RULE_variable = 7, 
-		RULE_recipe = 8, RULE_recipeText = 9, RULE_variableAssignment = 10, RULE_statement = 11, 
-		RULE_any = 12;
+		RULE_target = 4, RULE_prerequisiteList = 5, RULE_filename = 6, RULE_variableAssignment = 7, 
+		RULE_variableName = 8, RULE_variable = 9, RULE_recipe = 10, RULE_recipeText = 11, 
+		RULE_statement = 12, RULE_any = 13;
 	public static final String[] ruleNames = {
 		"compilationUnit", "row", "unterminatedRow", "line", "target", "prerequisiteList", 
-		"filename", "variable", "recipe", "recipeText", "variableAssignment", 
-		"statement", "any"
+		"filename", "variableAssignment", "variableName", "variable", "recipe", 
+		"recipeText", "statement", "any"
 	};
 
 	@Override
@@ -93,30 +93,30 @@ public class automakeParser extends Parser {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(29);
+			setState(31);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
 			while ( _alt!=2 && _alt!=ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1 ) {
 					{
 					{
-					setState(26); row();
+					setState(28); row();
 					}
 					} 
 				}
-				setState(31);
+				setState(33);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,0,_ctx);
 			}
-			setState(33);
+			setState(35);
 			_la = _input.LA(1);
-			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << AM_VARIABLE) | (1L << ID) | (1L << DOLLAR) | (1L << LPAREN) | (1L << RPAREN) | (1L << PLUSASSIGN) | (1L << DEFINE) | (1L << ASSIGN) | (1L << COLON) | (1L << TAB) | (1L << ANY))) != 0)) {
+			if ((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << AM_VARIABLE) | (1L << ID) | (1L << DOLLAR) | (1L << LPAREN) | (1L << RPAREN) | (1L << LBRACE) | (1L << RBRACE) | (1L << PLUSASSIGN) | (1L << DEFINE) | (1L << ASSIGN) | (1L << COLON) | (1L << TAB) | (1L << ANY))) != 0)) {
 				{
-				setState(32); unterminatedRow();
+				setState(34); unterminatedRow();
 				}
 			}
 
-			setState(35); match(EOF);
+			setState(37); match(EOF);
 			}
 		}
 		catch (RecognitionException re) {
@@ -158,7 +158,7 @@ public class automakeParser extends Parser {
 		RowContext _localctx = new RowContext(_ctx, getState());
 		enterRule(_localctx, 2, RULE_row);
 		try {
-			setState(41);
+			setState(43);
 			switch (_input.LA(1)) {
 			case STRING:
 			case AM_VARIABLE:
@@ -166,6 +166,8 @@ public class automakeParser extends Parser {
 			case DOLLAR:
 			case LPAREN:
 			case RPAREN:
+			case LBRACE:
+			case RBRACE:
 			case PLUSASSIGN:
 			case DEFINE:
 			case ASSIGN:
@@ -174,14 +176,14 @@ public class automakeParser extends Parser {
 			case ANY:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(37); line();
-				setState(38); match(NL);
+				setState(39); line();
+				setState(40); match(NL);
 				}
 				break;
 			case NL:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(40); match(NL);
+				setState(42); match(NL);
 				}
 				break;
 			default:
@@ -228,7 +230,7 @@ public class automakeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(43); line();
+			setState(45); line();
 			}
 		}
 		catch (RecognitionException re) {
@@ -280,29 +282,29 @@ public class automakeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(49);
+			setState(51);
 			switch ( getInterpreter().adaptivePredict(_input,3,_ctx) ) {
 			case 1:
 				{
-				setState(45); target();
+				setState(47); target();
 				}
 				break;
 
 			case 2:
 				{
-				setState(46); recipe();
+				setState(48); recipe();
 				}
 				break;
 
 			case 3:
 				{
-				setState(47); variableAssignment();
+				setState(49); variableAssignment();
 				}
 				break;
 
 			case 4:
 				{
-				setState(48); statement();
+				setState(50); statement();
 				}
 				break;
 			}
@@ -350,9 +352,9 @@ public class automakeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(51); match(ID);
-			setState(52); match(COLON);
-			setState(53); prerequisiteList();
+			setState(53); match(ID);
+			setState(54); match(COLON);
+			setState(55); prerequisiteList();
 			}
 		}
 		catch (RecognitionException re) {
@@ -399,16 +401,16 @@ public class automakeParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(58);
+			setState(60);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==ID || _la==DOLLAR) {
 				{
 				{
-				setState(55); filename();
+				setState(57); filename();
 				}
 				}
-				setState(60);
+				setState(62);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -453,18 +455,18 @@ public class automakeParser extends Parser {
 		FilenameContext _localctx = new FilenameContext(_ctx, getState());
 		enterRule(_localctx, 12, RULE_filename);
 		try {
-			setState(63);
+			setState(65);
 			switch (_input.LA(1)) {
 			case ID:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(61); match(ID);
+				setState(63); match(ID);
 				}
 				break;
 			case DOLLAR:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(62); variable();
+				setState(64); variable();
 				}
 				break;
 			default:
@@ -482,8 +484,121 @@ public class automakeParser extends Parser {
 		return _localctx;
 	}
 
-	public static class VariableContext extends ParserRuleContext {
+	public static class VariableAssignmentContext extends ParserRuleContext {
+		public VariableNameContext variableName() {
+			return getRuleContext(VariableNameContext.class,0);
+		}
+		public TerminalNode ASSIGN() { return getToken(automakeParser.ASSIGN, 0); }
+		public TerminalNode DEFINE() { return getToken(automakeParser.DEFINE, 0); }
+		public TerminalNode PLUSASSIGN() { return getToken(automakeParser.PLUSASSIGN, 0); }
+		public VariableAssignmentContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_variableAssignment; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof automakeListener ) ((automakeListener)listener).enterVariableAssignment(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof automakeListener ) ((automakeListener)listener).exitVariableAssignment(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof automakeVisitor ) return ((automakeVisitor<? extends T>)visitor).visitVariableAssignment(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final VariableAssignmentContext variableAssignment() throws RecognitionException {
+		VariableAssignmentContext _localctx = new VariableAssignmentContext(_ctx, getState());
+		enterRule(_localctx, 14, RULE_variableAssignment);
+		int _la;
+		try {
+			int _alt;
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(67); variableName();
+			setState(68);
+			_la = _input.LA(1);
+			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << PLUSASSIGN) | (1L << DEFINE) | (1L << ASSIGN))) != 0)) ) {
+			_errHandler.recoverInline(this);
+			}
+			consume();
+			setState(72);
+			_errHandler.sync(this);
+			_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
+			while ( _alt!=1 && _alt!=ATN.INVALID_ALT_NUMBER ) {
+				if ( _alt==1+1 ) {
+					{
+					{
+					setState(69);
+					matchWildcard();
+					}
+					} 
+				}
+				setState(74);
+				_errHandler.sync(this);
+				_alt = getInterpreter().adaptivePredict(_input,6,_ctx);
+			}
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class VariableNameContext extends ParserRuleContext {
 		public TerminalNode ID() { return getToken(automakeParser.ID, 0); }
+		public VariableNameContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_variableName; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof automakeListener ) ((automakeListener)listener).enterVariableName(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof automakeListener ) ((automakeListener)listener).exitVariableName(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof automakeVisitor ) return ((automakeVisitor<? extends T>)visitor).visitVariableName(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final VariableNameContext variableName() throws RecognitionException {
+		VariableNameContext _localctx = new VariableNameContext(_ctx, getState());
+		enterRule(_localctx, 16, RULE_variableName);
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(75); match(ID);
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class VariableContext extends ParserRuleContext {
+		public VariableNameContext variableName() {
+			return getRuleContext(VariableNameContext.class,0);
+		}
 		public TerminalNode RBRACE() { return getToken(automakeParser.RBRACE, 0); }
 		public TerminalNode LPAREN() { return getToken(automakeParser.LPAREN, 0); }
 		public TerminalNode LBRACE() { return getToken(automakeParser.LBRACE, 0); }
@@ -510,27 +625,27 @@ public class automakeParser extends Parser {
 
 	public final VariableContext variable() throws RecognitionException {
 		VariableContext _localctx = new VariableContext(_ctx, getState());
-		enterRule(_localctx, 14, RULE_variable);
+		enterRule(_localctx, 18, RULE_variable);
 		try {
-			setState(73);
-			switch ( getInterpreter().adaptivePredict(_input,6,_ctx) ) {
+			setState(87);
+			switch ( getInterpreter().adaptivePredict(_input,7,_ctx) ) {
 			case 1:
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(65); match(DOLLAR);
-				setState(66); match(LPAREN);
-				setState(67); match(ID);
-				setState(68); match(RPAREN);
+				setState(77); match(DOLLAR);
+				setState(78); match(LPAREN);
+				setState(79); variableName();
+				setState(80); match(RPAREN);
 				}
 				break;
 
 			case 2:
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(69); match(DOLLAR);
-				setState(70); match(LBRACE);
-				setState(71); match(ID);
-				setState(72); match(RBRACE);
+				setState(82); match(DOLLAR);
+				setState(83); match(LBRACE);
+				setState(84); variableName();
+				setState(85); match(RBRACE);
 				}
 				break;
 			}
@@ -572,12 +687,12 @@ public class automakeParser extends Parser {
 
 	public final RecipeContext recipe() throws RecognitionException {
 		RecipeContext _localctx = new RecipeContext(_ctx, getState());
-		enterRule(_localctx, 16, RULE_recipe);
+		enterRule(_localctx, 20, RULE_recipe);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(75); match(TAB);
-			setState(76); recipeText();
+			setState(89); match(TAB);
+			setState(90); recipeText();
 			}
 		}
 		catch (RecognitionException re) {
@@ -613,94 +728,24 @@ public class automakeParser extends Parser {
 
 	public final RecipeTextContext recipeText() throws RecognitionException {
 		RecipeTextContext _localctx = new RecipeTextContext(_ctx, getState());
-		enterRule(_localctx, 18, RULE_recipeText);
+		enterRule(_localctx, 22, RULE_recipeText);
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(81);
-			_errHandler.sync(this);
-			_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
-			while ( _alt!=1 && _alt!=ATN.INVALID_ALT_NUMBER ) {
-				if ( _alt==1+1 ) {
-					{
-					{
-					setState(78);
-					matchWildcard();
-					}
-					} 
-				}
-				setState(83);
-				_errHandler.sync(this);
-				_alt = getInterpreter().adaptivePredict(_input,7,_ctx);
-			}
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
-	public static class VariableAssignmentContext extends ParserRuleContext {
-		public TerminalNode ASSIGN() { return getToken(automakeParser.ASSIGN, 0); }
-		public TerminalNode DEFINE() { return getToken(automakeParser.DEFINE, 0); }
-		public TerminalNode PLUSASSIGN() { return getToken(automakeParser.PLUSASSIGN, 0); }
-		public VariableContext variable() {
-			return getRuleContext(VariableContext.class,0);
-		}
-		public VariableAssignmentContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_variableAssignment; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof automakeListener ) ((automakeListener)listener).enterVariableAssignment(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof automakeListener ) ((automakeListener)listener).exitVariableAssignment(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof automakeVisitor ) return ((automakeVisitor<? extends T>)visitor).visitVariableAssignment(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final VariableAssignmentContext variableAssignment() throws RecognitionException {
-		VariableAssignmentContext _localctx = new VariableAssignmentContext(_ctx, getState());
-		enterRule(_localctx, 20, RULE_variableAssignment);
-		int _la;
-		try {
-			int _alt;
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(84); variable();
-			setState(85);
-			_la = _input.LA(1);
-			if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << PLUSASSIGN) | (1L << DEFINE) | (1L << ASSIGN))) != 0)) ) {
-			_errHandler.recoverInline(this);
-			}
-			consume();
-			setState(89);
+			setState(95);
 			_errHandler.sync(this);
 			_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
 			while ( _alt!=1 && _alt!=ATN.INVALID_ALT_NUMBER ) {
 				if ( _alt==1+1 ) {
 					{
 					{
-					setState(86);
+					setState(92);
 					matchWildcard();
 					}
 					} 
 				}
-				setState(91);
+				setState(97);
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,8,_ctx);
 			}
@@ -742,11 +787,11 @@ public class automakeParser extends Parser {
 
 	public final StatementContext statement() throws RecognitionException {
 		StatementContext _localctx = new StatementContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_statement);
+		enterRule(_localctx, 24, RULE_statement);
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(92); any();
+			setState(98); any();
 			}
 		}
 		catch (RecognitionException re) {
@@ -761,6 +806,31 @@ public class automakeParser extends Parser {
 	}
 
 	public static class AnyContext extends ParserRuleContext {
+		public List<TerminalNode> LBRACE() { return getTokens(automakeParser.LBRACE); }
+		public TerminalNode LBRACE(int i) {
+			return getToken(automakeParser.LBRACE, i);
+		}
+		public TerminalNode ID(int i) {
+			return getToken(automakeParser.ID, i);
+		}
+		public TerminalNode TAB(int i) {
+			return getToken(automakeParser.TAB, i);
+		}
+		public TerminalNode DEFINE(int i) {
+			return getToken(automakeParser.DEFINE, i);
+		}
+		public List<TerminalNode> ID() { return getTokens(automakeParser.ID); }
+		public List<TerminalNode> RBRACE() { return getTokens(automakeParser.RBRACE); }
+		public TerminalNode STRING(int i) {
+			return getToken(automakeParser.STRING, i);
+		}
+		public TerminalNode ASSIGN(int i) {
+			return getToken(automakeParser.ASSIGN, i);
+		}
+		public List<TerminalNode> LPAREN() { return getTokens(automakeParser.LPAREN); }
+		public TerminalNode ANY(int i) {
+			return getToken(automakeParser.ANY, i);
+		}
 		public TerminalNode AM_VARIABLE(int i) {
 			return getToken(automakeParser.AM_VARIABLE, i);
 		}
@@ -770,37 +840,20 @@ public class automakeParser extends Parser {
 		public List<TerminalNode> COLON() { return getTokens(automakeParser.COLON); }
 		public List<TerminalNode> PLUSASSIGN() { return getTokens(automakeParser.PLUSASSIGN); }
 		public List<TerminalNode> STRING() { return getTokens(automakeParser.STRING); }
-		public TerminalNode ID(int i) {
-			return getToken(automakeParser.ID, i);
-		}
 		public List<TerminalNode> RPAREN() { return getTokens(automakeParser.RPAREN); }
 		public List<TerminalNode> AM_VARIABLE() { return getTokens(automakeParser.AM_VARIABLE); }
-		public TerminalNode TAB(int i) {
-			return getToken(automakeParser.TAB, i);
-		}
 		public List<TerminalNode> ANY() { return getTokens(automakeParser.ANY); }
-		public TerminalNode DEFINE(int i) {
-			return getToken(automakeParser.DEFINE, i);
-		}
 		public List<TerminalNode> TAB() { return getTokens(automakeParser.TAB); }
-		public List<TerminalNode> ID() { return getTokens(automakeParser.ID); }
+		public TerminalNode RBRACE(int i) {
+			return getToken(automakeParser.RBRACE, i);
+		}
 		public List<TerminalNode> ASSIGN() { return getTokens(automakeParser.ASSIGN); }
-		public TerminalNode STRING(int i) {
-			return getToken(automakeParser.STRING, i);
-		}
 		public List<TerminalNode> DEFINE() { return getTokens(automakeParser.DEFINE); }
-		public TerminalNode ASSIGN(int i) {
-			return getToken(automakeParser.ASSIGN, i);
-		}
 		public TerminalNode RPAREN(int i) {
 			return getToken(automakeParser.RPAREN, i);
 		}
-		public List<TerminalNode> LPAREN() { return getTokens(automakeParser.LPAREN); }
 		public TerminalNode COLON(int i) {
 			return getToken(automakeParser.COLON, i);
-		}
-		public TerminalNode ANY(int i) {
-			return getToken(automakeParser.ANY, i);
 		}
 		public List<TerminalNode> DOLLAR() { return getTokens(automakeParser.DOLLAR); }
 		public TerminalNode PLUSASSIGN(int i) {
@@ -830,13 +883,13 @@ public class automakeParser extends Parser {
 
 	public final AnyContext any() throws RecognitionException {
 		AnyContext _localctx = new AnyContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_any);
+		enterRule(_localctx, 26, RULE_any);
 		int _la;
 		try {
 			int _alt;
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(95); 
+			setState(101); 
 			_errHandler.sync(this);
 			_alt = 1+1;
 			do {
@@ -844,9 +897,9 @@ public class automakeParser extends Parser {
 				case 1+1:
 					{
 					{
-					setState(94);
+					setState(100);
 					_la = _input.LA(1);
-					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << AM_VARIABLE) | (1L << ID) | (1L << DOLLAR) | (1L << LPAREN) | (1L << RPAREN) | (1L << PLUSASSIGN) | (1L << DEFINE) | (1L << ASSIGN) | (1L << COLON) | (1L << TAB) | (1L << ANY))) != 0)) ) {
+					if ( !((((_la) & ~0x3f) == 0 && ((1L << _la) & ((1L << STRING) | (1L << AM_VARIABLE) | (1L << ID) | (1L << DOLLAR) | (1L << LPAREN) | (1L << RPAREN) | (1L << LBRACE) | (1L << RBRACE) | (1L << PLUSASSIGN) | (1L << DEFINE) | (1L << ASSIGN) | (1L << COLON) | (1L << TAB) | (1L << ANY))) != 0)) ) {
 					_errHandler.recoverInline(this);
 					}
 					consume();
@@ -856,7 +909,7 @@ public class automakeParser extends Parser {
 				default:
 					throw new NoViableAltException(this);
 				}
-				setState(97); 
+				setState(103); 
 				_errHandler.sync(this);
 				_alt = getInterpreter().adaptivePredict(_input,9,_ctx);
 			} while ( _alt!=1 && _alt!=ATN.INVALID_ALT_NUMBER );
@@ -874,31 +927,32 @@ public class automakeParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\24f\4\2\t\2\4\3\t"+
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\24l\4\2\t\2\4\3\t"+
 		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\4\13\t\13\4"+
-		"\f\t\f\4\r\t\r\4\16\t\16\3\2\7\2\36\n\2\f\2\16\2!\13\2\3\2\5\2$\n\2\3"+
-		"\2\3\2\3\3\3\3\3\3\3\3\5\3,\n\3\3\4\3\4\3\5\3\5\3\5\3\5\5\5\64\n\5\3\6"+
-		"\3\6\3\6\3\6\3\7\7\7;\n\7\f\7\16\7>\13\7\3\b\3\b\5\bB\n\b\3\t\3\t\3\t"+
-		"\3\t\3\t\3\t\3\t\3\t\5\tL\n\t\3\n\3\n\3\n\3\13\7\13R\n\13\f\13\16\13U"+
-		"\13\13\3\f\3\f\3\f\7\fZ\n\f\f\f\16\f]\13\f\3\r\3\r\3\16\6\16b\n\16\r\16"+
-		"\16\16c\3\16\5S[c\2\17\2\4\6\b\n\f\16\20\22\24\26\30\32\2\4\3\2\f\16\6"+
-		"\2\4\t\f\17\22\22\24\24d\2\37\3\2\2\2\4+\3\2\2\2\6-\3\2\2\2\b\63\3\2\2"+
-		"\2\n\65\3\2\2\2\f<\3\2\2\2\16A\3\2\2\2\20K\3\2\2\2\22M\3\2\2\2\24S\3\2"+
-		"\2\2\26V\3\2\2\2\30^\3\2\2\2\32a\3\2\2\2\34\36\5\4\3\2\35\34\3\2\2\2\36"+
-		"!\3\2\2\2\37\35\3\2\2\2\37 \3\2\2\2 #\3\2\2\2!\37\3\2\2\2\"$\5\6\4\2#"+
-		"\"\3\2\2\2#$\3\2\2\2$%\3\2\2\2%&\7\2\2\3&\3\3\2\2\2\'(\5\b\5\2()\7\21"+
-		"\2\2),\3\2\2\2*,\7\21\2\2+\'\3\2\2\2+*\3\2\2\2,\5\3\2\2\2-.\5\b\5\2.\7"+
-		"\3\2\2\2/\64\5\n\6\2\60\64\5\22\n\2\61\64\5\26\f\2\62\64\5\30\r\2\63/"+
-		"\3\2\2\2\63\60\3\2\2\2\63\61\3\2\2\2\63\62\3\2\2\2\64\t\3\2\2\2\65\66"+
-		"\7\6\2\2\66\67\7\17\2\2\678\5\f\7\28\13\3\2\2\29;\5\16\b\2:9\3\2\2\2;"+
-		">\3\2\2\2<:\3\2\2\2<=\3\2\2\2=\r\3\2\2\2><\3\2\2\2?B\7\6\2\2@B\5\20\t"+
-		"\2A?\3\2\2\2A@\3\2\2\2B\17\3\2\2\2CD\7\7\2\2DE\7\b\2\2EF\7\6\2\2FL\7\t"+
-		"\2\2GH\7\7\2\2HI\7\n\2\2IJ\7\6\2\2JL\7\13\2\2KC\3\2\2\2KG\3\2\2\2L\21"+
-		"\3\2\2\2MN\7\22\2\2NO\5\24\13\2O\23\3\2\2\2PR\13\2\2\2QP\3\2\2\2RU\3\2"+
-		"\2\2ST\3\2\2\2SQ\3\2\2\2T\25\3\2\2\2US\3\2\2\2VW\5\20\t\2W[\t\2\2\2XZ"+
-		"\13\2\2\2YX\3\2\2\2Z]\3\2\2\2[\\\3\2\2\2[Y\3\2\2\2\\\27\3\2\2\2][\3\2"+
-		"\2\2^_\5\32\16\2_\31\3\2\2\2`b\t\3\2\2a`\3\2\2\2bc\3\2\2\2cd\3\2\2\2c"+
-		"a\3\2\2\2d\33\3\2\2\2\f\37#+\63<AKS[c";
+		"\f\t\f\4\r\t\r\4\16\t\16\4\17\t\17\3\2\7\2 \n\2\f\2\16\2#\13\2\3\2\5\2"+
+		"&\n\2\3\2\3\2\3\3\3\3\3\3\3\3\5\3.\n\3\3\4\3\4\3\5\3\5\3\5\3\5\5\5\66"+
+		"\n\5\3\6\3\6\3\6\3\6\3\7\7\7=\n\7\f\7\16\7@\13\7\3\b\3\b\5\bD\n\b\3\t"+
+		"\3\t\3\t\7\tI\n\t\f\t\16\tL\13\t\3\n\3\n\3\13\3\13\3\13\3\13\3\13\3\13"+
+		"\3\13\3\13\3\13\3\13\5\13Z\n\13\3\f\3\f\3\f\3\r\7\r`\n\r\f\r\16\rc\13"+
+		"\r\3\16\3\16\3\17\6\17h\n\17\r\17\16\17i\3\17\5Jai\2\20\2\4\6\b\n\f\16"+
+		"\20\22\24\26\30\32\34\2\4\3\2\f\16\5\2\4\17\22\22\24\24i\2!\3\2\2\2\4"+
+		"-\3\2\2\2\6/\3\2\2\2\b\65\3\2\2\2\n\67\3\2\2\2\f>\3\2\2\2\16C\3\2\2\2"+
+		"\20E\3\2\2\2\22M\3\2\2\2\24Y\3\2\2\2\26[\3\2\2\2\30a\3\2\2\2\32d\3\2\2"+
+		"\2\34g\3\2\2\2\36 \5\4\3\2\37\36\3\2\2\2 #\3\2\2\2!\37\3\2\2\2!\"\3\2"+
+		"\2\2\"%\3\2\2\2#!\3\2\2\2$&\5\6\4\2%$\3\2\2\2%&\3\2\2\2&\'\3\2\2\2\'("+
+		"\7\2\2\3(\3\3\2\2\2)*\5\b\5\2*+\7\21\2\2+.\3\2\2\2,.\7\21\2\2-)\3\2\2"+
+		"\2-,\3\2\2\2.\5\3\2\2\2/\60\5\b\5\2\60\7\3\2\2\2\61\66\5\n\6\2\62\66\5"+
+		"\26\f\2\63\66\5\20\t\2\64\66\5\32\16\2\65\61\3\2\2\2\65\62\3\2\2\2\65"+
+		"\63\3\2\2\2\65\64\3\2\2\2\66\t\3\2\2\2\678\7\6\2\289\7\17\2\29:\5\f\7"+
+		"\2:\13\3\2\2\2;=\5\16\b\2<;\3\2\2\2=@\3\2\2\2><\3\2\2\2>?\3\2\2\2?\r\3"+
+		"\2\2\2@>\3\2\2\2AD\7\6\2\2BD\5\24\13\2CA\3\2\2\2CB\3\2\2\2D\17\3\2\2\2"+
+		"EF\5\22\n\2FJ\t\2\2\2GI\13\2\2\2HG\3\2\2\2IL\3\2\2\2JK\3\2\2\2JH\3\2\2"+
+		"\2K\21\3\2\2\2LJ\3\2\2\2MN\7\6\2\2N\23\3\2\2\2OP\7\7\2\2PQ\7\b\2\2QR\5"+
+		"\22\n\2RS\7\t\2\2SZ\3\2\2\2TU\7\7\2\2UV\7\n\2\2VW\5\22\n\2WX\7\13\2\2"+
+		"XZ\3\2\2\2YO\3\2\2\2YT\3\2\2\2Z\25\3\2\2\2[\\\7\22\2\2\\]\5\30\r\2]\27"+
+		"\3\2\2\2^`\13\2\2\2_^\3\2\2\2`c\3\2\2\2ab\3\2\2\2a_\3\2\2\2b\31\3\2\2"+
+		"\2ca\3\2\2\2de\5\34\17\2e\33\3\2\2\2fh\t\3\2\2gf\3\2\2\2hi\3\2\2\2ij\3"+
+		"\2\2\2ig\3\2\2\2j\35\3\2\2\2\f!%-\65>CJYai";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

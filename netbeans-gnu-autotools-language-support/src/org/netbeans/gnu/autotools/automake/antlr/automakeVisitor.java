@@ -21,6 +21,13 @@ public interface automakeVisitor<T> extends ParseTreeVisitor<T> {
 	T visitVariableAssignment(@NotNull automakeParser.VariableAssignmentContext ctx);
 
 	/**
+	 * Visit a parse tree produced by {@link automakeParser#variableName}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVariableName(@NotNull automakeParser.VariableNameContext ctx);
+
+	/**
 	 * Visit a parse tree produced by {@link automakeParser#line}.
 	 * @param ctx the parse tree
 	 * @return the visitor result

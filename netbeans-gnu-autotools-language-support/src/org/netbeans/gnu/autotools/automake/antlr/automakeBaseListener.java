@@ -32,6 +32,19 @@ public class automakeBaseListener implements automakeListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterVariableName(@NotNull automakeParser.VariableNameContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVariableName(@NotNull automakeParser.VariableNameContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterLine(@NotNull automakeParser.LineContext ctx) { }
 	/**
 	 * {@inheritDoc}

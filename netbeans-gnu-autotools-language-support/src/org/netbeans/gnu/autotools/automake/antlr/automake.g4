@@ -57,8 +57,7 @@ filename
     ;
 
 variableAssignment
-    :
-        variableName (ASSIGN | PLUSASSIGN | DEFINE) (.)*?
+    : variableName (ASSIGN | PLUSASSIGN | DEFINE) (.)*?
     ;
 
 variableName
@@ -83,20 +82,7 @@ statement
     ;
 
 any
-    : ( STRING 
-      | AM_VARIABLE 
-      | ID 
-      | DOLLAR 
-      | LPAREN 
-      | RPAREN 
-      | LBRACE 
-      | RBRACE 
-      | PLUSASSIGN 
-      | DEFINE 
-      | ASSIGN 
-      | COLON 
-      | TAB 
-      | ANY)+?
+    : ( variable | .)+?
     ;
 
 /* Lexer */

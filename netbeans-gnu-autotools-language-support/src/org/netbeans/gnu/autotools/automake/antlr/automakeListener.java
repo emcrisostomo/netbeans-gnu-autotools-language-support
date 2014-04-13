@@ -44,6 +44,17 @@ public interface automakeListener extends ParseTreeListener {
 	void exitLine(@NotNull automakeParser.LineContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link automakeParser#elsestatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterElsestatement(@NotNull automakeParser.ElsestatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link automakeParser#elsestatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitElsestatement(@NotNull automakeParser.ElsestatementContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link automakeParser#recipe}.
 	 * @param ctx the parse tree
 	 */
@@ -77,6 +88,17 @@ public interface automakeListener extends ParseTreeListener {
 	void exitTarget(@NotNull automakeParser.TargetContext ctx);
 
 	/**
+	 * Enter a parse tree produced by {@link automakeParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void enterCondition(@NotNull automakeParser.ConditionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link automakeParser#condition}.
+	 * @param ctx the parse tree
+	 */
+	void exitCondition(@NotNull automakeParser.ConditionContext ctx);
+
+	/**
 	 * Enter a parse tree produced by {@link automakeParser#prerequisiteList}.
 	 * @param ctx the parse tree
 	 */
@@ -108,6 +130,17 @@ public interface automakeListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitFilename(@NotNull automakeParser.FilenameContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link automakeParser#ifstatement}.
+	 * @param ctx the parse tree
+	 */
+	void enterIfstatement(@NotNull automakeParser.IfstatementContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link automakeParser#ifstatement}.
+	 * @param ctx the parse tree
+	 */
+	void exitIfstatement(@NotNull automakeParser.IfstatementContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link automakeParser#recipeText}.

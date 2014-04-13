@@ -35,6 +35,13 @@ public interface automakeVisitor<T> extends ParseTreeVisitor<T> {
 	T visitLine(@NotNull automakeParser.LineContext ctx);
 
 	/**
+	 * Visit a parse tree produced by {@link automakeParser#elsestatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitElsestatement(@NotNull automakeParser.ElsestatementContext ctx);
+
+	/**
 	 * Visit a parse tree produced by {@link automakeParser#recipe}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -56,6 +63,13 @@ public interface automakeVisitor<T> extends ParseTreeVisitor<T> {
 	T visitTarget(@NotNull automakeParser.TargetContext ctx);
 
 	/**
+	 * Visit a parse tree produced by {@link automakeParser#condition}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitCondition(@NotNull automakeParser.ConditionContext ctx);
+
+	/**
 	 * Visit a parse tree produced by {@link automakeParser#prerequisiteList}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -75,6 +89,13 @@ public interface automakeVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitFilename(@NotNull automakeParser.FilenameContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link automakeParser#ifstatement}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitIfstatement(@NotNull automakeParser.IfstatementContext ctx);
 
 	/**
 	 * Visit a parse tree produced by {@link automakeParser#recipeText}.

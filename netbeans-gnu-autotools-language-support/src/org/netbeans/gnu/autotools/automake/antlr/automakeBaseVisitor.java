@@ -44,6 +44,14 @@ public class automakeBaseVisitor<T> extends AbstractParseTreeVisitor<T> implemen
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitElsestatement(@NotNull automakeParser.ElsestatementContext ctx) { return visitChildren(ctx); }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitRecipe(@NotNull automakeParser.RecipeContext ctx) { return visitChildren(ctx); }
 
 	/**
@@ -68,6 +76,14 @@ public class automakeBaseVisitor<T> extends AbstractParseTreeVisitor<T> implemen
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitCondition(@NotNull automakeParser.ConditionContext ctx) { return visitChildren(ctx); }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitPrerequisiteList(@NotNull automakeParser.PrerequisiteListContext ctx) { return visitChildren(ctx); }
 
 	/**
@@ -85,6 +101,14 @@ public class automakeBaseVisitor<T> extends AbstractParseTreeVisitor<T> implemen
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitFilename(@NotNull automakeParser.FilenameContext ctx) { return visitChildren(ctx); }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitIfstatement(@NotNull automakeParser.IfstatementContext ctx) { return visitChildren(ctx); }
 
 	/**
 	 * {@inheritDoc}

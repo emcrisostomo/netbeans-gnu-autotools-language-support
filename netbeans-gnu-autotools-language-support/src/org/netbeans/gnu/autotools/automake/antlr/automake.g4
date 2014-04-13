@@ -41,7 +41,19 @@ unterminatedRow
     ;
 
 line
-    : (target | recipe | variableAssignment | statement)
+    : (ifstatement | target | recipe | variableAssignment | statement)
+    ;
+
+ifstatement
+    : IF condition NL (row)+? elsestatement? ENDIF
+    ;
+
+condition
+    : (.)+?
+    ;
+
+elsestatement
+    : ELSE NL (row)+
     ;
 
 target
@@ -95,6 +107,10 @@ STRING
     : '"' (ESC | .)*? '"' 
       { readTab = false; }
     ;
+
+IF    : 'if'    { readTab = false; };
+ELSE  : 'else'  { readTab = false; };
+ENDIF : 'endif' { readTab = false; };
 
 AM_VARIABLE
     : (LOWERCASE_LETTER | '_' )* '_' (UPPERCASE_LETTER)* 

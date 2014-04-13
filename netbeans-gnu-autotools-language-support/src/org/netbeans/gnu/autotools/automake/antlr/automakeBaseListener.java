@@ -58,6 +58,19 @@ public class automakeBaseListener implements automakeListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterElsestatement(@NotNull automakeParser.ElsestatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitElsestatement(@NotNull automakeParser.ElsestatementContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterRecipe(@NotNull automakeParser.RecipeContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -97,6 +110,19 @@ public class automakeBaseListener implements automakeListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
+	@Override public void enterCondition(@NotNull automakeParser.ConditionContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitCondition(@NotNull automakeParser.ConditionContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
 	@Override public void enterPrerequisiteList(@NotNull automakeParser.PrerequisiteListContext ctx) { }
 	/**
 	 * {@inheritDoc}
@@ -130,6 +156,19 @@ public class automakeBaseListener implements automakeListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitFilename(@NotNull automakeParser.FilenameContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterIfstatement(@NotNull automakeParser.IfstatementContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitIfstatement(@NotNull automakeParser.IfstatementContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

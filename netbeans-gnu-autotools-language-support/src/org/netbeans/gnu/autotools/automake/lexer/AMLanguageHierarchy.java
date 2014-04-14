@@ -39,7 +39,10 @@ public class AMLanguageHierarchy extends LanguageHierarchy<AMTokenId> {
         tokens = Arrays.asList(new AMTokenId[]{
             new AMTokenId("SINGLE_LINE_COMMENT", "comment", regExCounter++),
             new AMTokenId("STRING", "string", regExCounter++),
-            new AMTokenId("AM_VARIABLE", "automake", regExCounter++),
+            new AMTokenId("IF", "keyword", regExCounter++),
+            new AMTokenId("ELSE", "keyword", regExCounter++),
+            new AMTokenId("ENDIF", "keyword", regExCounter++),
+            new AMTokenId("AM_VARIABLE", "keyword", regExCounter++),            
             new AMTokenId("ID", "identifier", regExCounter++),
             new AMTokenId("DOLLAR", "whitespace", regExCounter++),
             new AMTokenId("LPAREN", "operator", regExCounter++),

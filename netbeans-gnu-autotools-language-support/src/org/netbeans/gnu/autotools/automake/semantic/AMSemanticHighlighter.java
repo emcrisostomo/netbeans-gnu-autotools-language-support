@@ -18,6 +18,7 @@ package org.netbeans.gnu.autotools.automake.semantic;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.IdentityHashMap;
 import java.util.List;
@@ -76,7 +77,7 @@ class AMSemanticHighlighter extends IndexingAwareParserResultTask<Parser.Result>
         visitor.visit(compilationUnit);
 
         // Get visitor results
-        Map<org.antlr.v4.runtime.Token, Type> identifiers = null; // = visitor.getIdentifiers();
+        Map<org.antlr.v4.runtime.Token, Type> identifiers = new HashMap<>(); // = visitor.getIdentifiers();
 
         final ANTLRTokenToNetBeansTokenMapper mapper = new ANTLRTokenToNetBeansTokenMapper(doc);
 

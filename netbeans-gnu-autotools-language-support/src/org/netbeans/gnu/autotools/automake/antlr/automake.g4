@@ -32,8 +32,8 @@ compilationUnit
     ;
 
 row
-    : line NL
-    | NL
+    : NL
+    | line NL
     ;
 
 unterminatedRow

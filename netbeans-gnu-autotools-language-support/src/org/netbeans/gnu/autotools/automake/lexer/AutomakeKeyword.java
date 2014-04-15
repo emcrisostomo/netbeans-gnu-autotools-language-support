@@ -21,8 +21,10 @@ package org.netbeans.gnu.autotools.automake.lexer;
  * @author Enrico M. Crisostomo
  */
 public final class AutomakeKeyword {
+
     public static enum Type {
 
-        AM_BUILTIN
+        AM_BUILTIN,
+        AM_BUILTIN_VARIABLE
     }
 }

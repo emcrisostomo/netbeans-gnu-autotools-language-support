@@ -29,6 +29,7 @@ import org.netbeans.api.lexer.Token;
 import org.netbeans.api.lexer.TokenHierarchy;
 import org.netbeans.api.lexer.TokenId;
 import org.netbeans.api.lexer.TokenSequence;
+import org.netbeans.gnu.autotools.automake.semantic.AMColoringAttributes.Coloring;
 import org.netbeans.spi.editor.highlighting.HighlightsSequence;
 import org.netbeans.spi.editor.highlighting.support.AbstractHighlightsContainer;
 import org.netbeans.spi.editor.highlighting.support.OffsetsBag;
@@ -38,9 +39,10 @@ import org.netbeans.spi.editor.highlighting.support.OffsetsBag;
  * @author Enrico M. Crisostomo
  */
 class AMLexerBasedHighlightLayer extends AbstractHighlightsContainer {
+
     private static final Logger logger = Logger.getLogger(AMLexerBasedHighlightLayer.class.getName());
-    private Map<Token<? extends TokenId>, AMColoringAttributes.Coloring> colorings;
-    private final Map<AMColoringAttributes.Coloring, AttributeSet> CACHE = new HashMap<>();
+    private Map<Token<? extends TokenId>, Coloring> colorings;
+    private final Map<Coloring, AttributeSet> CACHE = new HashMap<>();
     private final WeakReference<Document> doc;
     private final OffsetsBag bag;
 
@@ -76,7 +78,9 @@ class AMLexerBasedHighlightLayer extends AbstractHighlightsContainer {
         return bag.getHighlights(startOffset, endOffset);
     }
 
-    public void setColorings(final Map<Token<? extends TokenId>, AMColoringAttributes.Coloring> colorings, final Set<Token<? extends TokenId>> addedTokens) {
+    public void setColorings(
+            final Map<Token<? extends TokenId>, Coloring> colorings,
+            final Set<Token<? extends TokenId>> addedTokens) {
         bag.clear();
 
         this.colorings = colorings;
@@ -91,7 +95,7 @@ class AMLexerBasedHighlightLayer extends AbstractHighlightsContainer {
                 continue;
             }
 
-            final AMColoringAttributes.Coloring coloring = colorings.get(token);
+            final Coloring coloring = colorings.get(token);
 
             if (logger.isLoggable(Level.FINE)) {
                 logger.log(Level.FINE, "Token {0} has the following coloring info: ", token.text().toString());
@@ -110,7 +114,7 @@ class AMLexerBasedHighlightLayer extends AbstractHighlightsContainer {
         CACHE.clear();
     }
 
-    synchronized AttributeSet getColoring(AMColoringAttributes.Coloring c) {
+    synchronized AttributeSet getColoring(Coloring c) {
         AttributeSet a = CACHE.get(c);
 
         if (a == null) {

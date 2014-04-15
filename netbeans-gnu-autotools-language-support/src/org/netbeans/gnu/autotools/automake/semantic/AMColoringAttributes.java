@@ -27,7 +27,8 @@ import org.netbeans.gnu.autotools.automake.lexer.AutomakeKeyword.Type;
  * @author Enrico M. Crisostomo
  */
 enum AMColoringAttributes {
-    AM_BUILTIN;
+    AM_BUILTIN,
+    AM_BUILTIN_VARIABLE;
     
     public static Coloring empty() {
         return new Coloring();
@@ -45,6 +46,7 @@ enum AMColoringAttributes {
         switch (type)
         {
             case AM_BUILTIN: return AM_BUILTIN;
+            case AM_BUILTIN_VARIABLE: return AM_BUILTIN_VARIABLE;
          }
         
         return null;

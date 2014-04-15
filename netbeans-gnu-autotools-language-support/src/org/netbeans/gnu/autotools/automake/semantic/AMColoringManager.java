@@ -34,6 +34,7 @@ import org.netbeans.api.editor.mimelookup.MimePath;
 import org.netbeans.api.editor.settings.AttributesUtilities;
 import org.netbeans.api.editor.settings.FontColorSettings;
 import static org.netbeans.gnu.autotools.automake.semantic.AMColoringAttributes.AM_BUILTIN;
+import static org.netbeans.gnu.autotools.automake.semantic.AMColoringAttributes.AM_BUILTIN_VARIABLE;
 import org.netbeans.gnu.autotools.automake.semantic.AMColoringAttributes.Coloring;
 
 /**
@@ -49,6 +50,7 @@ final class AMColoringManager {
         type2Coloring = new LinkedHashMap<>();
 
         put("automake", AM_BUILTIN);
+        put("automake-variable", AM_BUILTIN_VARIABLE);
     }
 
     private static void put(String coloring, AMColoringAttributes... attributes) {

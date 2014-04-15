@@ -19,10 +19,6 @@ package org.netbeans.gnu.autotools.automake.lexer;
 import java.util.logging.Logger;
 import org.antlr.v4.runtime.Token;
 import org.netbeans.gnu.autotools.antlr.support.ANTLRCharStream;
-import org.netbeans.gnu.autotools.autoconf.antlr.autoconfLexer;
-import org.netbeans.gnu.autotools.autoconf.lexer.ACLanguageHierarchy;
-import org.netbeans.gnu.autotools.autoconf.lexer.ACLexer;
-import org.netbeans.gnu.autotools.autoconf.lexer.ACTokenId;
 import org.netbeans.gnu.autotools.automake.antlr.automakeLexer;
 import org.netbeans.spi.lexer.Lexer;
 import org.netbeans.spi.lexer.LexerRestartInfo;
@@ -61,7 +57,7 @@ class AMLexer implements Lexer<AMTokenId> {
             throw new IllegalStateException("Token unexpectedly null.");
         }
 
-        if (token.getType() == autoconfLexer.EOF) {
+        if (token.getType() == automakeLexer.EOF) {
             return null;
         }
 

@@ -105,11 +105,11 @@ public interface automakeVisitor<T> extends ParseTreeVisitor<T> {
 	T visitRecipeText(@NotNull automakeParser.RecipeTextContext ctx);
 
 	/**
-	 * Visit a parse tree produced by {@link automakeParser#variable}.
+	 * Visit a parse tree produced by {@link automakeParser#variableWiwhBrace}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitVariable(@NotNull automakeParser.VariableContext ctx);
+	T visitVariableWiwhBrace(@NotNull automakeParser.VariableWiwhBraceContext ctx);
 
 	/**
 	 * Visit a parse tree produced by {@link automakeParser#statement}.
@@ -131,4 +131,11 @@ public interface automakeVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitUnterminatedRow(@NotNull automakeParser.UnterminatedRowContext ctx);
+
+	/**
+	 * Visit a parse tree produced by {@link automakeParser#variableWithParen}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitVariableWithParen(@NotNull automakeParser.VariableWithParenContext ctx);
 }

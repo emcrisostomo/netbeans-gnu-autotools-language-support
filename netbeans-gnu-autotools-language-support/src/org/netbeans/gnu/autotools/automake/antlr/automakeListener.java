@@ -154,15 +154,15 @@ public interface automakeListener extends ParseTreeListener {
 	void exitRecipeText(@NotNull automakeParser.RecipeTextContext ctx);
 
 	/**
-	 * Enter a parse tree produced by {@link automakeParser#variable}.
+	 * Enter a parse tree produced by {@link automakeParser#variableWiwhBrace}.
 	 * @param ctx the parse tree
 	 */
-	void enterVariable(@NotNull automakeParser.VariableContext ctx);
+	void enterVariableWiwhBrace(@NotNull automakeParser.VariableWiwhBraceContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link automakeParser#variable}.
+	 * Exit a parse tree produced by {@link automakeParser#variableWiwhBrace}.
 	 * @param ctx the parse tree
 	 */
-	void exitVariable(@NotNull automakeParser.VariableContext ctx);
+	void exitVariableWiwhBrace(@NotNull automakeParser.VariableWiwhBraceContext ctx);
 
 	/**
 	 * Enter a parse tree produced by {@link automakeParser#statement}.
@@ -196,4 +196,15 @@ public interface automakeListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitUnterminatedRow(@NotNull automakeParser.UnterminatedRowContext ctx);
+
+	/**
+	 * Enter a parse tree produced by {@link automakeParser#variableWithParen}.
+	 * @param ctx the parse tree
+	 */
+	void enterVariableWithParen(@NotNull automakeParser.VariableWithParenContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link automakeParser#variableWithParen}.
+	 * @param ctx the parse tree
+	 */
+	void exitVariableWithParen(@NotNull automakeParser.VariableWithParenContext ctx);
 }

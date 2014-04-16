@@ -188,13 +188,13 @@ public class automakeBaseListener implements automakeListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterVariable(@NotNull automakeParser.VariableContext ctx) { }
+	@Override public void enterVariableWiwhBrace(@NotNull automakeParser.VariableWiwhBraceContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitVariable(@NotNull automakeParser.VariableContext ctx) { }
+	@Override public void exitVariableWiwhBrace(@NotNull automakeParser.VariableWiwhBraceContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
@@ -234,6 +234,19 @@ public class automakeBaseListener implements automakeListener {
 	 * <p>The default implementation does nothing.</p>
 	 */
 	@Override public void exitUnterminatedRow(@NotNull automakeParser.UnterminatedRowContext ctx) { }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void enterVariableWithParen(@NotNull automakeParser.VariableWithParenContext ctx) { }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation does nothing.</p>
+	 */
+	@Override public void exitVariableWithParen(@NotNull automakeParser.VariableWithParenContext ctx) { }
 
 	/**
 	 * {@inheritDoc}

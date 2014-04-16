@@ -124,7 +124,7 @@ public class automakeBaseVisitor<T> extends AbstractParseTreeVisitor<T> implemen
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitVariable(@NotNull automakeParser.VariableContext ctx) { return visitChildren(ctx); }
+	@Override public T visitVariableWiwhBrace(@NotNull automakeParser.VariableWiwhBraceContext ctx) { return visitChildren(ctx); }
 
 	/**
 	 * {@inheritDoc}
@@ -149,4 +149,12 @@ public class automakeBaseVisitor<T> extends AbstractParseTreeVisitor<T> implemen
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitUnterminatedRow(@NotNull automakeParser.UnterminatedRowContext ctx) { return visitChildren(ctx); }
+
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitVariableWithParen(@NotNull automakeParser.VariableWithParenContext ctx) { return visitChildren(ctx); }
 }

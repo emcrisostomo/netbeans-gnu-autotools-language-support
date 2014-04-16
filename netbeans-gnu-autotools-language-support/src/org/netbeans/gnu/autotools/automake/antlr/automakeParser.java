@@ -809,29 +809,57 @@ public class automakeParser extends Parser {
 	}
 
 	public static class VariableContext extends ParserRuleContext {
-		public VariableNameContext variableName() {
-			return getRuleContext(VariableNameContext.class,0);
-		}
-		public TerminalNode RBRACE() { return getToken(automakeParser.RBRACE, 0); }
-		public TerminalNode LPAREN() { return getToken(automakeParser.LPAREN, 0); }
-		public TerminalNode LBRACE() { return getToken(automakeParser.LBRACE, 0); }
-		public TerminalNode DOLLAR() { return getToken(automakeParser.DOLLAR, 0); }
-		public TerminalNode RPAREN() { return getToken(automakeParser.RPAREN, 0); }
 		public VariableContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
 		@Override public int getRuleIndex() { return RULE_variable; }
+	 
+		public VariableContext() { }
+		public void copyFrom(VariableContext ctx) {
+			super.copyFrom(ctx);
+		}
+	}
+	public static class VariableWiwhBraceContext extends VariableContext {
+		public VariableNameContext variableName() {
+			return getRuleContext(VariableNameContext.class,0);
+		}
+		public TerminalNode RBRACE() { return getToken(automakeParser.RBRACE, 0); }
+		public TerminalNode LBRACE() { return getToken(automakeParser.LBRACE, 0); }
+		public TerminalNode DOLLAR() { return getToken(automakeParser.DOLLAR, 0); }
+		public VariableWiwhBraceContext(VariableContext ctx) { copyFrom(ctx); }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof automakeListener ) ((automakeListener)listener).enterVariable(this);
+			if ( listener instanceof automakeListener ) ((automakeListener)listener).enterVariableWiwhBrace(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof automakeListener ) ((automakeListener)listener).exitVariable(this);
+			if ( listener instanceof automakeListener ) ((automakeListener)listener).exitVariableWiwhBrace(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof automakeVisitor ) return ((automakeVisitor<? extends T>)visitor).visitVariable(this);
+			if ( visitor instanceof automakeVisitor ) return ((automakeVisitor<? extends T>)visitor).visitVariableWiwhBrace(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+	public static class VariableWithParenContext extends VariableContext {
+		public VariableNameContext variableName() {
+			return getRuleContext(VariableNameContext.class,0);
+		}
+		public TerminalNode LPAREN() { return getToken(automakeParser.LPAREN, 0); }
+		public TerminalNode DOLLAR() { return getToken(automakeParser.DOLLAR, 0); }
+		public TerminalNode RPAREN() { return getToken(automakeParser.RPAREN, 0); }
+		public VariableWithParenContext(VariableContext ctx) { copyFrom(ctx); }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof automakeListener ) ((automakeListener)listener).enterVariableWithParen(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof automakeListener ) ((automakeListener)listener).exitVariableWithParen(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof automakeVisitor ) return ((automakeVisitor<? extends T>)visitor).visitVariableWithParen(this);
 			else return visitor.visitChildren(this);
 		}
 	}
@@ -843,6 +871,7 @@ public class automakeParser extends Parser {
 			setState(119);
 			switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
 			case 1:
+				_localctx = new VariableWithParenContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
 				setState(109); match(DOLLAR);
@@ -853,6 +882,7 @@ public class automakeParser extends Parser {
 				break;
 
 			case 2:
+				_localctx = new VariableWiwhBraceContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
 				setState(114); match(DOLLAR);

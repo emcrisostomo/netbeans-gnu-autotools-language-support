@@ -77,8 +77,8 @@ variableName
     ;
 
 variable
-    : DOLLAR LPAREN variableName RPAREN
-    | DOLLAR LBRACE variableName RBRACE
+    : DOLLAR LPAREN variableName RPAREN # variableWithParen
+    | DOLLAR LBRACE variableName RBRACE # variableWiwhBrace
     ;
 
 recipe

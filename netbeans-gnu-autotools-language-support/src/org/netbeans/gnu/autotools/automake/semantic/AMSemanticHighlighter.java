@@ -77,7 +77,7 @@ class AMSemanticHighlighter extends IndexingAwareParserResultTask<Parser.Result>
         visitor.visit(compilationUnit);
 
         // Get visitor results
-        Map<org.antlr.v4.runtime.Token, Type> identifiers = new HashMap<>(); // = visitor.getIdentifiers();
+        Map<org.antlr.v4.runtime.Token, Type> identifiers = visitor.getIdentifiers();
 
         final ANTLRTokenToNetBeansTokenMapper mapper = new ANTLRTokenToNetBeansTokenMapper(doc);
 

@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.antlr.v4.runtime.Token;
-import org.netbeans.gnu.autotools.autoconf.lexer.AutoconfKeyword;
+import org.antlr.v4.runtime.tree.TerminalNode;
 import org.netbeans.gnu.autotools.automake.antlr.automakeBaseVisitor;
 import org.netbeans.gnu.autotools.automake.antlr.automakeParser;
 import org.netbeans.gnu.autotools.automake.lexer.AutomakeKeyword.Type;
@@ -38,11 +38,24 @@ class AMBuiltinMacroVisitor extends automakeBaseVisitor<Void> {
 
     @Override
     public Void visitVariableWithParen(automakeParser.VariableWithParenContext ctx) {
-        logger.log(Level.FINE, "Automake $() variable found: {0}", ctx.variableName().ID().getText());
+        final TerminalNode identifier = ctx.variableName().ID();
+        final TerminalNode amVariable = ctx.variableName().AM_VARIABLE();
+
+        logger.log(Level.FINE, "Automake variable found: {0}", ctx.getText());
+
+        System.out.println("Automake variable found: " + ctx.getText());
 
         tokensByType.put(ctx.DOLLAR().getSymbol(), Type.AM_BUILTIN_VARIABLE);
         tokensByType.put(ctx.LPAREN().getSymbol(), Type.AM_BUILTIN_VARIABLE);
-        tokensByType.put(ctx.variableName().ID().getSymbol(), Type.AM_BUILTIN_VARIABLE);
+
+        if (identifier != null) {
+            tokensByType.put(identifier.getSymbol(), Type.AM_BUILTIN_VARIABLE);
+        }
+
+        if (amVariable != null) {
+            tokensByType.put(amVariable.getSymbol(), Type.AM_BUILTIN_VARIABLE);
+        }
+
         tokensByType.put(ctx.RPAREN().getSymbol(), Type.AM_BUILTIN_VARIABLE);
 
         return null;
@@ -50,11 +63,24 @@ class AMBuiltinMacroVisitor extends automakeBaseVisitor<Void> {
 
     @Override
     public Void visitVariableWiwhBrace(automakeParser.VariableWiwhBraceContext ctx) {
-        logger.log(Level.FINE, "Automake ${} variable found: {0}", ctx.variableName().ID().getText());
+        final TerminalNode identifier = ctx.variableName().ID();
+        final TerminalNode amVariable = ctx.variableName().AM_VARIABLE();
+
+        logger.log(Level.FINE, "Automake variable found: {0}", ctx.getText());
+
+        System.out.println("Automake variable found: " + ctx.getText());
 
         tokensByType.put(ctx.DOLLAR().getSymbol(), Type.AM_BUILTIN_VARIABLE);
         tokensByType.put(ctx.LBRACE().getSymbol(), Type.AM_BUILTIN_VARIABLE);
-        tokensByType.put(ctx.variableName().ID().getSymbol(), Type.AM_BUILTIN_VARIABLE);
+
+        if (identifier != null) {
+            tokensByType.put(identifier.getSymbol(), Type.AM_BUILTIN_VARIABLE);
+        }
+
+        if (amVariable != null) {
+            tokensByType.put(amVariable.getSymbol(), Type.AM_BUILTIN_VARIABLE);
+        }
+
         tokensByType.put(ctx.RBRACE().getSymbol(), Type.AM_BUILTIN_VARIABLE);
 
         return null;

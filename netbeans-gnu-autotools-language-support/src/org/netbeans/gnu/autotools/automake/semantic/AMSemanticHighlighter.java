@@ -18,7 +18,6 @@ package org.netbeans.gnu.autotools.automake.semantic;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.IdentityHashMap;
 import java.util.List;

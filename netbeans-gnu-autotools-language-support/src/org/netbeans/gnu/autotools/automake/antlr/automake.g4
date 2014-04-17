@@ -69,7 +69,7 @@ filename
     ;
 
 variableAssignment
-    : variableName (ASSIGN | PLUSASSIGN | DEFINE) (.)*?
+    : variableName (ASSIGN | PLUSASSIGN | DEFINE) (variable | .)*?
     ;
 
 variable

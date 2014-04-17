@@ -65,7 +65,7 @@ prerequisiteList
     ;
 
 filename
-    : ID | variable
+    : variable | (.)+? 
     ;
 
 variableAssignment

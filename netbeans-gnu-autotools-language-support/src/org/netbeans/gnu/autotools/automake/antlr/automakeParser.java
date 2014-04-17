@@ -30,12 +30,12 @@ public class automakeParser extends Parser {
 		RULE_compilationUnit = 0, RULE_row = 1, RULE_unterminatedRow = 2, RULE_line = 3, 
 		RULE_ifstatement = 4, RULE_condition = 5, RULE_elsestatement = 6, RULE_target = 7, 
 		RULE_prerequisiteList = 8, RULE_filename = 9, RULE_variableAssignment = 10, 
-		RULE_variableName = 11, RULE_variable = 12, RULE_recipe = 13, RULE_recipeText = 14, 
+		RULE_variable = 11, RULE_variableName = 12, RULE_recipe = 13, RULE_recipeText = 14, 
 		RULE_statement = 15, RULE_any = 16;
 	public static final String[] ruleNames = {
 		"compilationUnit", "row", "unterminatedRow", "line", "ifstatement", "condition", 
 		"elsestatement", "target", "prerequisiteList", "filename", "variableAssignment", 
-		"variableName", "variable", "recipe", "recipeText", "statement", "any"
+		"variable", "variableName", "recipe", "recipeText", "statement", "any"
 	};
 
 	@Override
@@ -767,47 +767,6 @@ public class automakeParser extends Parser {
 		return _localctx;
 	}
 
-	public static class VariableNameContext extends ParserRuleContext {
-		public TerminalNode ID() { return getToken(automakeParser.ID, 0); }
-		public VariableNameContext(ParserRuleContext parent, int invokingState) {
-			super(parent, invokingState);
-		}
-		@Override public int getRuleIndex() { return RULE_variableName; }
-		@Override
-		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof automakeListener ) ((automakeListener)listener).enterVariableName(this);
-		}
-		@Override
-		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof automakeListener ) ((automakeListener)listener).exitVariableName(this);
-		}
-		@Override
-		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof automakeVisitor ) return ((automakeVisitor<? extends T>)visitor).visitVariableName(this);
-			else return visitor.visitChildren(this);
-		}
-	}
-
-	public final VariableNameContext variableName() throws RecognitionException {
-		VariableNameContext _localctx = new VariableNameContext(_ctx, getState());
-		enterRule(_localctx, 22, RULE_variableName);
-		try {
-			enterOuterAlt(_localctx, 1);
-			{
-			setState(107); match(ID);
-			}
-		}
-		catch (RecognitionException re) {
-			_localctx.exception = re;
-			_errHandler.reportError(this, re);
-			_errHandler.recover(this, re);
-		}
-		finally {
-			exitRule();
-		}
-		return _localctx;
-	}
-
 	public static class VariableContext extends ParserRuleContext {
 		public VariableContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
@@ -866,18 +825,18 @@ public class automakeParser extends Parser {
 
 	public final VariableContext variable() throws RecognitionException {
 		VariableContext _localctx = new VariableContext(_ctx, getState());
-		enterRule(_localctx, 24, RULE_variable);
+		enterRule(_localctx, 22, RULE_variable);
 		try {
-			setState(119);
+			setState(117);
 			switch ( getInterpreter().adaptivePredict(_input,11,_ctx) ) {
 			case 1:
 				_localctx = new VariableWithParenContext(_localctx);
 				enterOuterAlt(_localctx, 1);
 				{
-				setState(109); match(DOLLAR);
-				setState(110); match(LPAREN);
-				setState(111); variableName();
-				setState(112); match(RPAREN);
+				setState(107); match(DOLLAR);
+				setState(108); match(LPAREN);
+				setState(109); variableName();
+				setState(110); match(RPAREN);
 				}
 				break;
 
@@ -885,12 +844,60 @@ public class automakeParser extends Parser {
 				_localctx = new VariableWiwhBraceContext(_localctx);
 				enterOuterAlt(_localctx, 2);
 				{
-				setState(114); match(DOLLAR);
-				setState(115); match(LBRACE);
-				setState(116); variableName();
-				setState(117); match(RBRACE);
+				setState(112); match(DOLLAR);
+				setState(113); match(LBRACE);
+				setState(114); variableName();
+				setState(115); match(RBRACE);
 				}
 				break;
+			}
+		}
+		catch (RecognitionException re) {
+			_localctx.exception = re;
+			_errHandler.reportError(this, re);
+			_errHandler.recover(this, re);
+		}
+		finally {
+			exitRule();
+		}
+		return _localctx;
+	}
+
+	public static class VariableNameContext extends ParserRuleContext {
+		public TerminalNode ID() { return getToken(automakeParser.ID, 0); }
+		public TerminalNode AM_VARIABLE() { return getToken(automakeParser.AM_VARIABLE, 0); }
+		public VariableNameContext(ParserRuleContext parent, int invokingState) {
+			super(parent, invokingState);
+		}
+		@Override public int getRuleIndex() { return RULE_variableName; }
+		@Override
+		public void enterRule(ParseTreeListener listener) {
+			if ( listener instanceof automakeListener ) ((automakeListener)listener).enterVariableName(this);
+		}
+		@Override
+		public void exitRule(ParseTreeListener listener) {
+			if ( listener instanceof automakeListener ) ((automakeListener)listener).exitVariableName(this);
+		}
+		@Override
+		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
+			if ( visitor instanceof automakeVisitor ) return ((automakeVisitor<? extends T>)visitor).visitVariableName(this);
+			else return visitor.visitChildren(this);
+		}
+	}
+
+	public final VariableNameContext variableName() throws RecognitionException {
+		VariableNameContext _localctx = new VariableNameContext(_ctx, getState());
+		enterRule(_localctx, 24, RULE_variableName);
+		int _la;
+		try {
+			enterOuterAlt(_localctx, 1);
+			{
+			setState(119);
+			_la = _input.LA(1);
+			if ( !(_la==AM_VARIABLE || _la==ID) ) {
+			_errHandler.recoverInline(this);
+			}
+			consume();
 			}
 		}
 		catch (RecognitionException re) {
@@ -1133,13 +1140,13 @@ public class automakeParser extends Parser {
 		"\64\n\3\3\4\3\4\3\5\3\5\3\5\3\5\3\5\5\5=\n\5\3\6\3\6\3\6\3\6\6\6C\n\6"+
 		"\r\6\16\6D\3\6\5\6H\n\6\3\6\3\6\3\7\6\7M\n\7\r\7\16\7N\3\b\3\b\3\b\6\b"+
 		"T\n\b\r\b\16\bU\3\t\3\t\3\t\3\t\3\n\7\n]\n\n\f\n\16\n`\13\n\3\13\3\13"+
-		"\5\13d\n\13\3\f\3\f\3\f\7\fi\n\f\f\f\16\fl\13\f\3\r\3\r\3\16\3\16\3\16"+
-		"\3\16\3\16\3\16\3\16\3\16\3\16\3\16\5\16z\n\16\3\17\3\17\3\17\3\20\7\20"+
-		"\u0080\n\20\f\20\16\20\u0083\13\20\3\21\3\21\3\22\3\22\6\22\u0089\n\22"+
-		"\r\22\16\22\u008a\3\22\bDNUj\u0081\u008a\2\23\2\4\6\b\n\f\16\20\22\24"+
-		"\26\30\32\34\36 \"\2\3\3\2\17\21\u008d\2\'\3\2\2\2\4\63\3\2\2\2\6\65\3"+
+		"\5\13d\n\13\3\f\3\f\3\f\7\fi\n\f\f\f\16\fl\13\f\3\r\3\r\3\r\3\r\3\r\3"+
+		"\r\3\r\3\r\3\r\3\r\5\rx\n\r\3\16\3\16\3\17\3\17\3\17\3\20\7\20\u0080\n"+
+		"\20\f\20\16\20\u0083\13\20\3\21\3\21\3\22\3\22\6\22\u0089\n\22\r\22\16"+
+		"\22\u008a\3\22\bDNUj\u0081\u008a\2\23\2\4\6\b\n\f\16\20\22\24\26\30\32"+
+		"\34\36 \"\2\4\3\2\17\21\3\2\b\t\u008d\2\'\3\2\2\2\4\63\3\2\2\2\6\65\3"+
 		"\2\2\2\b<\3\2\2\2\n>\3\2\2\2\fL\3\2\2\2\16P\3\2\2\2\20W\3\2\2\2\22^\3"+
-		"\2\2\2\24c\3\2\2\2\26e\3\2\2\2\30m\3\2\2\2\32y\3\2\2\2\34{\3\2\2\2\36"+
+		"\2\2\2\24c\3\2\2\2\26e\3\2\2\2\30w\3\2\2\2\32y\3\2\2\2\34{\3\2\2\2\36"+
 		"\u0081\3\2\2\2 \u0084\3\2\2\2\"\u0088\3\2\2\2$&\5\4\3\2%$\3\2\2\2&)\3"+
 		"\2\2\2\'%\3\2\2\2\'(\3\2\2\2(+\3\2\2\2)\'\3\2\2\2*,\5\6\4\2+*\3\2\2\2"+
 		"+,\3\2\2\2,-\3\2\2\2-.\7\2\2\3.\3\3\2\2\2/\64\7\24\2\2\60\61\5\b\5\2\61"+
@@ -1152,16 +1159,16 @@ public class automakeParser extends Parser {
 		"O\r\3\2\2\2PQ\7\6\2\2QS\7\24\2\2RT\5\4\3\2SR\3\2\2\2TU\3\2\2\2UV\3\2\2"+
 		"\2US\3\2\2\2V\17\3\2\2\2WX\7\t\2\2XY\7\22\2\2YZ\5\22\n\2Z\21\3\2\2\2["+
 		"]\5\24\13\2\\[\3\2\2\2]`\3\2\2\2^\\\3\2\2\2^_\3\2\2\2_\23\3\2\2\2`^\3"+
-		"\2\2\2ad\7\t\2\2bd\5\32\16\2ca\3\2\2\2cb\3\2\2\2d\25\3\2\2\2ef\5\30\r"+
+		"\2\2\2ad\7\t\2\2bd\5\30\r\2ca\3\2\2\2cb\3\2\2\2d\25\3\2\2\2ef\5\32\16"+
 		"\2fj\t\2\2\2gi\13\2\2\2hg\3\2\2\2il\3\2\2\2jk\3\2\2\2jh\3\2\2\2k\27\3"+
-		"\2\2\2lj\3\2\2\2mn\7\t\2\2n\31\3\2\2\2op\7\n\2\2pq\7\13\2\2qr\5\30\r\2"+
-		"rs\7\f\2\2sz\3\2\2\2tu\7\n\2\2uv\7\r\2\2vw\5\30\r\2wx\7\16\2\2xz\3\2\2"+
-		"\2yo\3\2\2\2yt\3\2\2\2z\33\3\2\2\2{|\7\25\2\2|}\5\36\20\2}\35\3\2\2\2"+
-		"~\u0080\13\2\2\2\177~\3\2\2\2\u0080\u0083\3\2\2\2\u0081\u0082\3\2\2\2"+
-		"\u0081\177\3\2\2\2\u0082\37\3\2\2\2\u0083\u0081\3\2\2\2\u0084\u0085\5"+
-		"\"\22\2\u0085!\3\2\2\2\u0086\u0089\5\32\16\2\u0087\u0089\13\2\2\2\u0088"+
+		"\2\2\2lj\3\2\2\2mn\7\n\2\2no\7\13\2\2op\5\32\16\2pq\7\f\2\2qx\3\2\2\2"+
+		"rs\7\n\2\2st\7\r\2\2tu\5\32\16\2uv\7\16\2\2vx\3\2\2\2wm\3\2\2\2wr\3\2"+
+		"\2\2x\31\3\2\2\2yz\t\3\2\2z\33\3\2\2\2{|\7\25\2\2|}\5\36\20\2}\35\3\2"+
+		"\2\2~\u0080\13\2\2\2\177~\3\2\2\2\u0080\u0083\3\2\2\2\u0081\u0082\3\2"+
+		"\2\2\u0081\177\3\2\2\2\u0082\37\3\2\2\2\u0083\u0081\3\2\2\2\u0084\u0085"+
+		"\5\"\22\2\u0085!\3\2\2\2\u0086\u0089\5\30\r\2\u0087\u0089\13\2\2\2\u0088"+
 		"\u0086\3\2\2\2\u0088\u0087\3\2\2\2\u0089\u008a\3\2\2\2\u008a\u008b\3\2"+
-		"\2\2\u008a\u0088\3\2\2\2\u008b#\3\2\2\2\21\'+\63<DGNU^cjy\u0081\u0088"+
+		"\2\2\u008a\u0088\3\2\2\2\u008b#\3\2\2\2\21\'+\63<DGNU^cjw\u0081\u0088"+
 		"\u008a";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());

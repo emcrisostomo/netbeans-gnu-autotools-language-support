@@ -72,13 +72,14 @@ variableAssignment
     : variableName (ASSIGN | PLUSASSIGN | DEFINE) (.)*?
     ;
 
-variableName
-    : ID
-    ;
-
 variable
     : DOLLAR LPAREN variableName RPAREN # variableWithParen
     | DOLLAR LBRACE variableName RBRACE # variableWiwhBrace
+    ;
+
+variableName
+    : AM_VARIABLE
+    | ID
     ;
 
 recipe

@@ -43,8 +43,6 @@ class AMBuiltinMacroVisitor extends automakeBaseVisitor<Void> {
 
         logger.log(Level.FINE, "Automake variable found: {0}", ctx.getText());
 
-        System.out.println("Automake variable found: " + ctx.getText());
-
         tokensByType.put(ctx.DOLLAR().getSymbol(), Type.AM_BUILTIN_VARIABLE);
         tokensByType.put(ctx.LPAREN().getSymbol(), Type.AM_BUILTIN_VARIABLE);
 
@@ -67,8 +65,6 @@ class AMBuiltinMacroVisitor extends automakeBaseVisitor<Void> {
         final TerminalNode amVariable = ctx.variableName().AM_VARIABLE();
 
         logger.log(Level.FINE, "Automake variable found: {0}", ctx.getText());
-
-        System.out.println("Automake variable found: " + ctx.getText());
 
         tokensByType.put(ctx.DOLLAR().getSymbol(), Type.AM_BUILTIN_VARIABLE);
         tokensByType.put(ctx.LBRACE().getSymbol(), Type.AM_BUILTIN_VARIABLE);

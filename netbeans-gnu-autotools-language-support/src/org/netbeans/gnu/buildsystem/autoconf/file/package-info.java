@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 @TemplateRegistration(
-        folder = "Autotools",
+        folder = "GNU Build System (Autotools)",
         content = "configure.ac",
         displayName = "Autoconf configuration file")
 package org.netbeans.gnu.buildsystem.autoconf.file;

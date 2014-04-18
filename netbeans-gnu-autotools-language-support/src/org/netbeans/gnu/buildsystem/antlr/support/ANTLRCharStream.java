@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-package org.netbeans.gnu.autotools.antlr.support;
+package org.netbeans.gnu.buildsystem.antlr.support;
 
 import java.util.ArrayList;
 import java.util.List;

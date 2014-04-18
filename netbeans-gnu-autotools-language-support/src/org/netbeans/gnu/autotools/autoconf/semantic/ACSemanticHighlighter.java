@@ -29,7 +29,7 @@ import javax.swing.text.Document;
 import org.netbeans.api.lexer.Token;
 import org.netbeans.api.lexer.TokenId;
 import org.netbeans.gnu.autotools.autoconf.antlr.autoconfParser.CompilationUnitContext;
-import org.netbeans.gnu.autotools.antlr.support.ANTLRTokenToNetBeansTokenMapper;
+import org.netbeans.gnu.buildsystem.antlr.support.ANTLRTokenToNetBeansTokenMapper;
 import org.netbeans.gnu.autotools.autoconf.lexer.AutoconfKeyword;
 import org.netbeans.gnu.autotools.autoconf.lexer.AutoconfKeyword.Type;
 import org.netbeans.gnu.autotools.autoconf.parser.ACParser;

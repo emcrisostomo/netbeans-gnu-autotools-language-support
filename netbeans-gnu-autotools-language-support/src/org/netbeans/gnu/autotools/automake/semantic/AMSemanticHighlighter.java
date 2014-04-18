@@ -28,7 +28,7 @@ import java.util.logging.Logger;
 import javax.swing.text.Document;
 import org.netbeans.api.lexer.Token;
 import org.netbeans.api.lexer.TokenId;
-import org.netbeans.gnu.autotools.antlr.support.ANTLRTokenToNetBeansTokenMapper;
+import org.netbeans.gnu.buildsystem.antlr.support.ANTLRTokenToNetBeansTokenMapper;
 import org.netbeans.gnu.autotools.automake.antlr.automakeParser.CompilationUnitContext;
 import org.netbeans.gnu.autotools.automake.lexer.AutomakeKeyword.Type;
 import org.netbeans.gnu.autotools.automake.parser.AMParser;

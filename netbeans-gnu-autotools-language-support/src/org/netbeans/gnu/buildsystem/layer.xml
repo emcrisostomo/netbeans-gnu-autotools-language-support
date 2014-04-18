@@ -4,24 +4,24 @@
     <folder name="Editors">
         <folder name="text">
             <folder name="x-autoconf">
-                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.autotools.Bundle"/>
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.buildsystem.Bundle"/>
                 <folder name="FontsColors">
                     <folder name="NetBeans">
                         <folder name="Defaults">
                             <file name="ACFontAndColors.xml" url="ACFontAndColors.xml">
-                                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.autotools.Bundle"/>
+                                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.buildsystem.Bundle"/>
                             </file>
                         </folder>
                     </folder>
                 </folder>
             </folder>
             <folder name="x-automake">
-                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.autotools.Bundle"/>
+                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.buildsystem.Bundle"/>
                 <folder name="FontsColors">
                     <folder name="NetBeans">
                         <folder name="Defaults">
                             <file name="AMFontAndColors.xml" url="AMFontAndColors.xml">
-                                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.autotools.Bundle"/>
+                                <attr name="SystemFileSystem.localizingBundle" stringvalue="org.netbeans.gnu.buildsystem.Bundle"/>
                             </file>
                         </folder>
                     </folder>

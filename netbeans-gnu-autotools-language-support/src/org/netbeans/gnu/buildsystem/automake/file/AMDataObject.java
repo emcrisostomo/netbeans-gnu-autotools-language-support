@@ -42,7 +42,7 @@ import org.openide.windows.TopComponent;
 )
 @DataObject.Registration(
         mimeType = "text/x-automake",
-        iconBase = "org/netbeans/gnu/autotools/resources/am.png",
+        iconBase = "org/netbeans/gnu/buildsystem/resources/am.png",
         displayName = "#LBL_AM_LOADER",
         position = 300
 )

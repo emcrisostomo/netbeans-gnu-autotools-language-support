@@ -7,7 +7,7 @@
             <suite-component/>
             <module-dependencies/>
             <friend-packages>
-                <friend>org.netbeans.gnu.autotools</friend>
+                <friend>org.netbeans.gnu.buildsystem</friend>
                 <package>org.abego.treelayout</package>
                 <package>org.abego.treelayout.internal.util</package>
                 <package>org.abego.treelayout.internal.util.java.lang</package>

@@ -42,7 +42,7 @@ import org.openide.windows.TopComponent;
 )
 @DataObject.Registration(
         mimeType = "text/x-autoconf",
-        iconBase = "org/netbeans/gnu/autotools/resources/ac.png",
+        iconBase = "org/netbeans/gnu/buildsystem/resources/ac.png",
         displayName = "#LBL_AC_LOADER",
         position = 300
 )

@@ -113,7 +113,7 @@ public class AMDataObject extends MultiDataObject {
     
     @MultiViewElement.Registration(
             displayName = "#LBL_AM_EDITOR",
-            iconBase = "org/netbeans/gnu/autotools/resources/am.png",
+            iconBase = "org/netbeans/gnu/buildsystem/resources/am.png",
             mimeType = "text/x-automake",
             persistenceType = TopComponent.PERSISTENCE_ONLY_OPENED,
             preferredID = "AC",

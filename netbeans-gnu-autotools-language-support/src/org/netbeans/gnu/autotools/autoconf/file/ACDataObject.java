@@ -113,7 +113,7 @@ public class ACDataObject extends MultiDataObject {
     
     @MultiViewElement.Registration(
             displayName = "#LBL_AC_EDITOR",
-            iconBase = "org/netbeans/gnu/autotools/resources/ac.png",
+            iconBase = "org/netbeans/gnu/buildsystem/resources/ac.png",
             mimeType = "text/x-autoconf",
             persistenceType = TopComponent.PERSISTENCE_ONLY_OPENED,
             preferredID = "AC",

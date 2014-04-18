@@ -16,7 +16,7 @@
                     </run-dependency>
                 </dependency>
                 <dependency>
-                    <code-name-base>org.netbeans.gnu.autotools.antlr.v4</code-name-base>
+                    <code-name-base>org.netbeans.gnu.buildsystem.antlr.v4</code-name-base>
                     <build-prerequisite/>
                     <compile-dependency/>
                     <run-dependency>

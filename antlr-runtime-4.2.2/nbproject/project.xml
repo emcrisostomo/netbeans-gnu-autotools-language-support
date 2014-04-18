@@ -3,7 +3,7 @@
     <type>org.netbeans.modules.apisupport.project</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/nb-module-project/3">
-            <code-name-base>org.netbeans.gnu.autotools.antlr.v4</code-name-base>
+            <code-name-base>org.netbeans.gnu.buildsystem.antlr.v4</code-name-base>
             <suite-component/>
             <module-dependencies/>
             <friend-packages>
